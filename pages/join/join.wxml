@@ -1,0 +1,8 @@
+<view>
+	<block wx:for="{{items}}" wx:for-item="community">
+		<text class='community'>
+			{{community.name}}
+		</text>
+		<button bindtap='join' id="{{index}}">加入该社团</button>
+	</block>
+</view>

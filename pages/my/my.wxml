@@ -1,0 +1,44 @@
+<!--pages/my/my.wxml-->
+<view class='container'>
+    <view class='info'>
+        <view>
+            <view class='name'>用户昵称：{{nickName}}</view>
+        </view>
+        <view>
+            <view class='community'>所属社团：{{communityName}}</view>
+            <view class='community-text'></view>
+        </view>
+        <view>
+            <view class='score'>积分：{{score}}</view>
+            <view class='score-text'></view>
+        </view>
+        <view>
+            <view class='bag'>回收垃圾总量：{{countBag}}</view>
+            <view class='bag-text'></view>
+        </view>
+    </view>
+    <view class='dynamic'>
+        <navigator url='../dynamic/dynamic'>
+            <button>我的最近动态</button>
+        </navigator>
+    </view>
+    <view class='features'>
+        <navigator url='../rule/rule'>
+            <button>
+                活动规则
+            </button>
+        </navigator>
+        <navigator url='../contact/contact'>
+            <button>
+                联系我们
+            </button>
+        </navigator>
+        <navigator url='../invitate_code/invitate_code'>
+            <button bindtap='invitate_code'>
+                生成邀请码
+            </button>
+        </navigator>
+    </view>
+    <view class='bottom'>
+    </view>
+</view>

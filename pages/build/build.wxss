@@ -1,0 +1,22 @@
+/* pages/build/build.wxss */
+form {
+	height: 100%;
+	width:100%;
+}
+textarea {
+	border-style:border; 
+	width: 100%;
+	font-size:1rem;
+}
+textarea.communityName {
+	height: 15%;
+}
+textarea.name {
+	height: 10%;
+}
+textarea.phone {
+	height: 10%;
+}
+textarea.mail {
+	height: 10%;
+}

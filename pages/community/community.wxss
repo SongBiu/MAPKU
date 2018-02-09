@@ -1,0 +1,12 @@
+/* pages/community/community.wxss */
+view.opera {
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+view.btn {
+	width:33%;
+	height: 10%;
+}

@@ -1,0 +1,10 @@
+<!--pages/invitate_code/invitate_code.wxml-->
+<view class='container'>
+	<view class='code'>
+		<text>您的邀请码为</text>
+		<text>{{app.invitate_code}}</text>
+	</view>
+	<view class='intro'>
+		<text>介绍：将这个邀请码发给您的朋友，朋友注册后输入邀请码，当ta第一次上传照片时，您将得到奖励，一个用户只能生成一个邀请码，可以多次使用</text>
+	</view>
+</view>

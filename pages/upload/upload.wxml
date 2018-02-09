@@ -1,0 +1,8 @@
+<view class='container'>
+	<form bindsubmit='formSubmit'>
+		<image catchtap='loadImage' src="{{imgPath}}" name="img"></image>
+		<textarea id="num" name="number" placeholder='请输入垃圾包数'></textarea>
+		<textarea id="talk" name="talk" placeholder='说点什么吧'></textarea>
+		<button form-type='submit' class='send'>发送</button>
+	</form>
+</view>

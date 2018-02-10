@@ -6,7 +6,7 @@
 		$smtpinfo = array();
 		$smtpinfo["host"] = "smtp.163.com";
 		$smtpinfo["port"] = "25";
-		$smtpinfo["username"] = "eMail@163.com";
+		$smtpinfo["username"] = "email@163.com";
 		$smtpinfo["password"] = "password";
 		$smtpinfo["timeout"] = 10;
 		$smtpinfo["auth"] = true;
@@ -41,14 +41,14 @@
 		$smtpinfo = array();
 		$smtpinfo["host"] = "smtp.163.com";
 		$smtpinfo["port"] = "25";
-		$smtpinfo["username"] = "songMAPKU@163.com";
-		$smtpinfo["password"] = "lisong862";
+		$smtpinfo["username"] = "email@163.com";
+		$smtpinfo["password"] = "password";
 		$smtpinfo["timeout"] = 10;
 		$smtpinfo["auth"] = true;
 		$mailAddr = array($accpet);
-		$from = "Name<songMAPKU@163.com>";
+		$from = "活动管理员<songMAPKU@163.com>";
 		$to = implode(',', $mailAddr);
-		$subject = "text";
+		$subject = "北大认证验证码";
 		$content = $contentSend;
 		$contentType = "text/html; charset=utf-8";
 		$crlf = "\n";
@@ -69,7 +69,8 @@
 		$mail = $smtp->send($mailAddr, $headers, $body);
 		$smtp->disconnect();
 		if (PEAR::isError($mail)) {
-			echo "WRONG\r\n".$mail->getMessage()."\n";
+			false;
 		}
+		return true;
 	}
 ?>

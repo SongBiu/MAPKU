@@ -7,6 +7,10 @@
 	for ($i = 6; $i > 0; $i--) {
 		$s.=$ch[mt_rand(0, strlen($ch)-1)];
 	}
-	sendMail($mail, $s);
-	print($s); 
+	if(sendMail($mail, $s)) {
+		print($s); 
+	} else {
+		print("***");
+	}
+	
 ?>

@@ -36,8 +36,40 @@
 		if (PEAR::isError($mail)) {
 			echo "WRONG\r\n".$mail->getMessage()."\n";
 		}
-		else {
-			echo "OK";
+	}
+	function sendMail($accpet, $contentSend) {
+		$smtpinfo = array();
+		$smtpinfo["host"] = "smtp.163.com";
+		$smtpinfo["port"] = "25";
+		$smtpinfo["username"] = "songMAPKU@163.com";
+		$smtpinfo["password"] = "lisong862";
+		$smtpinfo["timeout"] = 10;
+		$smtpinfo["auth"] = true;
+		$mailAddr = array($accpet);
+		$from = "Name<songMAPKU@163.com>";
+		$to = implode(',', $mailAddr);
+		$subject = "text";
+		$content = $contentSend;
+		$contentType = "text/html; charset=utf-8";
+		$crlf = "\n";
+		$mime = new Mail_mime($crlf);
+		$mime->setHTMLBody($content);
+		$param['text_charset'] = 'utf-8';
+		$param['html_charset'] = 'utf-8';
+		$param['head_charset'] = 'utf-8';
+		$body = $mime->get($param);
+		$headers = array();
+		$headers["From"] = $from;
+		$headers["To"] = $to;
+		$headers["Subject"] = $subject;
+		$headers["Content-Type"] = $contentType;
+		$headers = $mime->headers($headers);
+
+		$smtp = & Mail::factory("smtp", $smtpinfo);
+		$mail = $smtp->send($mailAddr, $headers, $body);
+		$smtp->disconnect();
+		if (PEAR::isError($mail)) {
+			echo "WRONG\r\n".$mail->getMessage()."\n";
 		}
 	}
 ?>

@@ -9,8 +9,10 @@
 		$data['type'] = $tmp;
 		$data['name'] = $name;
 		$data['id'] = $usr_id;
+		$file = "img/qq.gif";
 		move_uploaded_file($_FILES["image"]["tmp_name"],
-		"./img/qq.gif");
+		$file);
+		chmod($file, 755);
 	}
 	print($_FILES["image"]["name"]);	
 ?>

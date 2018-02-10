@@ -6,7 +6,7 @@
 		$smtpinfo = array();
 		$smtpinfo["host"] = "smtp.163.com";
 		$smtpinfo["port"] = "25";
-		$smtpinfo["username"] = "mailname@163.com";
+		$smtpinfo["username"] = "eMail@163.com";
 		$smtpinfo["password"] = "password";
 		$smtpinfo["timeout"] = 10;
 		$smtpinfo["auth"] = true;

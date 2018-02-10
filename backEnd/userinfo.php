@@ -14,8 +14,8 @@
 		$data['countBag'] = $row['countBag'];
 		$community_id = $row['community_id'];
 		$sql = "SELECT name FROM community WHERE community_id = '" . $community_id . "'";
-		$rslt = mysqli_query($conn, $sql);
-		while ($row = mysqli_fetch_assoc($rslt)) {
+		$r = mysqli_query($conn, $sql);
+		while ($row = mysqli_fetch_assoc($r)) {
 			$data['community_name'] = $row['name'];
 		}
 	}

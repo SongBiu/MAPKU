@@ -13,7 +13,8 @@
 	"pages/communityRule/communityRule",
 	"pages/my/my",
 	"pages/dynamic/dynamic",
-	"pages/invitate_code/invitate_code"
+	"pages/invitate_code/invitate_code",
+	"pages/verify/verify"
   ],
   "window":{
     "backgroundTextStyle":"light",

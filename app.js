@@ -4,6 +4,7 @@ App({
 	openid:'',
 	invitate_code:'',
 	community_name:'',
+	PKU:false,
 	url_pre: "http://192.168.25.138",
 	onLaunch: function () {
 		// 展示本地存储能力

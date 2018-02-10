@@ -1,1 +1,19 @@
-对不起，本社团还没有开设商城
+<view class="container">
+	<view wx:if="{{PKU}}">
+		商城
+	</view>
+	<view wx:else>
+		<view>
+			<text>
+				对不起，目前只有经过认证的北大山鹰社的社员才能进入积分购买功能，此时，您所在的社团还未开放购买，或者您未经过认证。
+			</text>
+			<text>
+				具有北大邮箱的社员可以按下面按键，根据指示完成认证。
+			</text>
+			<navigator url='../verify/verify'><button>去认证</button></navigator>
+			<text>
+				如果您所在的社团想要开放购买功能，请联系北大山鹰社负责人，或者在“我的”-“联系我们”中，联系技术人员进行交流。
+			</text>
+		</view>
+	</view>
+</view>

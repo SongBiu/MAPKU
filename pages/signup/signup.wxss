@@ -1,33 +1,50 @@
 /* pages/signup/signup.wxss */
+
 form {
-	height: 100%;
-	width:100%;
+    height: 100%;
+    width: 100%;
 }
+
 textarea.name {
-	height: 10%;
-	width: 60%;
-	border-style: solid;
+    height: 10%;
+    width: 60%;
+    border-style: solid;
 }
+
 textarea.mail {
+    height: 10%;
+    width: 60%;
+    border-style: solid;
+}
+
+textarea.pkuID {
+    height: 10%;
+    border-style: solid;
+}
+
+textarea.verify {
+    height: 90%;
+    border-style: solid;
+    width: 60%;
+}
+
+textarea.ID {
+	width: 40%;
+	border-style: solid;
 	height: 10%;
-	width: 60%;
+}
+textarea.invitateCode {
+	width: 40%;
+	height: 10%;
 	border-style: solid;
 }
-textarea.pkuID {
-	height: 10%;
-	border-style:solid; 
+
+
+text {
+	font-size: 1.2rem;
 }
-textarea.verify {
-	 height: 90%; 
-	border-style:solid; 
-	width: 60%;
-}
-button.verify {
-	/* height: 10%; */
-	width: 40%;
-}
-view.verify {
-	height: 10%;
-	display: flex;
-	flex-direction: row;
+button {
+	position: fixed;
+	bottom: 0;
+	width:100%;
 }

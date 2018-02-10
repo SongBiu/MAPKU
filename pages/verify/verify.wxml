@@ -1,0 +1,10 @@
+<!--pages/verify/verify.wxml-->
+<view class='container'>
+	<form bindsubmit='eMailSubmit'>
+		<text>
+			请输入您的北大邮箱
+		</text>
+		<input>
+		</input>
+	</form>
+</view>

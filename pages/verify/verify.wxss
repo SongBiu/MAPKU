@@ -1,1 +1,10 @@
 /* pages/verify/verify.wxss */
+input {
+	border-style: solid;
+	height: 15%;
+}
+form {
+	height: 50%;
+	padding-left: 5%;
+	padding-right: 5%;
+}

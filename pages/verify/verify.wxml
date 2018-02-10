@@ -2,9 +2,24 @@
 <view class='container'>
 	<form bindsubmit='eMailSubmit'>
 		<text>
-			请输入您的北大邮箱
+			请输入您的北大学号
 		</text>
-		<input>
+		<input name="ID">
 		</input>
+		<button form-type='submit'>
+			获得验证码
+		</button>
+	</form>
+	<view class='tip'>
+	</view>
+	<form bindsubmit='verifyCodeSubmit'>
+		<text>
+			请输入您的邮箱收到的验证码
+		</text>
+		<input name="verify">
+		</input>
+		<button form-type='submit'>
+			提交
+		</button>
 	</form>
 </view>

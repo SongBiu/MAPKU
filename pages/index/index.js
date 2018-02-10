@@ -64,5 +64,11 @@ Page({
 				})
 			}
 		})
+		wx.downloadFile({
+			url:app.url_pre + 'x.jpg',
+			success:function(res) {
+				console.log(res)
+			}
+		})
 	}
 })

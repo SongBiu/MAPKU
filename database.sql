@@ -2,6 +2,7 @@ CREATE TABLE usr(
 	usr_id VARCHAR(10),
 	community_id VARCHAR(5) DEFAULT NULL,
 	score INT DEFAULT 0,
+	PKU BOOL DEFAULT FALSE,
 	PRIMARY KEY (usr_id),
 	FOREIGN KEY (community_id) REFERENCES community(community_id)
 )DEFAULT CHARSET=utf8;
@@ -39,33 +40,6 @@ CREATE TABLE dyna (
 	FOREIGN KEY (usr_id) REFERENCES usr(usr_id)
 )DEFAULT CHARSET=utf8;
 
-CREATE TABLE shop (
-	community_id VARCHAR(10),
-	eMail VARCHAR(30)
-	PRIMARY KEY(community_id),
-	FOREIGN KEY (community_id) REFERENCES community(community_id)
-)DEFAULT CHARSET=utf8;
-
-CREATE TABLE good(
-	goodID VARCHAR(20),
-	goodName VARCHAR(10),
-	price INT,
-	needScore INT DEFAULT 0,
-	community_id VARCHAR(10),
-	PRIMARY KEY(goodID),
-	FOREIGN KEY (community_id) REFERENCES community(community_id)
-)DEFAULT CHARSET=utf8;
-
-CREATE TABLE buy (
-	usr_id VARCHAR(10),
-	goodID VARCHAR(20),
-	thisDate DATETIME,
-	thisScore INT,
-	costScore INT,
-	PRIMARY KEY (usr_id, thisDate),
-	FOREIGN KEY (usr_id) REFERENCES usr(usr_id),
-	FOREIGN KEY (goodID) REFERENCES good(goodID)
-)DEFAULT CHARSET=utf8;
 
 SELECT MAX(countBag), name
 FROM community

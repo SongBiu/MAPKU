@@ -1,1 +1,13 @@
 /* pages/signup/signup.wxss */
+textarea.name {
+
+}
+textarea.mail {
+
+}
+textarea.pkuID {
+
+}
+button.verify {
+
+}

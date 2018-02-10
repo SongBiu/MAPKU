@@ -49,12 +49,6 @@ Page({
 
 	},
 	onShow: function() {
-		wx.request({
-			url: app.url_pre + '/img/x.jpg',
-			success: function(res) {
-				console.log(res)
-			}
-		})
 		var that = this;
 		wx.request({
 			url: app.url_pre + '/all_dynamic.php',
@@ -62,12 +56,6 @@ Page({
 				that.setData({
 					dynamics: res.data
 				})
-			}
-		})
-		wx.downloadFile({
-			url:app.url_pre + 'x.jpg',
-			success:function(res) {
-				console.log(res)
 			}
 		})
 	}

@@ -68,9 +68,7 @@ Page({
 	},
 	eMailSubmit: function (event) {
 		var that = this;
-		console.log(event)
 		var id = event.detail.value.ID;
-		console.log(id == "")
 		if (id == "") {
 			this.setData({
 				eMailError:true
@@ -87,24 +85,43 @@ Page({
 			},
 			success:function(res) {
 				var send = res.data;
-				that.setData({
-					code:send
+				wx.request({
+					url: app.url_pre + '/hash.php',
+					method:'POST',
+					data:{
+						str:send
+					},
+					success:function(res) {
+						that.setData({
+							code:res.data
+						})
+					}
 				})
 			}
 		})
 	},
 	verifyCodeSubmit: function(event) {
+		var that = this;
 		var input = event.detail.value.verify;
-		if (input == this.data.code) {
-			wx.request({
-				url: app.url_pre + 'verifySuccess.php',
-				data:{
-					usr_id: '5'
-				},
-				success:function(){
-					console.log("认证完成")
+		wx.request({
+			url: app.url_pre + '/hash.php',
+			method:'POST',
+			data:{
+				str:input
+			},
+			success(res) {
+				if (res.data == that.data.code) {
+					wx.request({
+						url: app.url_pre + '/verifySuccess.php',
+						data: {
+							usr_id: '5'
+						},
+						success: function () {
+
+						}
+					})
 				}
-			})
-		}
+			}
+		})	
 	}
 })

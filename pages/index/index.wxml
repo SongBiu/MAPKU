@@ -1,13 +1,34 @@
 <!--index.wxml-->
 <view class="container">
-	<text>{{app.nickName}}</text>
-    <view class='body' id='dynamic-list'>
-		<block wx:for="{{dynamics}}">
-			<view class='text'>
-				{{item.text}}
-			</view>
-		</block>
+	<view wx:if="{{bind}}" class='body'>
+		<text>点击下面加入活动</text>
+		<navigator url='../signup/signup'><button>加入我们</button></navigator>
 	</view>
+     <view wx:else class='body' id='dynamic-list'>
+        <block wx:for="{{dynamics}}" wx:for-item="dyna">
+            <view class='dynamic'>
+                <view class='usr'>
+                    {{dyna.name}}
+                </view>
+                <view class='time'>
+                    {{dyna.time}}
+                </view>
+                <view class="content">
+                    <view class='image'>
+                    </view>
+                    <view class='text'>
+                        {{dyna.say}}
+                    </view>
+                </view>
+                <view class='good'>
+                    {{dyna.good}}
+                </view>
+            </view>
+        </block>
+    </view> 
+
+    <!-- 这里是分界线 -->
+
     <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom'>
             <navigator url='../community/community'>
@@ -25,7 +46,6 @@
             <navigator url='../my/my'>
                 <button>我的</button>
             </navigator>
-
         </view>
     </view>
 </view>

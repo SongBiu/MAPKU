@@ -5,11 +5,14 @@ Page({
 	},
 	formSubmit: function(event) {
 		var img = this.data.imgPath[0];
-		console.log(img)
+		var value = event.detail.value;
 		wx.uploadFile({
 			url: app.url_pre + '/uploadImage.php',
 			filePath: img,
 			name: 'image',
+			formData: {
+				ID:'5'
+			},
 			complete: function(res) {
 				console.log(res)
 			}
@@ -17,14 +20,17 @@ Page({
 		wx.request({
 			url: app.url_pre + '/upload.php',
 			data: {
-				countBag: event.detail.number,
-				say: event.detail.talk
+				countBag: event.detail.value.number,
+				say: event.detail.value.talk
+			},
+			success: function(res) {
+				console.log(res);
 			}
 		})
 	},
 	loadImage: function() {
 		var that = this;
-		console.log("This is load")
+
 		wx.chooseImage({
 			count: 1,
 			sizeType:['original', 'compressed'],
@@ -35,11 +41,9 @@ Page({
 				})
 			},
 			complete: function() {
-				console.log("about over")
-				console.log(that.data.imgPath)
+				
 			}
 		})
-		console.log("you upload a image")
 		
 	}
 })

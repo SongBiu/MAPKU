@@ -10,3 +10,8 @@ view.btn {
 	width:33%;
 	height: 10%;
 }
+view.body {
+	height: 90%;
+	overflow-y: scroll;
+	width: 100%;
+}

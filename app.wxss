@@ -15,7 +15,7 @@ page {
 } 
 .bottom {
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	display: flex;
 	flex-direction: row;
 	bottom: 0;

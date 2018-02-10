@@ -1,14 +1,10 @@
 <view class='container'>
-	<view class='some-community'>
-		<view>
-			<text>昨日回收垃圾最多的社团</text>
-		</view>
-		<view>
-			<text>本周回收垃圾最多的社团</text>
-		</view>
-		<view>
-			<text>本月回收垃圾最多的社团</text>
-		</view>
+	<view class='body'>
+		 <block wx:for="{{members}}" wx:for-item="member">
+		 	<view class='member'>
+			 	<text>{{member.name}}</text><text>{{member.countBag}}</text>
+			 </view>
+		 </block>
 	</view>
     <view class='opera'>
         <view class='btn'>

@@ -19,3 +19,13 @@
 .usermotto {
   margin-top: 200px;
 }
+
+view.body {
+	height: 85%;
+	width:100%;
+	overflow-y: scroll;
+}
+
+view.dynamic {
+	border-style: solid;
+}

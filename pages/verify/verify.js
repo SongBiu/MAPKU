@@ -117,7 +117,7 @@ Page({
 							usr_id: '5'
 						},
 						success: function () {
-
+							app.PKU = true;
 						}
 					})
 				}

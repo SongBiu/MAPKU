@@ -1,10 +1,10 @@
 //app.js
 App({
-	nickName:'',
-	openid:'',
-	invitate_code:'',
-	community_name:'',
-	PKU:false,
+	nickName: '',
+	openid: '',
+	invitate_code: '',
+	community_name: '',
+	PKU: false,
 	url_pre: "http://192.168.25.138",
 	onLaunch: function () {
 		// 展示本地存储能力
@@ -38,5 +38,8 @@ App({
 				}
 			}
 		})
+	},
+	globalData: {
+		userInfo: null
 	}
 })

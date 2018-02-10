@@ -1,25 +1,25 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-	"pages/community/community",
-	"pages/upload/upload",
-	"pages/join/join",
-	"pages/build/build",
-	"pages/shop/shop",
-	"pages/rule/rule",
-	"pages/contact/contact",
-	"pages/signup/signup",
-	"pages/communityRule/communityRule",
-	"pages/my/my",
-	"pages/dynamic/dynamic",
-	"pages/invitate_code/invitate_code",
-	"pages/verify/verify"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+	"pages": [
+		"pages/index/index",
+		"pages/logs/logs",
+		"pages/community/community",
+		"pages/upload/upload",
+		"pages/join/join",
+		"pages/build/build",
+		"pages/shop/shop",
+		"pages/rule/rule",
+		"pages/contact/contact",
+		"pages/signup/signup",
+		"pages/communityRule/communityRule",
+		"pages/my/my",
+		"pages/dynamic/dynamic",
+		"pages/invitate_code/invitate_code",
+		"pages/verify/verify"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "WeChat",
+		"navigationBarTextStyle": "black"
+	}
 }

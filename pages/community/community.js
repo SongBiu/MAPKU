@@ -1,4 +1,4 @@
-const app = getApp();
+var app = getApp();
 Page({
 	data: {
 		members:[]
@@ -11,7 +11,7 @@ Page({
 				usrID:'5'
 			},
 			success:function(res) {
-				console.log(res)
+
 				that.setData({
 					members: res.data
 				})

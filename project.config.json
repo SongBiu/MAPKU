@@ -8,9 +8,10 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.8",
-	"appid": "touristappid",
+	"libVersion": "1.9.91",
+	"appid": "wxf75f308cbcc043f1",
 	"projectname": "puma",
+	"isGameTourist": false,
 	"condition": {
 		"search": {
 			"current": -1,

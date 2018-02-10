@@ -19,11 +19,14 @@ Page({
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
 			success:function(res) {
+				
 				if (res.data.length != 0) {
 					that.setData({
 						bind:false
 					})
 				}
+				console.log(res)
+				app.PKU = res.data.PKU
 			}
 		})
 		var that = this;
@@ -56,6 +59,11 @@ Page({
 				that.setData({
 					dynamics: res.data
 				})
+			}
+		})
+		wx.login({
+			success:function(res) {
+				console.log(res)
 			}
 		})
 	}

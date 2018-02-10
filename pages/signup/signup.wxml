@@ -1,15 +1,15 @@
 <!--pages/signup/signup.wxml-->
 <view class='container'>
-	<view>
 		<form>
 			<text>请填入您的昵称</text>
 			<textarea name="name" class='name'></textarea>
 			<text>请填入您的联系邮箱，方便接收通知</text>
 			<textarea name="mail" class='mail'></textarea>
 			<text>如果您是北京大学的同学，请填入学号完成认证</text>
-			<textarea name="pkuID" class='pkuID'></textarea><button bindtap='pkuVerify' class='verify'>获得验证码</button>
+			<textarea name="pkuID" class='pkuID'></textarea>
 			<text>请输入您PKU邮箱中得到的验证码</text>
-			<textarea></textarea>
+			<view class='verify'><textarea class='verify'></textarea><button bindtap='pkuVerify' class='verify'>获得验证码</button></view>	
+			<text>请输入您的ID（仅测试阶段使用，随便填写）</text>
+			<textarea name="ID"></textarea>
 		</form>
-	</view>
 </view>

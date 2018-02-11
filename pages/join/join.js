@@ -6,13 +6,16 @@ Page({
 	 * 页面的初始数据
 	 */
 	data:{
-		items: []
+		items: [],
+		openid:null
 	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		console.log('OK, load OK');
+		this.setData({
+			openid:app.openid
+		})
 	},
 
 	/**
@@ -75,15 +78,11 @@ Page({
 
 	},
 	join: function(event) {
-		console.log(event.target.id)
 		wx.request({
 			url: app.url_pre + '/join.php',
 			data:{
-				usrID:'5',
+				usrID:this.data.openid,
 				communityID:event.target.id
-			},
-			success: function(res) {
-				
 			}
 		})
 	}

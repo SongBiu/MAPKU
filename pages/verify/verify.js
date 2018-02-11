@@ -8,14 +8,17 @@ Page({
 	data: {
 		code:null,
 		emailError:false,
-		inputWrong:false
+		inputWrong:false,
+		openid:null
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.setData({
+			openid:app.openid
+		})
 	},
 
 	/**
@@ -105,7 +108,6 @@ Page({
 		var input = event.detail.value.verify;
 		wx.request({
 			url: app.url_pre + '/hash.php',
-			method:'POST',
 			data:{
 				str:input
 			},
@@ -114,7 +116,7 @@ Page({
 					wx.request({
 						url: app.url_pre + '/verifySuccess.php',
 						data: {
-							usr_id: '5'
+							usrID:that.data.openid
 						},
 						success: function () {
 							app.PKU = true;

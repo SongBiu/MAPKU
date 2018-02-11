@@ -11,9 +11,15 @@ App({
 		urlPre: "http://192.168.25.138",
 	},
 	data:{
+<<<<<<< HEAD
 		jsonCode:'',
 		appID: 'wxf75f308cbcc043f1',
 		secret: '91b08bb2c99810aa3808c9a283e59178'
+=======
+		json_code:'',
+		appID: '',
+		secret: ''
+>>>>>>> 3bcb1dba36f480fe3a5e2d01556f43177d94de39
 	},
 	onLaunch: function () {
 		var that = this;
@@ -44,4 +50,4 @@ App({
 		})
 	}
 	
-})
+})})

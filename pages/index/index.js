@@ -56,10 +56,6 @@ Page({
 					that.setData({
 						bind:false
 					})
-					app.bind = false
-				}
-				else {
-					app.bind = true;
 				}
 				app.PKU = res.data.PKU
 			}
@@ -74,6 +70,7 @@ Page({
 				app.nickName = userInfo.nickName;
 			}
 		})
+<<<<<<< HEAD
 		this.setData({
 			bind:app.bind
 		})
@@ -88,6 +85,29 @@ Page({
 		// })
 		// wx.login({
 		// 	success:function(res) {
+=======
+		
+	},
+	getUserInfo: function (e) {
+		app.globalData.userInfo = e.detail.userInfo
+		this.setData({
+			userInfo: e.detail.userInfo,
+			hasUserInfo: true
+		})
+	},
+	onShow: function() {
+		var that = this;
+		wx.request({
+			url: app.url_pre + '/all_dynamic.php',
+			success: function (res) {
+				that.setData({
+					dynamics: res.data
+				})
+			}
+		})
+		wx.login({
+			success:function(res) {
+>>>>>>> parent of df52954... bugKill
 				
 		// 	}
 		// })

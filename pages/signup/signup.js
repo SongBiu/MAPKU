@@ -6,8 +6,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		openid: null,
-		wrong:null
+		openid: null
 	},
 
 	/**
@@ -68,7 +67,7 @@ Page({
 
 	},
 	formSubmit:function(event) {
-		var that = this;
+		console.log(event)
 		var value = event.detail.value;
 		wx.request({
 			url: app.url_pre + '/signup.php',
@@ -79,14 +78,7 @@ Page({
 				invitateCode: value.invitateCode
 			},
 			success: function(res) {
-				app.bind = true;
-				if (res.data.error == undefined) {
-
-				} else {
-					that.setData({
-						wrong:res.data.error
-					})
-				}
+				console.log(res)
 			}
 		})
 	}

@@ -15,6 +15,16 @@ App({
 		appID: 'wxf75f308cbcc043f1',
 		secret: '91b08bb2c99810aa3808c9a283e59178',
 	},
+<<<<<<< HEAD
+=======
+	nickName: '',
+	openid: '',
+	invitate_code: '',
+	community_name: '',
+	json_code:'',
+	PKU: false,
+	url_pre: "http://192.168.25.138",
+>>>>>>> parent of df52954... bugKill
 	onLaunch: function () {
 		var that = this;
 		// 展示本地存储能力

@@ -8,8 +8,5 @@
 			<text>请输入邀请码（如果有的话）</text>
 			<textarea name="invitateCode" class='invitateCode'></textarea>
 			<button form-type='submit'>提交</button>
-			<view wx:if="{{wrong!=null}}">
-				{{wrong}}
-			</view>
 		</form>
 </view>

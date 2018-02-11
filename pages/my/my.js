@@ -1,6 +1,7 @@
 // pages/my/my.js
 var app = getApp();
 Page({
+<<<<<<< HEAD
 	data:{
 		openid:null,
 		nickName:'',
@@ -8,6 +9,9 @@ Page({
 		score: '',
 		countBag:'',
 	},
+=======
+
+>>>>>>> parent of df52954... bugKill
 	/**
 	 * 页面的初始数据
 	 */
@@ -26,9 +30,6 @@ Page({
 		})
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
-			data: {
-				usrID:this.data.openid
-			},
 			success: function(res) {
 				console.log("success")
 				console.log(res)
@@ -45,7 +46,11 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> parent of df52954... bugKill
 	},
 
 	/**

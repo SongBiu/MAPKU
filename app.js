@@ -2,6 +2,7 @@
 App({
 	globalData: {
 		userInfo: null,
+<<<<<<< HEAD
 		openid:null,
 		bind:true,
 		nickName:null,
@@ -9,14 +10,21 @@ App({
 		invitateCode: null,
 		PKU: false,
 		urlPre: "http://192.168.25.138",
+=======
+		openid:null
+>>>>>>> parent of 21af9e4... name
 	},
 	data:{
-		jsonCode:'',
+		json_code:'',
 		appID: 'wxf75f308cbcc043f1',
 		secret: '91b08bb2c99810aa3808c9a283e59178',
 	},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+	bind:false,
+>>>>>>> parent of 21af9e4... name
 	nickName: '',
 	openid: '',
 	invitate_code: '',
@@ -24,7 +32,10 @@ App({
 	json_code:'',
 	PKU: false,
 	url_pre: "http://192.168.25.138",
+<<<<<<< HEAD
 >>>>>>> parent of df52954... bugKill
+=======
+>>>>>>> parent of 21af9e4... name
 	onLaunch: function () {
 		var that = this;
 		// 展示本地存储能力

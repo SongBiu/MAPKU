@@ -77,7 +77,7 @@ Page({
 	join: function(event) {
 		console.log(event.target.id)
 		wx.request({
-			url: app.urlPre + '/join.php',
+			url: app.url_pre + '/join.php',
 			data:{
 				usrID:'5',
 				communityID:event.target.id

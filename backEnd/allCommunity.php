@@ -10,7 +10,7 @@
 	$rslt = mysqli_query($conn, $sql);
 	$data = Array();
 	while ($row = mysqli_fetch_assoc($rslt)) {
-		$id = $row['communityId'];
+		$id = $row['community_id'];
 		$community = Array();
 		$community['name'] = $row['name'];
 		$community['des'] = $row['des'];

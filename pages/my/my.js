@@ -23,15 +23,11 @@ Page({
 	onLoad: function () {
 		var that = this;
 		this.setData({
-			nickName: app.nickName,
-		})
-		this.setData({
-			openid: app.globalData.openid
+			nickName:app.nickName,
 		})
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
 			success: function(res) {
-				console.log("success")
 				console.log(res)
 				that.setData({
 					score: res.data.score,
@@ -47,10 +43,16 @@ Page({
 	 */
 	onReady: function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 =======
 
 >>>>>>> parent of df52954... bugKill
+=======
+		this.setData({
+			openid:app.globalData.openid
+		})
+>>>>>>> parent of 21af9e4... name
 	},
 
 	/**
@@ -101,7 +103,7 @@ Page({
 			wx.request({
 				url: app.url_pre + '/invitate.php',
 				data:{
-					invitater:this.data.openid
+					invitater:'5'
 				},
 				success: function(res) {
 					app.invitate_code= res.data;

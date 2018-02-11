@@ -7,23 +7,22 @@
 	}
 	mysqli_query($conn, "SET NAMES utf8");
 	$data = Array();
-	$sql = "SELECT COUNT(*) as num FROM invitate WHERE invitateCode = '" . $_REQUEST['invitateCode'] . "'";
+	$sql = "SELECT COUNT(*) as num FROM invitate WHERE invitate_code = '" . $_REQUEST['invitateCode'] . "'";
 	$data['sql'] = $sql;
 	$rslt = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($rslt);
 	if ($row['num'] == 0 && $row['num'] != "") {
 		$data['error'] = "邀请码不存在";
-		print(json_encode($data));
 		exit;
 	}
-	$sql = "INSERT INTO usr(usrID, name, email) VALUES ('" . $_REQUEST["openid"] . "', '" . $_REQUEST['name'] . "', '" . $_REQUEST['email'] . "')"; 
+	$sql = "INSERT INTO usr(usr_id, name, email) VALUES ('" . $_REQUEST["openid"] . "', '" . $_REQUEST['name'] . "', '" . $_REQUEST['email'] . "')"; 
 	$rslt = mysqli_query($conn, $sql);
 	if (!$rslt) {
 		$data['error'] = "名字或邮箱填写错误";
 		print(json_encode($data));
 		exit;
 	}
-	$sql = "INSERT INTO invitated(usrID, invitateCode) VALUES ('" . $_REQUEST['openid'] . "'" . ", '" . $_REQUEST['invitateCode'] . "')";
+	$sql = "INSERT INTO invitated(newusr_id, invitation_code) VALUES ('" . $_REQUEST['openid'] . "'" . ", '" . $_REQUEST['invitateCode'] . "')";
 	mysqli_query($conn, $sql);
 	print(json_encode($data));
 ?>

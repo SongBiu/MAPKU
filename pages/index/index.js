@@ -42,14 +42,19 @@ Page({
 			userInfo: e.detail.userInfo,
 			hasUserInfo: true
 		})
+<<<<<<< HEAD
 	},
 	onShow: function() {
 		var that = this;
 		app.globalData.openid = this.data.openid;
 		wx.request({
 			url: app.globalData.urlPre + '/userinfo.php',
+=======
+		wx.request({
+			url: app.url_pre + '/userinfo.php',
+>>>>>>> parent of 21af9e4... name
 			data:{
-				usrID:this.data.openid
+				usr_id:this.data.openid
 			},
 			success:function(res) {
 				if (res.data.length != 0) {
@@ -109,7 +114,32 @@ Page({
 			success:function(res) {
 >>>>>>> parent of df52954... bugKill
 				
+<<<<<<< HEAD
 		// 	}
 		// })
+=======
+			}
+		})
+	},
+	onReady: function() {
+		var that = this;
+		wx.login({
+			success: function (res) {
+				var json_code = res.code
+				wx.request({
+					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + json_code + '&grant_type=authorization_code',
+					success: function (res) {
+						var id = res.data.openid;
+						app.globalData.openid = id;
+						that.setData({
+							openid:id
+						})
+					}
+				})
+			},
+			complete: function (res) {
+			}
+		})
+>>>>>>> parent of 21af9e4... name
 	}
 })

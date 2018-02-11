@@ -5,6 +5,9 @@ Page({
 	/**
 	 * 页面的初始数据
 	 */
+	data: {
+		app:getApp()
+	},
 
 	/**
 	 * 生命周期函数--监听页面加载
@@ -65,7 +68,7 @@ Page({
 		console.log(event)
 		var value = event.detail.value;
 		wx.request({
-			url: app.globalData.urlPre + '/build.php',
+			url: app.url_pre + '/build.php',
 			data: {
 				name:value.communityName,
 				desc:value.desc,

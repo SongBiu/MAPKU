@@ -29,12 +29,8 @@ Page({
 						
 					}
 				})
-			},
-			complete: function (res) {
 			}
 		})
-		
-		
 	},
 	getUserInfo: function (e) {
 		app.globalData.userInfo = e.detail.userInfo
@@ -58,8 +54,11 @@ Page({
 		})
 		var that = this;
 		wx.getUserInfo({
+			
 			success: function (res) {
+				console.log("I am here")
 				var userInfo = res.userInfo;
+				console.log(userInfo)
 				that.setData({
 					nickName: userInfo.nickName
 				})
@@ -67,13 +66,6 @@ Page({
 			}
 		})
 		
-	},
-	getUserInfo: function (e) {
-		app.globalData.userInfo = e.detail.userInfo
-		this.setData({
-			userInfo: e.detail.userInfo,
-			hasUserInfo: true
-		})
 	},
 	onShow: function() {
 		var that = this;
@@ -83,11 +75,6 @@ Page({
 				that.setData({
 					dynamics: res.data
 				})
-			}
-		})
-		wx.login({
-			success:function(res) {
-				
 			}
 		})
 	},
@@ -100,7 +87,7 @@ Page({
 					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + json_code + '&grant_type=authorization_code',
 					success: function (res) {
 						var id = res.data.openid;
-						app.globalData.openid = id;
+						app.openid = id;
 						that.setData({
 							openid:id
 						})

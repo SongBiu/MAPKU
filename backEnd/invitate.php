@@ -14,20 +14,20 @@
 			exit;
 		}
 		mysqli_query($conn, "SET NAMES utf8");
-		$sql = "SELECT invitation_code FROM invitate WHERE inviter_id = '" . $invitater . "'";
+		$sql = "SELECT invitateCode FROM invitate WHERE usrID = '" . $invitater . "'";
 		$rslt = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($rslt) != 0) {
 			$row = mysqli_fetch_assoc($rslt);
-			$str = $row['invitation_code'];
+			$str = $row['invitateCode'];
 			return true;
 		}
-		$sql = "SELECT COUNT(*) AS num FROM invitate WHERE invitation_code = '" . $s . "'";
+		$sql = "SELECT COUNT(*) AS num FROM invitate WHERE invitateCode = '" . $s . "'";
 		$rslt = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($rslt);
 		if ($row['num'] != 0) {
 			return false;
 		}
-		$sql = "INSERT INTO invitate(invitation_code, inviter_id) VALUES ('" . $s . "', '" . $invitater . "')";
+		$sql = "INSERT INTO invitate(invitateCode, usrID) VALUES ('" . $s . "', '" . $invitater . "')";
 		$rslt = mysqli_query($conn, $sql);
 		if (!$rslt) {
 			echo "error";

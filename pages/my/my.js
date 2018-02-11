@@ -4,24 +4,34 @@ Page({
 	/**
 	 * 页面的初始数据
 	 */
-	
 
+	data: {
+		nickName: null,
+		communityName: null,
+		score: null,
+		countBag: null,
+		openid: null
+	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function () {
 		var that = this;
 		this.setData({
-			nickName:app.nickName,
+			nickName: app.nickName,
+			openid: app.openid
 		})
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
-			success: function(res) {
+			data: {
+				usrID: this.data.openid
+			},
+			success: function (res) {
 				console.log(res)
 				that.setData({
 					score: res.data.score,
 					communityName: res.data.community_name,
-					countBag:res.data.countBag
+					countBag: res.data.countBag
 				})
 			}
 		})
@@ -32,7 +42,7 @@ Page({
 	 */
 	onReady: function () {
 		this.setData({
-			openid:app.globalData.openid
+			openid: app.openid
 		})
 	},
 
@@ -77,19 +87,21 @@ Page({
 	onShareAppMessage: function () {
 
 	},
-	invitate_code: function() {
+	invitate_code: function () {
+		console.log("hi")
 		if (app.invitate_code != '') {
+			
 			return;
 		} else {
 			wx.request({
 				url: app.url_pre + '/invitate.php',
-				data:{
-					invitater:'5'
+				data: {
+					invitater: this.data.openid
 				},
-				success: function(res) {
-					app.invitate_code= res.data;
+				success: function (res) {
+					app.invitate_code = res.data;
 				},
-				fail: function() {
+				fail: function () {
 					console.log('error')
 				}
 			})

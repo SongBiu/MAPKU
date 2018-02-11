@@ -1,12 +1,12 @@
 // pages/invitate_code/invitate_code.js
-
+var app = getApp();
 Page({
 	// var app = getApp(),
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		app:getApp()
+		invitateCode:null
 	},
 
 	/**
@@ -20,7 +20,9 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
+		this.setData({
+			invitateCode:app.globalData.invitateCode
+		})
 	},
 
 	/**

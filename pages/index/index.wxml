@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-	<view wx:if="{{bind}}" class='body'>
+	<view wx:if="{{!bind}}" class='body'>
 		<text>点击下面加入活动</text>
 		<navigator url='../signup/signup'><button>加入我们</button></navigator>
 	</view>

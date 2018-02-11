@@ -38,9 +38,9 @@
 	}
 	$str = '';
 	while (true) {
-		if (str_rand($str, $_REQUEST['invitater'])) {
+		if (str_rand($str, $_REQUEST['usrID'])) {
 			break;
 		}
 	}
-	echo $str;
+	print($str);
 ?>

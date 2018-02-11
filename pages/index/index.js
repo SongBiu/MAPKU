@@ -20,10 +20,11 @@ Page({
 		this.setData({
 			openid:app.globalData.openid
 		})
+
 		wx.request({
-			url: app.url_pre + '/userinfo.php',
+			url: app.urlPre + '/userinfo.php',
 			data:{
-				usr_id:this.data.openid
+				usrID:this.data.openid
 			},
 			success:function(res) {
 				console.log(res)
@@ -64,7 +65,7 @@ Page({
 			bind:app.bind
 		})
 		wx.request({
-			url: app.url_pre + '/all_dynamic.php',
+			url: app.urlPre + '/all_dynamic.php',
 			success: function (res) {
 				that.setData({
 					dynamics: res.data
@@ -81,9 +82,9 @@ Page({
 		var that = this;
 		wx.login({
 			success: function (res) {
-				var json_code = res.code
+				var jsonCode = res.code
 				wx.request({
-					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + json_code + '&grant_type=authorization_code',
+					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
 					success: function (res) {
 						var id = res.data.openid;
 						app.globalData.openid = id;

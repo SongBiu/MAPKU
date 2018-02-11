@@ -2,21 +2,19 @@
 App({
 	globalData: {
 		userInfo: null,
-		openid:null
+		openid:null,
+		bind:true,
+		nickName,
+		communityName: '',
+		invitateCode: '',
+		PKU: false,
+		urlPre: "http://192.168.25.138",
 	},
 	data:{
-		json_code:'',
+		jsonCode:'',
 		appID: 'wxf75f308cbcc043f1',
 		secret: '91b08bb2c99810aa3808c9a283e59178'
 	},
-	bind:false,
-	nickName: '',
-	openid: '',
-	invitate_code: '',
-	community_name: '',
-	json_code:'',
-	PKU: false,
-	url_pre: "http://192.168.25.138",
 	onLaunch: function () {
 		var that = this;
 		// 展示本地存储能力

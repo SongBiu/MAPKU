@@ -5,7 +5,7 @@
 		die('error');
 		exit;
 	}
-	$sql = "UPDATE usr SET community_id = '" . $_REQUEST['communityID'] . "' WHERE usr_id = '" . $_REQUEST['usrID'] . "'";
+	$sql = "UPDATE usr SET communityID = '" . $_REQUEST['communityID'] . "' WHERE usrID = '" . $_REQUEST['usrID'] . "'";
 	mysqli_query($conn, "SET NAMES utf8");
 	$rslt = mysqli_query($conn, $sql);
 	if (!$rslt) {

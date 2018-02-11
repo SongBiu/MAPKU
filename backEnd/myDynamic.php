@@ -6,17 +6,17 @@
 		exit;
 	}
 	mysqli_query($conn, "SET NAMES utf8");
-	$sql = "SELECT * FROM dyna WHERE usr_id = '" . $_REQUEST['usr_id'] . "' ORDER BY dynamic_data ASC";
+	$sql = "SELECT * FROM dyna WHERE usrID = '" . $_REQUEST['usrID'] . "' ORDER BY dynamicDate ASC";
 	$rslt = mysqli_query($conn, $sql);
 	$data = Array();
 	$index = 0;
 	while ($row = mysqli_fetch_assco($rslt)) {
 		$dyna = Array();
 		$dyna['good'] = $row['good'];
-		$dyna['count_bag'] = $row['count_bag'];
+		$dyna['countBag'] = $row['countBag'];
 		$dyna['image'] = $row['image'];
 		$dyna['say'] = $row['say'];
-		$dyna['dynamic_date'] = $row['dynamic_date'];
+		$dyna['dynamicDate'] = $row['dynamicDate'];
 		$data[$index++] = $dyna;
 	}
 	print(json_encode($data));

@@ -18,7 +18,10 @@ Page({
 	onLoad: function () {
 		var that = this;
 		this.setData({
-			nickName:app.nickName,
+			nickName: app.nickName,
+		})
+		this.setData({
+			openid: app.globalData.openid
 		})
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
@@ -26,6 +29,7 @@ Page({
 				usrID:this.data.openid
 			},
 			success: function(res) {
+				console.log("success")
 				console.log(res)
 				that.setData({
 					score: res.data.score,
@@ -40,9 +44,7 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-		this.setData({
-			openid:app.globalData.openid
-		})
+		
 	},
 
 	/**
@@ -93,7 +95,7 @@ Page({
 			wx.request({
 				url: app.url_pre + '/invitate.php',
 				data:{
-					invitater:'5'
+					invitater:this.data.openid
 				},
 				success: function(res) {
 					app.invitate_code= res.data;

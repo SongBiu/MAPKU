@@ -52,20 +52,6 @@ Page({
 				app.PKU = res.data.PKU
 			}
 		})
-		var that = this;
-		wx.getUserInfo({
-			
-			success: function (res) {
-				console.log("I am here")
-				var userInfo = res.userInfo;
-				console.log(userInfo)
-				that.setData({
-					nickName: userInfo.nickName
-				})
-				app.nickName = userInfo.nickName;
-			}
-		})
-		
 	},
 	onShow: function() {
 		var that = this;
@@ -95,6 +81,17 @@ Page({
 				})
 			},
 			complete: function (res) {
+			}
+		})
+		wx.getUserInfo({	
+			success: function (res) {
+				console.log("I am here")
+				var userInfo = res.userInfo;
+				console.log(userInfo)
+				that.setData({
+					nickName: userInfo.nickName
+				})
+				app.nickName = userInfo.nickName;
 			}
 		})
 	}

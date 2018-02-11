@@ -54,7 +54,11 @@ SELECT MAX(countBag), name
 FROM community
 GROUP by name
 
-INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('0')
-
-北大山鹰社
-李松
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('0', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-12-04 12:12:12', 2, 'this is lisong')
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('1', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2015-12-04 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('2', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2014-12-04 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('3', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2016-12-04 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('4', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-11-04 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('5', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-7-04 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('6', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-4-03 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('7', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-12-04 12:12:12', 2, 'this is lisong');

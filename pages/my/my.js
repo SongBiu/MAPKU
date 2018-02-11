@@ -6,6 +6,7 @@ Page({
 	 */
 
 	data: {
+		app:getApp(),
 		nickName: null,
 		communityName: null,
 		score: null,

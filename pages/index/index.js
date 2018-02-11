@@ -42,17 +42,8 @@ Page({
 			userInfo: e.detail.userInfo,
 			hasUserInfo: true
 		})
-<<<<<<< HEAD
-	},
-	onShow: function() {
-		var that = this;
-		app.globalData.openid = this.data.openid;
-		wx.request({
-			url: app.globalData.urlPre + '/userinfo.php',
-=======
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
->>>>>>> parent of 21af9e4... name
 			data:{
 				usr_id:this.data.openid
 			},
@@ -75,22 +66,6 @@ Page({
 				app.nickName = userInfo.nickName;
 			}
 		})
-<<<<<<< HEAD
-		this.setData({
-			bind:app.bind
-		})
-		// wx.request({
-		// 	url: app.globalData.urlPre + '/allDynamic.php',
-		// 	success: function (res) {
-		// 		console.log(res)
-		// 		that.setData({
-		// 			dynamics: res.data
-		// 		})
-		// 	}
-		// })
-		// wx.login({
-		// 	success:function(res) {
-=======
 		
 	},
 	getUserInfo: function (e) {
@@ -112,12 +87,7 @@ Page({
 		})
 		wx.login({
 			success:function(res) {
->>>>>>> parent of df52954... bugKill
 				
-<<<<<<< HEAD
-		// 	}
-		// })
-=======
 			}
 		})
 	},
@@ -140,6 +110,5 @@ Page({
 			complete: function (res) {
 			}
 		})
->>>>>>> parent of 21af9e4... name
 	}
 })

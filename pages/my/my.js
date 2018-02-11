@@ -1,17 +1,6 @@
 // pages/my/my.js
 var app = getApp();
 Page({
-<<<<<<< HEAD
-	data:{
-		openid:null,
-		nickName:'',
-		communityName: '',
-		score: '',
-		countBag:'',
-	},
-=======
-
->>>>>>> parent of df52954... bugKill
 	/**
 	 * 页面的初始数据
 	 */
@@ -42,17 +31,9 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-<<<<<<< HEAD
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> parent of df52954... bugKill
-=======
 		this.setData({
 			openid:app.globalData.openid
 		})
->>>>>>> parent of 21af9e4... name
 	},
 
 	/**

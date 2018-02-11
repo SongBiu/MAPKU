@@ -1,7 +1,6 @@
 //index.js
 //获取应用实例
-var app = getApp()
-
+var app = getApp();
 Page({
 	data: {
 		motto: '环保推广小程序',
@@ -10,24 +9,49 @@ Page({
 		dynamics: [],
 		nickName:'',
 		bind: true,
-		openid:''
+		openid:null
 	},
 	//事件处理函数
 	bindViewTap: function () {
 	},
 	onLoad: function () {
 		var that = this;
-		this.setData({
-			openid:app.globalData.openid
+		wx.login({
+			success: function (res) {
+				var jsonCode = res.code
+				wx.request({
+					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
+					success: function (res) {
+						var id = res.data.openid
+						that.setData({
+							openid:id
+						})
+						
+					}
+				})
+			},
+			complete: function (res) {
+			}
 		})
-
+		
+		
+	},
+	getUserInfo: function (e) {
+		app.globalData.userInfo = e.detail.userInfo
+		this.setData({
+			userInfo: e.detail.userInfo,
+			hasUserInfo: true
+		})
+	},
+	onShow: function() {
+		var that = this;
+		app.globalData.openid = this.data.openid;
 		wx.request({
-			url: app.urlPre + '/userinfo.php',
+			url: app.globalData.urlPre + '/userinfo.php',
 			data:{
 				usrID:this.data.openid
 			},
 			success:function(res) {
-				console.log(res)
 				if (res.data.length != 0) {
 					that.setData({
 						bind:false
@@ -50,52 +74,22 @@ Page({
 				app.nickName = userInfo.nickName;
 			}
 		})
-		
-	},
-	getUserInfo: function (e) {
-		app.globalData.userInfo = e.detail.userInfo
-		this.setData({
-			userInfo: e.detail.userInfo,
-			hasUserInfo: true
-		})
-	},
-	onShow: function() {
-		var that = this;
 		this.setData({
 			bind:app.bind
 		})
-		wx.request({
-			url: app.urlPre + '/all_dynamic.php',
-			success: function (res) {
-				that.setData({
-					dynamics: res.data
-				})
-			}
-		})
-		wx.login({
-			success:function(res) {
+		// wx.request({
+		// 	url: app.globalData.urlPre + '/allDynamic.php',
+		// 	success: function (res) {
+		// 		console.log(res)
+		// 		that.setData({
+		// 			dynamics: res.data
+		// 		})
+		// 	}
+		// })
+		// wx.login({
+		// 	success:function(res) {
 				
-			}
-		})
-	},
-	onReady: function() {
-		var that = this;
-		wx.login({
-			success: function (res) {
-				var jsonCode = res.code
-				wx.request({
-					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
-					success: function (res) {
-						var id = res.data.openid;
-						app.globalData.openid = id;
-						that.setData({
-							openid:id
-						})
-					}
-				})
-			},
-			complete: function (res) {
-			}
-		})
+		// 	}
+		// })
 	}
 })

@@ -2,15 +2,16 @@
 var app = getApp();
 Page({
 	data:{
-		openid:null
+		openid:null,
+		nickName:'',
+		communityName: '',
+		score: '',
+		countBag:'',
 	},
 	/**
 	 * 页面的初始数据
 	 */
-	nickName:'',
-	communityName: '',
-	score: '',
-	countBag:'',
+	
 
 	/**
 	 * 生命周期函数--监听页面加载

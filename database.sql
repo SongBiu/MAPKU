@@ -4,6 +4,7 @@ CREATE TABLE usr(
 	score INT DEFAULT 0,
 	PKU BOOL DEFAULT FALSE,
 	name VARCHAR(30) NOT NULL,
+	email VARCHAR(30) NOT NULL,
 	PRIMARY KEY (usr_id),
 	FOREIGN KEY (community_id) REFERENCES community(community_id)
 )DEFAULT CHARSET=utf8;

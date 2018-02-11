@@ -37,8 +37,6 @@
 		return true;
 	}
 	$str = '';
-	// while (str_rand($str, $_REQUEST['invitater'])) {
-	// }
 	while (true) {
 		if (str_rand($str, $_REQUEST['invitater'])) {
 			break;

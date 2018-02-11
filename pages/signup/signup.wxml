@@ -4,9 +4,7 @@
 			<text>请填入您的昵称</text>
 			<textarea name="name" class='name'></textarea>
 			<text>请填入您的联系邮箱，方便接收通知</text>
-			<textarea name="mail" class='mail'></textarea>	
-			<text>请输入您的ID（仅测试阶段使用，随便填写）</text>
-			<textarea name="ID" class='ID'></textarea>
+			<textarea name="email" class='mail'></textarea>	
 			<text>请输入邀请码（如果有的话）</text>
 			<textarea name="invitateCode" class='invitateCode'></textarea>
 			<button form-type='submit'>提交</button>

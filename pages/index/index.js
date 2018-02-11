@@ -23,9 +23,10 @@ Page({
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
 			data:{
-				usr_id:openid
+				usr_id:this.data.openid
 			},
 			success:function(res) {
+				console.log(res)
 				if (res.data.length != 0) {
 					that.setData({
 						bind:false
@@ -77,7 +78,6 @@ Page({
 				wx.request({
 					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + json_code + '&grant_type=authorization_code',
 					success: function (res) {
-						console.log(res)
 						var id = res.data.openid;
 						app.globalData.openid = id;
 						that.setData({
@@ -87,7 +87,6 @@ Page({
 				})
 			},
 			complete: function (res) {
-				console.log("OK")
 			}
 		})
 	}

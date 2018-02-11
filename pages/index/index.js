@@ -9,23 +9,28 @@ Page({
 		canIUse: wx.canIUse('button.open-type.getUserInfo'),
 		dynamics: [],
 		nickName:'',
-		bind: true
+		bind: true,
+		openid:''
 	},
 	//事件处理函数
 	bindViewTap: function () {
 	},
 	onLoad: function () {
 		var that = this;
+		this.setData({
+			openid:app.globalData.openid
+		})
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
+			data:{
+				usr_id:openid
+			},
 			success:function(res) {
-				
 				if (res.data.length != 0) {
 					that.setData({
 						bind:false
 					})
 				}
-				console.log(res)
 				app.PKU = res.data.PKU
 			}
 		})
@@ -48,9 +53,6 @@ Page({
 			hasUserInfo: true
 		})
 	},
-	button: function () {
-
-	},
 	onShow: function() {
 		var that = this;
 		wx.request({
@@ -63,7 +65,29 @@ Page({
 		})
 		wx.login({
 			success:function(res) {
-				console.log(res)
+				
+			}
+		})
+	},
+	onReady: function() {
+		var that = this;
+		wx.login({
+			success: function (res) {
+				var json_code = res.code
+				wx.request({
+					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + json_code + '&grant_type=authorization_code',
+					success: function (res) {
+						console.log(res)
+						var id = res.data.openid;
+						app.globalData.openid = id;
+						that.setData({
+							openid:id
+						})
+					}
+				})
+			},
+			complete: function (res) {
+				console.log("OK")
 			}
 		})
 	}

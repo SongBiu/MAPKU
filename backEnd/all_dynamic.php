@@ -5,7 +5,7 @@
 		die('error');
 		exit;
 	}
-	$sql = "SELECT * FROM dyna ORDER BY dynamic_date DESC";
+	$sql = "SELECT * FROM dyna ORDER BY dynamicDate DESC";
 	mysqli_query($conn, "SET NAMES utf8");
 	$rslt = mysqli_query($conn, $sql);
 	if (!$rslt) {
@@ -17,11 +17,11 @@
 	while ($row = mysqli_fetch_assoc($rslt)) {
 		$dyna = Array();
 		$dyna['say'] = $row["say"];
-		$dyna["countBag"] = $row['count_bag'];
+		$dyna["countBag"] = $row['countBag'];
 		$dyna["good"] = $row["good"];
-		$dyna['time'] = $row['dynamic_date'];
+		$dyna['time'] = $row['dynamicDate'];
 		$id = $row['usr_id'];
-		$sql = "SELECT name FROM usr WHERE usr_id = '" . $id . "'";
+		$sql = "SELECT name FROM usr WHERE usrID = '" . $id . "'";
 		$r = mysqli_query($conn, $sql);
 		$name = '';
 		while ($row = mysqli_fetch_assoc($r)) {

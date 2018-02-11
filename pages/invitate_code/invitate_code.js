@@ -1,6 +1,5 @@
 // pages/invitate_code/invitate_code.js
 Page({
-	// var app = getApp(),
 	/**
 	 * 页面的初始数据
 	 */

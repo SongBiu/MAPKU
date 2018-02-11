@@ -1,14 +1,15 @@
 var app = getApp();
 Page({
 	data: {
-		members:[]
+		members:[],
+		openid:''
 	},
 	onShow: function() {
 		var that = this;
 		wx.request({
 			url: app.url_pre + '/thisCommunity.php',
 			data:{
-				usrID:'5'
+				usrID:this.data.openid
 			},
 			success:function(res) {
 
@@ -16,6 +17,11 @@ Page({
 					members: res.data
 				})
 			}
+		})
+	},
+	onReady:function() {
+		this.setData({
+			openid: app.globalData.openid
 		})
 	}
 })

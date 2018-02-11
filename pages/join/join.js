@@ -6,7 +6,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data:{
-		items: []
+		items: [],
+		openid:null
 	},
 	/**
 	 * 生命周期函数--监听页面加载
@@ -19,6 +20,9 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
+		this.setData({
+			openid:app.globalData.openid
+		})
 		var that = this;
 		wx.request({
 			url: app.url_pre + "/allCommunity.php",
@@ -79,7 +83,7 @@ Page({
 		wx.request({
 			url: app.url_pre + '/join.php',
 			data:{
-				usrID:'5',
+				usrID:this.data.openid,
 				communityID:event.target.id
 			},
 			success: function(res) {

@@ -6,6 +6,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		openid:'',
 		code:null,
 		emailError:false,
 		inputWrong:false
@@ -22,7 +23,9 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
+		this.setData({
+			openid:app.globalData.openid
+		})
 	},
 
 	/**
@@ -114,7 +117,7 @@ Page({
 					wx.request({
 						url: app.url_pre + '/verifySuccess.php',
 						data: {
-							usr_id: '5'
+							usr_id: this.data.openid
 						},
 						success: function () {
 							app.PKU = true;

@@ -31,6 +31,10 @@ Page({
 					that.setData({
 						bind:false
 					})
+					app.bind = false
+				}
+				else {
+					app.bind = true;
 				}
 				app.PKU = res.data.PKU
 			}
@@ -56,6 +60,9 @@ Page({
 	},
 	onShow: function() {
 		var that = this;
+		this.setData({
+			bind:app.bind
+		})
 		wx.request({
 			url: app.url_pre + '/all_dynamic.php',
 			success: function (res) {

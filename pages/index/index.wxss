@@ -29,3 +29,7 @@ view.body {
 view.dynamic {
 	border-style: solid;
 }
+image {
+	height: 224px;
+	width:224px;
+}

@@ -1,8 +1,10 @@
-const app = getApp();
+var app = getApp();
 Page({
 	data: {
-		imgPath:"x.png"
+		imgPath:"x.png",
+		openid:null
 	},
+	
 	formSubmit: function(event) {
 		var img = this.data.imgPath[0];
 		var value = event.detail.value;
@@ -11,7 +13,7 @@ Page({
 			filePath: img,
 			name: 'image',
 			formData: {
-				ID:'5'
+				usrID:this.data.openid
 			},
 			complete: function(res) {
 				console.log(res)
@@ -36,14 +38,29 @@ Page({
 			sizeType:['original', 'compressed'],
 			sourceType: ['album', 'camera'],
 			success: function(res) {
+				console.log(res)
 				that.setData({
 					imgPath:res.tempFilePaths
 				})
 			},
-			complete: function() {
-				
+			complete: function(res) {
+				wx.uploadFile({
+					url: app.url_pre + '/uploadImage.php',
+					filePath: res.tempFilePaths[0],
+					name: 'image',
+					formData: {
+						usrID: that.data.openid
+					},
+					complete: function (res) {
+						console.log(res)
+					}
+				})
 			}
 		})
-		
+	},
+	onLoad:function() {
+		this.setData({
+			openid:app.openid
+		})
 	}
 })

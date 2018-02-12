@@ -58,6 +58,7 @@ Page({
 		wx.request({
 			url: app.url_pre + '/all_dynamic.php',
 			success: function (res) {
+				console.log(res)
 				that.setData({
 					dynamics: res.data
 				})
@@ -85,9 +86,7 @@ Page({
 		})
 		wx.getUserInfo({	
 			success: function (res) {
-				console.log("I am here")
 				var userInfo = res.userInfo;
-				console.log(userInfo)
 				that.setData({
 					nickName: userInfo.nickName
 				})

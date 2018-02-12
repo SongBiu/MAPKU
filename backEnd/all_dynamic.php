@@ -20,8 +20,16 @@
 		$dyna["countBag"] = $row['countBag'];
 		$dyna["good"] = $row["good"];
 		$dyna['time'] = $row['dynamicDate'];
-		$id = $row['usr_id'];
-		$sql = "SELECT name FROM usr WHERE usrID = '" . $id . "'";
+		if ($row['image'] == NULL) {
+			$dyna['hasImg'] = false;
+		}
+		else {
+			$dyna['hasImg'] = true;
+		}
+		$dyna['image'] = 'img/'.$row['image'];
+		$dyna['dynamicID'] = $row['dynamicID']; 
+		$usrID = $row['usrID'];
+		$sql = "SELECT name FROM usr WHERE usrID = '" . $usrID . "'";
 		$r = mysqli_query($conn, $sql);
 		$name = '';
 		while ($row = mysqli_fetch_assoc($r)) {

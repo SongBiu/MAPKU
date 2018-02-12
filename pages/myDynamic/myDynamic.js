@@ -1,4 +1,4 @@
-// pages/shop/shop.js
+// pages/myDynamic/myDynamic.js
 var app = getApp();
 Page({
 
@@ -6,8 +6,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		PKU: false,
-		app:getApp()
+		dynamics: [],
+		openid: null
 	},
 
 	/**
@@ -15,7 +15,7 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.setData({
-			PKU:app.PKU
+			openid:app.openid
 		})
 	},
 
@@ -23,13 +23,25 @@ Page({
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
+
 	},
 
 	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		var that = this;
+		wx.request({
+			url: app.url_pre + '/myDynamic.php',
+			data:{
+				usrID:this.data.openid
+			},
+			success: function(res) {
+				that.setData({
+					dynamics:res.data
+				})
+			}
+		})
 	},
 
 	/**

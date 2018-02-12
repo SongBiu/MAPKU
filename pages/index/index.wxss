@@ -33,3 +33,8 @@ image {
 	height: 224px;
 	width:224px;
 }
+
+button.good {
+	width: 50px;
+	left:0px;
+}

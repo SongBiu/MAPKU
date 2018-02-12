@@ -15,20 +15,25 @@
                 <view class='time'>
                     发布时间{{dyna.time}}
                 </view>
-				<view class='image'>
-					<image src="http://192.168.25.138/{{dyna.image}}"></image>
-				</view>
-                <view class="content">
+				<text>
+				</text>
+				<view class="content">
                     <view class='image'>
                     </view>
                     <view class='text'>
                         {{dyna.say}}
                     </view>
                 </view>
-                <view class='good'>
-                    赞{{dyna.good}}
-                </view>
-            </view>
+				<view wx:if="{{dyna.hasImg}}" class='image'>
+					<image src="http://192.168.25.138/{{dyna.image}}"></image>
+				</view>
+				<view class='bag'>
+					上传垃圾包数：{{dyna.countBag}}
+				</view>
+                 <!-- <view class='good'>
+                    <button class="good" id="{{dyna.dynamicID}}" bindtap='giveGood'>赞</button><view>{{dyna.good}}</view>
+                </view> -->
+            </view> 
         </block>
     </view>
 

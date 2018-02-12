@@ -12,9 +12,9 @@
 		"pages/signup/signup",
 		"pages/communityRule/communityRule",
 		"pages/my/my",
-		"pages/dynamic/dynamic",
 		"pages/invitate_code/invitate_code",
-		"pages/verify/verify"
+		"pages/verify/verify",
+		"pages/myDynamic/myDynamic"
 	],
 	"window": {
 		"backgroundTextStyle": "light",

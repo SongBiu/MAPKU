@@ -1,0 +1,14 @@
+/* pages/myDynamic/myDynamic.wxss */
+view.body {
+	height: 85%;
+	width:100%;
+	overflow-y: scroll;
+}
+
+view.dynamic {
+	border-style: solid;
+}
+image {
+	height: 224px;
+	width:224px;
+}

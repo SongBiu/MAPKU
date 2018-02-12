@@ -18,7 +18,7 @@
         </view>
     </view>
     <view class='dynamic'>
-        <navigator url='../dynamic/dynamic'>
+        <navigator url='../myDynamic/myDynamic'>
             <button>我的最近动态</button>
         </navigator>
     </view>

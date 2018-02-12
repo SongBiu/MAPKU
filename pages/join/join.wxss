@@ -1,1 +1,11 @@
 /* pages/join/join.wxss */
+
+.community {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+	display: block;
+}

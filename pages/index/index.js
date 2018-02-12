@@ -38,23 +38,11 @@ Page({
 			userInfo: e.detail.userInfo,
 			hasUserInfo: true
 		})
-		wx.request({
-			url: app.url_pre + '/userinfo.php',
-			data:{
-				usr_id:this.data.openid
-			},
-			success:function(res) {
-				if (res.data.length != 0) {
-					that.setData({
-						bind:false
-					})
-				}
-				app.PKU = res.data.PKU
-			}
-		})
+		
 	},
 	onShow: function() {
 		var that = this;
+		this.getUserInfo
 		wx.request({
 			url: app.url_pre + '/all_dynamic.php',
 			success: function (res) {
@@ -82,16 +70,35 @@ Page({
 				})
 			},
 			complete: function (res) {
-			}
-		})
-		wx.getUserInfo({	
-			success: function (res) {
-				var userInfo = res.userInfo;
-				that.setData({
-					nickName: userInfo.nickName
+				wx.getUserInfo({	
+					success: function (res) {
+						var userInfo = res.userInfo;
+						that.setData({
+							nickName: userInfo.nickName
+						})
+						app.nickName = userInfo.nickName;
+						wx.request({
+							url: app.url_pre + '/userinfo.php',
+							data:{
+								usrID:that.data.openid
+							},
+							success:function(res) {
+								if (res.data.length == 0) {
+									console.log("bind error!")
+									that.setData({
+										bind:false
+									})
+								}
+								console.log(res)
+								app.PKU = res.data.PKU
+							}
+						})
+					}
 				})
-				app.nickName = userInfo.nickName;
 			}
 		})
+	},
+	giveGood: function(event) {
+		
 	}
 })

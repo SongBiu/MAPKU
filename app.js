@@ -21,6 +21,7 @@ App({
 	community_name: '',
 	json_code:'',
 	PKU: false,
+	bind:true,
 	url_pre: "http://192.168.25.138",
 	onLaunch: function () {
 		var that = this;
@@ -29,7 +30,7 @@ App({
 		logs.unshift(Date.now())
 		wx.setStorageSync('logs', logs)
 		
-		// 获取用户信息
+		//获取用户信息
 		wx.getSetting({
 			success: res => {
 				if (res.authSetting['scope.userInfo']) {

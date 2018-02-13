@@ -14,7 +14,7 @@ Page({
 	 */
 	onLoad: function (options) {
 		this.setData({
-			openid:app.globalData.openid
+			openid:app.openid
 		})
 	},
 
@@ -78,7 +78,7 @@ Page({
 				invitateCode: value.invitateCode
 			},
 			success: function(res) {
-				console.log(res)
+				app.bind = true
 			}
 		})
 	}

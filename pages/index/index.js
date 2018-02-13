@@ -9,12 +9,11 @@ Page({
 		dynamics: [],
 		nickName:'',
 		bind: true,
-		openid:null
-	},
-	//事件处理函数
-	bindViewTap: function () {
+		openid:null,
+		app:getApp()
 	},
 	onLoad: function () {
+		console.log("onLoad")
 		var that = this;
 		wx.login({
 			success: function (res) {
@@ -26,11 +25,42 @@ Page({
 						that.setData({
 							openid:id
 						})
-						
+					},
+					complete: function(res) {
+						var id = res.data.openid
+						app.openid = id;
+						wx.request({
+							url: app.url_pre + '/userinfo.php',
+							data:{
+								usrID:id
+							},
+							success:function(res) {
+								that.setData({
+									bind:true
+								})
+								app.bind = false
+								if (res.data.length == 0) {
+									console.log("LOAD bind error!")
+									that.setData({
+										bind:false
+									})
+									app.bind = false
+								}
+								else {
+									console.log(res)
+									app.PKU = res.data.PKU
+									app.nickName = res.data.name
+									that.setData({
+										nickName:res.data.name
+									})
+								}
+							}
+						})
 					}
 				})
 			}
 		})
+		
 	},
 	getUserInfo: function (e) {
 		app.globalData.userInfo = e.detail.userInfo
@@ -42,6 +72,7 @@ Page({
 	},
 	onShow: function() {
 		var that = this;
+		console.log("SHOW")
 		this.getUserInfo
 		wx.request({
 			url: app.url_pre + '/all_dynamic.php',
@@ -52,51 +83,12 @@ Page({
 				})
 			}
 		})
+		this.setData({
+			bind:app.bind
+		})
 	},
 	onReady: function() {
-		var that = this;
-		wx.login({
-			success: function (res) {
-				var json_code = res.code
-				wx.request({
-					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + json_code + '&grant_type=authorization_code',
-					success: function (res) {
-						var id = res.data.openid;
-						app.openid = id;
-						that.setData({
-							openid:id
-						})
-					}
-				})
-			},
-			complete: function (res) {
-				wx.getUserInfo({	
-					success: function (res) {
-						var userInfo = res.userInfo;
-						that.setData({
-							nickName: userInfo.nickName
-						})
-						app.nickName = userInfo.nickName;
-						wx.request({
-							url: app.url_pre + '/userinfo.php',
-							data:{
-								usrID:that.data.openid
-							},
-							success:function(res) {
-								if (res.data.length == 0) {
-									console.log("bind error!")
-									that.setData({
-										bind:false
-									})
-								}
-								console.log(res)
-								app.PKU = res.data.PKU
-							}
-						})
-					}
-				})
-			}
-		})
+		
 	},
 	giveGood: function(event) {
 		

@@ -1,7 +1,7 @@
 var app = getApp();
 Page({
 	data: {
-		imgPath:"x.png",
+		imgPath:null,
 		openid:null
 	},
 	

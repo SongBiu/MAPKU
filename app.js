@@ -3,7 +3,6 @@ App({
 	globalData: {
 		userInfo: null,
 		openid:null,
-		bind:true,
 		nickName:null,
 		communityName: null,
 		invitateCode: null,
@@ -21,7 +20,7 @@ App({
 	community_name: '',
 	json_code:'',
 	PKU: false,
-	bind:true,
+	bind:null,
 	url_pre: "http://192.168.25.138",
 	onLaunch: function () {
 		var that = this;

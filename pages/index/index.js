@@ -10,7 +10,6 @@ Page({
 		nickName:'',
 		bind: true,
 		openid:null,
-		app:getApp()
 	},
 	onLoad: function () {
 		console.log("onLoad")
@@ -25,10 +24,10 @@ Page({
 						that.setData({
 							openid:id
 						})
+						app.openid = id;
 					},
 					complete: function(res) {
 						var id = res.data.openid
-						app.openid = id;
 						wx.request({
 							url: app.url_pre + '/userinfo.php',
 							data:{
@@ -38,7 +37,7 @@ Page({
 								that.setData({
 									bind:true
 								})
-								app.bind = false
+								app.bind = true;
 								if (res.data.length == 0) {
 									console.log("LOAD bind error!")
 									that.setData({
@@ -72,20 +71,52 @@ Page({
 	},
 	onShow: function() {
 		var that = this;
-		console.log("SHOW")
 		this.getUserInfo
-		wx.request({
-			url: app.url_pre + '/all_dynamic.php',
+		console.log("SHOW")
+		wx.login({
 			success: function (res) {
-				console.log(res)
-				that.setData({
-					dynamics: res.data
+				var jsonCode = res.code
+				wx.request({
+					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
+					success: function (res) {
+						var id = res.data.openid
+						wx.request({
+							url: app.url_pre + '/userinfo.php',
+							data:{
+								usrID:id
+							},
+							success:function(res) {
+								if (res.data.length != 0) {
+									that.setData({
+										bind:true
+									})
+									app.bind = true;
+								}
+								else {
+									that.setData({
+										bind:false
+									})
+									app.bind = false;
+								}
+							}
+						})
+					},
+					complete: function(res) {
+						wx.request({
+							url: app.url_pre + '/all_dynamic.php',
+							success: function (res) {
+								console.log(res)
+								that.setData({
+									dynamics: res.data
+								})
+							}
+						})
+					}
 				})
 			}
 		})
-		this.setData({
-			bind:app.bind
-		})
+		
+		
 	},
 	onReady: function() {
 		

@@ -6,13 +6,14 @@
 		exit;
 	}
 	mysqli_query($conn, "SET NAMES utf8");
-	$sql = "SELECT score, communityID, countBag, PKU FROM usr WHERE usrID = '". $_REQUEST['usrID'] ."'";
+	$sql = "SELECT name, score, communityID, countBag, PKU FROM usr WHERE usrID = '". $_REQUEST['usrID'] ."'";
 	$rslt = mysqli_query($conn, $sql);
 	$data = Array();
 	while ($row = mysqli_fetch_assoc($rslt)) {
 		$data['score'] = $row['score'];
 		$data['countBag'] = $row['countBag'];
 		$data['PKU'] = $row['PKU'];
+		$data['name'] = $row['name'];
 		$communityID = $row['communityID'];
 		$sql = "SELECT name FROM community WHERE communityID = '" . $communityID . "'";
 		$r = mysqli_query($conn, $sql);

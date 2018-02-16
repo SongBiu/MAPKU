@@ -2,7 +2,8 @@ var app = getApp();
 Page({
 	data: {
 		imgPath:null,
-		openid:null
+		openid:null,
+		app:getApp()
 	},
 	
 	formSubmit: function(event) {
@@ -23,7 +24,8 @@ Page({
 			url: app.url_pre + '/upload.php',
 			data: {
 				countBag: event.detail.value.number,
-				say: event.detail.value.talk
+				say: event.detail.value.talk,
+				usrID:this.data.openid
 			},
 			success: function(res) {
 				console.log(res);

@@ -64,3 +64,4 @@ INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('4', 'o77
 INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('5', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-7-04 12:12:12', 2, 'this is lisong');
 INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('6', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-4-03 12:12:12', 2, 'this is lisong');
 INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('7', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2017-12-04 12:12:12', 2, 'this is lisong');
+INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('8', 'o77EP5Zl7suJ4rHpnhViZOjDiEgY', '2018-2-14 12:12:12', 2, 'this is lisong');

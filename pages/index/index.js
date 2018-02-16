@@ -10,6 +10,7 @@ Page({
 		nickName:'',
 		bind: true,
 		openid:null,
+		app:getApp()
 	},
 	onLoad: function () {
 		console.log("onLoad")

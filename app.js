@@ -20,7 +20,7 @@ App({
 	json_code:'',
 	PKU: false,
 	bind:null,
-	url_pre: "http://192.168.25.139",
+	url_pre: "http://192.168.25.140",
 	onLaunch: function () {
 		var that = this;
 		// 展示本地存储能力

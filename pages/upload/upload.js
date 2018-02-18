@@ -7,19 +7,9 @@ Page({
 	},
 	
 	formSubmit: function(event) {
-		var img = this.data.imgPath[0];
+		var img = this.data.imgPath;
 		var value = event.detail.value;
-		wx.uploadFile({
-			url: app.url_pre + '/uploadImage.php',
-			filePath: img,
-			name: 'image',
-			formData: {
-				usrID:this.data.openid
-			},
-			complete: function(res) {
-				console.log(res)
-			}
-		})
+		var that = this;
 		wx.request({
 			url: app.url_pre + '/upload.php',
 			data: {
@@ -28,34 +18,36 @@ Page({
 				usrID:this.data.openid
 			},
 			success: function(res) {
-				console.log(res);
+				console.log(res)
+				wx.uploadFile({
+				url: app.url_pre + '/uploadImage.php',
+				filePath: img,
+				name: 'image',
+				formData: {
+					usrID: that.data.openid,
+					dynamicID:res.data.dynamicID
+				},
+				complete: function (res) {
+					console.log(res)
+				}
+			})
 			}
 		})
 	},
 	loadImage: function() {
 		var that = this;
-
 		wx.chooseImage({
 			count: 1,
 			sizeType:['original', 'compressed'],
 			sourceType: ['album', 'camera'],
 			success: function(res) {
-				console.log(res)
 				that.setData({
 					imgPath:res.tempFilePaths
 				})
 			},
 			complete: function(res) {
-				wx.uploadFile({
-					url: app.url_pre + '/uploadImage.php',
-					filePath: res.tempFilePaths[0],
-					name: 'image',
-					formData: {
-						usrID: that.data.openid
-					},
-					complete: function (res) {
-						console.log(res)
-					}
+				that.setData({
+					imgPath: res.tempFilePaths[0]
 				})
 			}
 		})

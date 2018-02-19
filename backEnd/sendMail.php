@@ -6,8 +6,8 @@
 		$smtpinfo = array();
 		$smtpinfo["host"] = "smtp.163.com";
 		$smtpinfo["port"] = "25";
-		$smtpinfo["username"] = "mail@163.com";
-		$smtpinfo["password"] = "password";
+		$smtpinfo["username"] = "@163.com";
+		$smtpinfo["password"] = "";
 		$smtpinfo["timeout"] = 10;
 		$smtpinfo["auth"] = true;
 		$mailAddr = array('song_pku@foxmail.com');
@@ -42,7 +42,7 @@
 		$smtpinfo["host"] = "smtp.163.com";
 		$smtpinfo["port"] = "25";
 		$smtpinfo["username"] = "mail@163.com";
-		$smtpinfo["password"] = "password";
+		$smtpinfo["password"] = "";
 		$smtpinfo["timeout"] = 10;
 		$smtpinfo["auth"] = true;
 		$mailAddr = array($accpet);

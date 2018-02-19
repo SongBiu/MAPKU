@@ -8,15 +8,15 @@
 		die("Connection Failed" . mysqli_connect_error());
 		exit;
 	}
-	//if ($_REQUEST['countBag'] == 0) {
-	//	echo "OK";		
-	//	exit;
-	//}
+	if ($_REQUEST['countBag'] == 0) {
+		echo "OK";		
+		exit;
+	}
 	mysqli_query($conn, "SET NAMES utf8");
 	$sql = "SELECT signupDate FROM usr WHERE usrID = '" . $_REQUEST['usrID'] . "'";
 	
 	$rslt = mysqli_query($conn, $sql);
-	$score = 0;
+	$score = 2;
 	while ($row = mysqli_fetch_assoc($rslt)) {
 		
 		$signupDate = $row['signupDate'];
@@ -24,13 +24,17 @@
 		$sql = "SELECT COUNT(*) AS num FROM dyna WHERE usrID = '" . $_REQUEST['usrID'] . "'";
 		$rslt = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($rslt)) {
-			if ($row['num'] == 0 && $deltaDay <= 7) {
-				$score = 3;
-			} else {
-				$score = 2;
+			if ($row['num'] == 0) {
+				if ($deltaDay <=7) {
+					$score = 3;
+				}
+				$sql = "UPDATE usr, invitate, invitated SET usr.score = usr.score + 3 WHERE usr.usrID = invitate.usrID AND invitate.invitateCode = invitated.invitatedCode AND invitated.usrID = '" . $_REQUEST['usrID'] . "'";
+				mysqli_query($conn, $sql);
+				$sql = "DELETE FROM invitated WHERE usrID = '" . $_REQUEST['usrID'] . "'";
+				mysqli_query($conn, $sql);
 			}
 		}
-		$sql = "SELECT invitate.usrID FROM invitate, invitated WHERE invitate.invitateCode = invitated.invitateCode AND invitated.usrID = '" . $_REQUEST['usrID'] . "'";
+		
 		if ($_REQUEST['countBag'] > 1) {
 			$score += $_REQUEST['countBag'];
 		}
@@ -46,6 +50,9 @@
 	$data['dynamicID'] = $ID;
 	$sql = "INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('" . $ID . "', '" . $_REQUEST['usrID'] . "', '" . $date . "', " . $_REQUEST['countBag'] . ", '" . $_REQUEST['say'] . "')";
 	mysqli_query($conn, $sql);
-	$data['sql'] = $sql;
+	$sql = "UPDATE usr SET score = score + " . $score . " WHERE usrID = '" . $_REQUEST['usrID'] . "'";
+	mysqli_query($conn, $sql);
+	$sql = "UPDATE usr SET countBag = countBag + " . $_REQUEST['countBag'] . " WHERE usrID = '" . $_REQUEST['usrID'] . "'";
+	mysqli_query($conn, $sql);
 	print(json_encode($data));
 ?>

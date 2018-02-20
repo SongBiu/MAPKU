@@ -36,7 +36,7 @@
 		}
 		
 		if ($_REQUEST['countBag'] > 1) {
-			$score += $_REQUEST['countBag'];
+			$score += $_REQUEST['countBag'] - 1;
 		}
 		if ($score > 5) {
 			$score = 5;

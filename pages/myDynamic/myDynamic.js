@@ -7,7 +7,8 @@ Page({
 	 */
 	data: {
 		dynamics: [],
-		openid: null
+		openid: null,
+		app:getApp()
 	},
 
 	/**

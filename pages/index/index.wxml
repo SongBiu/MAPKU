@@ -28,7 +28,7 @@
 					<image src="{{app.url_pre}}/{{dyna.image}}"></image>
 				</view>
 				<view class='bag'>
-					上传垃圾包数：{{dyna.countBag}}
+					上传垃圾袋数：{{dyna.countBag}}
 				</view>
                  <!-- <view class='good'>
                     <button class="good" id="{{dyna.dynamicID}}" bindtap='giveGood'>赞</button><view>{{dyna.good}}</view>
@@ -48,7 +48,7 @@
         </view>
         <view class='button-bottom'>
             <navigator url='../upload/upload'>
-                <button>发布</button>
+                <button>打卡</button>
             </navigator>
 
         </view>

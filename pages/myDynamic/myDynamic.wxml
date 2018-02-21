@@ -19,7 +19,7 @@
                     </view>
                 </view>
                 <view wx:if="{{dyna.hasImg}}" class='image'>
-                    <image src="http://192.168.25.138/{{dyna.image}}"></image>
+                    <image src="{{app.url_pre}}/{{dyna.image}}"></image>
                 </view>
                 <view class='bag'>
                     上传垃圾包数：{{dyna.countBag}}

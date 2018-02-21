@@ -27,5 +27,6 @@
 		$data['state'] = "OK";
 	}
 	$sql = "UPDATE dyna SET image = '" . $file . "' WHERE dynamicID = '" . $_REQUEST['dynamicID'] . "'";
+	echo $sql;
 	mysqli_query($conn, $sql);
 ?>

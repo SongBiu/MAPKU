@@ -49,6 +49,7 @@
 	}
 	$data['dynamicID'] = $ID;
 	$sql = "INSERT INTO dyna(dynamicID, usrID, dynamicDate, countBag, say) VALUES ('" . $ID . "', '" . $_REQUEST['usrID'] . "', '" . $date . "', " . $_REQUEST['countBag'] . ", '" . $_REQUEST['say'] . "')";
+	$data['sql'] = $sql;
 	mysqli_query($conn, $sql);
 	$sql = "UPDATE usr SET score = score + " . $score . " WHERE usrID = '" . $_REQUEST['usrID'] . "'";
 	mysqli_query($conn, $sql);

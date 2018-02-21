@@ -80,6 +80,7 @@ Page({
 				wx.request({
 					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
 					success: function (res) {
+						console.log(res)
 						var id = res.data.openid
 						wx.request({
 							url: app.url_pre + '/userinfo.php',
@@ -114,6 +115,9 @@ Page({
 						})
 					}
 				})
+			},
+			fail: function(res) {
+				console.log(res)
 			}
 		})
 		

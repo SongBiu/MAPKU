@@ -8,25 +8,27 @@ Page({
 	formSubmit: function(event) {
 		var img = this.data.imgPath[0];
 		var value = event.detail.value;
-		wx.uploadFile({
-			url: app.url_pre + '/uploadImage.php',
-			filePath: img,
-			name: 'image',
-			formData: {
-				usrID:this.data.openid
-			},
-			complete: function(res) {
-				console.log(res)
-			}
-		})
+		var that = this;
 		wx.request({
 			url: app.url_pre + '/upload.php',
 			data: {
 				countBag: event.detail.value.number,
-				say: event.detail.value.talk
+				say: event.detail.value.talk,
+				usrID:this.data.openid
 			},
 			success: function(res) {
-				console.log(res);
+				wx.uploadFile({
+					url: app.url_pre + '/uploadImage.php',
+					filePath: img,
+					name: 'image',
+					formData: {
+						usrID: that.data.openid,
+						dynamicID:res.data.dynamicID
+					},
+					complete: function (res) {
+						console.log(res)
+					}
+				})
 			}
 		})
 	},

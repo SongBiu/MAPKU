@@ -154,5 +154,19 @@ Page({
 	},
 	cancelGood:function(event) {
 		console.log(event)
+		var that = this;
+		var dynamicID = event.currentTarget.id;
+		wx.request({
+			url:app.url_pre + '/cancelGood.php',
+			data:{
+				openid:this.data.openid,
+				dynamicID:dynamicID
+			},
+			success: function(res) {
+				that.data.dynamics[dynamicID].good -= 1;
+				that.data.dynamics[dynamicID].hasGood = false;
+			}
+		})
+		
 	}
 })

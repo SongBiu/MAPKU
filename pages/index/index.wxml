@@ -10,30 +10,32 @@
         <block wx:for="{{dynamics}}" wx:for-item="dyna">
             <view class='dynamic'>
                 <view class='usr'>
-                	{{dyna.name}}
+                    {{dyna.name}}
                 </view>
                 <view class='time'>
                     发布时间{{dyna.time}}
                 </view>
-				<text>
+                <text>
 				</text>
-				<view class="content">
+                <view class="content">
                     <view class='image'>
                     </view>
                     <view class='text'>
                         {{dyna.say}}
                     </view>
                 </view>
-				<view wx:if="{{dyna.hasImg}}" class='image'>
-					<image src="{{app.url_pre}}/{{dyna.image}}" bindtap='preImg' data-list="{{app.url_pre}}/{{dyna.image}}" data-src='{{app.url_pre}}/{{dyna.image}}'></image>
-				</view>
-				<view class='bag'>
-					上传垃圾袋数：{{dyna.countBag}}
-				</view>
-                 <!-- <view class='good'>
-                    <button class="good" id="{{dyna.dynamicID}}" bindtap='giveGood'>赞</button><view>{{dyna.good}}</view>
-                </view> -->
-            </view> 
+                <view wx:if="{{dyna.hasImg}}" class='image'>
+                    <image src="{{app.url_pre}}/{{dyna.image}}" bindtap='preImg' data-list="{{app.url_pre}}/{{dyna.image}}" data-src='{{app.url_pre}}/{{dyna.image}}'></image>
+                </view>
+                <view class='bag'>
+                    上传垃圾袋数：{{dyna.countBag}}
+                </view>
+                <view class='good'>
+                    <view>{{dyna.good}}</view>
+					<button wx:if="{{dyna.hasGood}}" class="good" id="{{dyna.dynamicID}}" bindtap='cancelGood'>取消赞</button>
+                    <button wx:else class="good" id="{{dyna.dynamicID}}" bindtap='giveGood'>赞</button>
+                </view>
+            </view>
         </block>
     </view>
 

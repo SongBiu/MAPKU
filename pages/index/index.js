@@ -106,6 +106,9 @@ Page({
 					complete: function(res) {
 						wx.request({
 							url: app.url_pre + '/all_dynamic.php',
+							data:{
+								openid: res.data.openid
+							},
 							success: function (res) {
 								console.log(res)
 								that.setData({
@@ -127,7 +130,18 @@ Page({
 		
 	},
 	giveGood: function(event) {
-		
+		console.log(event)
+		var dynamicID = event.currentTarget.id;
+		wx.request({
+			url: app.url_pre + "/giveGood.php",
+			data:{
+				openid:this.data.openid,
+				dynamicID:dynamicID
+			},
+			success:function(res) {
+				console.log(res)
+			}
+		})
 	},
 	preImg: function(event) {
 		console.log(event)
@@ -137,5 +151,8 @@ Page({
 			current:src,
 			urls: [imgList]
 		})
+	},
+	cancelGood:function(event) {
+		console.log(event)
 	}
 })

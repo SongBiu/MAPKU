@@ -36,6 +36,17 @@
 			$name = $row['name'];
 		}
 		$dyna['name'] = $name;
+		
+
+		$sql = "SELECT COUNT(*) AS num FROM good WHERE usrID = '" . $_REQUEST['openid'] . "' AND dynamicID = '" . $dyna['dynamicID'] . "'";
+		$r = mysqli_query($conn, $sql);
+		while ($row = mysqli_fetch_assoc($r)) {
+			if ($row['num'] != 0) {
+				$dyna['hasGood'] = true;
+			} else {
+				$dyna['hasGood'] = false;
+			}
+		}
 		$data[$index++] = $dyna;
 	}
 	print(json_encode($data));

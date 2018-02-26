@@ -51,6 +51,12 @@ CREATE TABLE dyna (
 	FOREIGN KEY (usrID) REFERENCES usr(usrID)
 )DEFAULT CHARSET=utf8;
 
+CREATE TABLE good (
+	dynamicID VARCHAR(40),
+	usrID VARCHAR(40),
+	PRIMARY KEY (dynamicID, usrID)
+)DEFAULT CHARSET=utf8;
+
 
 SELECT MAX(countBag), name
 FROM community

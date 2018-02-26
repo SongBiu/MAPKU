@@ -128,5 +128,14 @@ Page({
 	},
 	giveGood: function(event) {
 		
+	},
+	preImg: function(event) {
+		console.log(event)
+		var src = event.currentTarget.dataset.src;
+		var imgList = event.currentTarget.dataset.src;
+		wx.previewImage({
+			current:src,
+			urls: [imgList]
+		})
 	}
 })

@@ -25,7 +25,7 @@
                     </view>
                 </view>
 				<view wx:if="{{dyna.hasImg}}" class='image'>
-					<image src="{{app.url_pre}}/{{dyna.image}}"></image>
+					<image src="{{app.url_pre}}/{{dyna.image}}" bindtap='preImg' data-list="{{app.url_pre}}/{{dyna.image}}" data-src='{{app.url_pre}}/{{dyna.image}}'></image>
 				</view>
 				<view class='bag'>
 					上传垃圾袋数：{{dyna.countBag}}

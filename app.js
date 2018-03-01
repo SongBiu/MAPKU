@@ -20,7 +20,7 @@ App({
 	json_code:'',
 	PKU: false,
 	bind:null,
-	url_pre: "http://120.78.202.126",
+	url_pre: "https://www.mapku.top",
 	onLaunch: function () {
 		var that = this;
 		// 展示本地存储能力

@@ -1,29 +1,18 @@
 <!--pages/my/my.wxml-->
 <view class='container'>
-    <view class='info'>
-        <view>
-            <view class='name'>用户昵称：{{nickName}}</view>
-        </view>
-        <view>
-            <view class='community'>所属社团：{{communityName}}</view>
-            <view class='community-text'></view>
-        </view>
-        <view>
-            <view class='score'>积分：{{score}}</view>
-            <view class='score-text'></view>
-        </view>
-        <view>
-            <view class='bag'>回收垃圾总量：{{countBag}}</view>
-            <view class='bag-text'></view>
-        </view>
+	<view class="usr">
+		<view class='name'>{{nickName}}</view>
+		<view class='community'>{{communityName}}</view>
+	</view>
+	<view class="count">
+		<view class='score'>积分：{{score}}</view>
+		<view class='bag'>回收垃圾总量：{{countBag}}</view>		
     </view>
-    <view class='dynamic'>
+    <view class="function">
         <navigator url='../myDynamic/myDynamic'>
             <button>我的最近动态</button>
         </navigator>
-    </view>
-    <view class='features'>
-        <navigator url='../rule/rule'>
+		<navigator url='../rule/rule'>
             <button>
                 活动规则
             </button>

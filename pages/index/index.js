@@ -19,30 +19,35 @@ Page({
 			success: function (res) {
 				var jsonCode = res.code
 				wx.request({
-					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
-					success: function (res) {
-						var id = res.data.openid
+					url: app.url_pre + "/getOpenid.php",
+					data:{
+						jsonCode:jsonCode,
+						appID:app.data.appID,
+						secret: app.data.secret
+					},
+					success(res) {
+						var id = res.data.openid;
 						that.setData({
 							openid:id
 						})
 						app.openid = id;
 					},
 					complete: function(res) {
-						var id = res.data.openid
+						var id = res.data.openid;
 						wx.request({
 							url: app.url_pre + '/userinfo.php',
-							data:{
-								usrID:id
+							data: {
+								usrID: id
 							},
-							success:function(res) {
+							success: function (res) {
 								that.setData({
-									bind:true
+									bind: true
 								})
 								app.bind = true;
 								if (res.data.length == 0) {
 									console.log("LOAD bind error!")
 									that.setData({
-										bind:false
+										bind: false
 									})
 									app.bind = false
 								}
@@ -51,7 +56,7 @@ Page({
 									app.PKU = res.data.PKU
 									app.nickName = res.data.name
 									that.setData({
-										nickName:res.data.name
+										nickName: res.data.name
 									})
 								}
 							}
@@ -78,7 +83,12 @@ Page({
 			success: function (res) {
 				var jsonCode = res.code
 				wx.request({
-					url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appID + '&secret=' + app.data.secret + '&js_code=' + jsonCode + '&grant_type=authorization_code',
+					url: app.url_pre + "/getOpenid.php",
+					data: {
+						jsonCode: jsonCode,
+						appID: app.data.appID,
+						secret: app.data.secret
+					},
 					success: function (res) {
 						console.log(res)
 						var id = res.data.openid

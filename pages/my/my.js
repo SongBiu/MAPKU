@@ -11,7 +11,8 @@ Page({
 		communityName: null,
 		score: null,
 		countBag: null,
-		openid: null
+		openid: null,
+		app:getApp()
 	},
 	/**
 	 * 生命周期函数--监听页面加载

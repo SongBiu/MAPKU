@@ -1,5 +1,6 @@
 <!--pages/invitate_code/invitate_code.wxml-->
 <view class='container'>
+	<image src='../icon/chat.png' id='chat'></image>
 	<view class='code'>
 		<text>
 			您的邀请码为

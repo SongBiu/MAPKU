@@ -1,1 +1,5 @@
 /* pages/invitate_code/invitate_code.wxss */
+image#chat {
+	width: 20%;
+	height: 20%;
+}

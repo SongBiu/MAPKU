@@ -14,12 +14,13 @@
 		"pages/my/my",
 		"pages/invitate_code/invitate_code",
 		"pages/verify/verify",
-		"pages/myDynamic/myDynamic"
+		"pages/myDynamic/myDynamic",
+		"pages/leadboard/leadboard"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
 		"navigationBarBackgroundColor": "#fff",
-		"navigationBarTitleText": "WeChat",
+		"navigationBarTitleText": "顺手一带",
 		"navigationBarTextStyle": "black"
 	}
 }

@@ -1,12 +1,13 @@
 <!--pages/signup/signup.wxml-->
 <view class='container'>
-		<form bindsubmit='formSubmit'>
-			<text>请填入您的昵称</text>
-			<textarea name="name" class='name'></textarea>
-			<text>请填入您的联系邮箱，方便接收通知</text>
-			<textarea name="email" class='mail'></textarea>	
-			<text>请输入邀请码（如果有的话）</text>
-			<textarea name="invitateCode" class='invitateCode'></textarea>
-			<button form-type='submit'>提交</button>
-		</form>
+    <image src='../icon/copy.png'></image>
+    <view class='form'>
+        <form bindsubmit='formSubmit'>
+            <textarea name="name" class='name'>昵称</textarea>
+            <textarea name="email" class='mail'>邮箱</textarea>
+            <textarea name="invitateCode" class='invitateCode'>邀请码（选填）</textarea>
+            <button form-type='submit'>提交</button>
+        </form>
+    </view>
+
 </view>

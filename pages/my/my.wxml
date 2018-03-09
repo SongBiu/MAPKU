@@ -1,6 +1,6 @@
 <!--pages/my/my.wxml-->
 <view class='container'>
-	
+
     <view class="usr">
         <view>
             <image src="{{app.globalData.userInfo.avatarUrl}}"></image>
@@ -15,14 +15,14 @@
         </view>
     </view>
     <view class="count">
-		<view class='score'>
-			<view class='scoreNum'>{{score}}</view>
-			<view class='text'>积分</view>
-		</view>
-		<view class='countBag'>
-			<view class='bagNum'>{{countBag}}</view>
-			<view class='text'>袋数</view>
-		</view>
+        <view class='score'>
+            <view class='scoreNum'>{{score}}</view>
+            <view class='text'>积分</view>
+        </view>
+        <view class='countBag'>
+            <view class='bagNum'>{{countBag}}</view>
+            <view class='text'>袋数</view>
+        </view>
     </view>
     <view class="function">
         <navigator url='../myDynamic/myDynamic'>
@@ -44,6 +44,5 @@
             </button>
         </navigator>
     </view>
-    <view class='bottom'>
-    </view>
+    
 </view>

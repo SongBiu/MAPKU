@@ -1,0 +1,67 @@
+<view class="container">
+	<view class='topline'>
+		<view class='btn'>
+			<navigator url='../index/index'>社团动态</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../join/join'>加入社团</navigator>
+		</view>
+		<view class="btn">
+			<navigator url='../leadboard/leadboard'>排行榜</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../shop/shop'>社团商城</navigator>
+		</view>
+	</view>
+	<view class="leadboard">
+		<view class="thefirst">
+			<text class="st">1st</text>
+			<view class="info">
+				<image src="{{app.url_pre}}/avatar/{{thefirst.usrID}}.jpg" class="firstAvar"></image>
+				<text class="name">{{thefirst.name}}</text>
+			</view>
+			<view class="num">
+				<text class="count">{{thefirst.countBag}}</text>
+				<text class="bag">袋</text>
+			</view>
+
+		</view>
+		<view class="other">
+			<block wx:for="{{others}}" wx:for-item="usr">
+				<view class="usr">
+					<view class="st">{{usr.index}}</view>
+					<view class="info">
+						<image src="{{app.url_pre}}/avatar/{{usr.usrID}}.jpg" class="avar"></image>
+						<text class="oname">{{usr.name}}</text>
+					</view>
+					<view class="countBag">
+						<view class="count">{{usr.countBag}}</view>
+						<view class="bag">袋</view>
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+	<view class='bottom' style="flex-direction:row；">
+		<view class='button-bottom'>
+			<navigator url='../community/community'>
+				<image src='../icon/Fill-1.png' class='bottom'></image>
+				<text class="label">社团</text>
+			</navigator>
+		</view>
+		<view class='button-bottom'>
+			<navigator url='../upload/upload'>
+				<image src='../icon/Combined Shape.png' class='bottom'>
+					<text class="label">打开</text>
+				</image>
+			</navigator>
+
+		</view>
+		<view class='button-bottom'>
+			<navigator url='../my/my'>
+				<image src='../icon/people.png' class='bottom'></image>
+				<text class="label">我的</text>
+			</navigator>
+		</view>
+	</view>
+</view>

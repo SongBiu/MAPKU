@@ -21,7 +21,7 @@
 }
 
 view.body {
-	height: 85%;
+	height: 89%;
 	width:100%;
 	overflow-y: scroll;
 }
@@ -29,17 +29,13 @@ view.body {
 view.dynamic {
 	border-style: solid;
 }
-image {
+view.dynamic image {
 	height: 224px;
 	width:224px;
-}
-
-image.bottom {
-	height: 50px;
-	width: 50px;
 }
 
 button.good {
 	width: 50px;
 	left:0px;
 }
+

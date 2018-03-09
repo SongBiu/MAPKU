@@ -42,25 +42,25 @@
     <!-- 这里是分界线 -->
 
     <view class='bottom' style="flex-direction:row；">
-        <view class='button-bottom'>
-            <navigator url='../community/community'>
-                <!-- <button>社团</button> -->
-				<image src='../icon/Fill-1.png' class='bottom'></image>
-            </navigator>
-
+            <view class='button-bottom'>
+                <navigator url='../community/community'>
+                    <image src='../icon/Fill-1.png' class='bottom'></image>
+                    <text class="label">社团</text>
+                </navigator>
+            </view>
+            <view class='button-bottom'>
+                <navigator url='../upload/upload'>
+                    <image src='../icon/Combined Shape.png' class='bottom'>
+                        <text class="label">打开</text>
+                    </image>
+                </navigator>
+    
+            </view>
+            <view class='button-bottom'>
+                <navigator url='../my/my'>
+                    <image src='../icon/people.png' class='bottom'></image>
+                    <text class="label">我的</text>
+                </navigator>
+            </view>
         </view>
-        <view class='button-bottom'>
-            <navigator url='../upload/upload'>
-                <!-- <button>打卡</button> -->
-				<image src='../icon/Combined Shape.png' class='bottom'></image>
-            </navigator>
-
-        </view>
-        <view class='button-bottom'>
-            <navigator url='../my/my'>
-                <!-- <button>我的</button> -->
-				<image src='../icon/people.png' class='bottom'></image>
-            </navigator>
-        </view>
-    </view>
 </view>

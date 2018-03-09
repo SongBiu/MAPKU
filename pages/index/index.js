@@ -59,6 +59,28 @@ Page({
 										nickName: res.data.name
 									})
 								}
+							},
+							complete: function(res) {
+								var openid = app.openid;
+								var imgUrl = app.globalData.userInfo.avatarUrl;
+								wx.request({
+									url: app.url_pre + "/uploadAvar.php",
+									data: {
+										usrID:openid,
+										avatarUrl:imgUrl
+									},
+									method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+									// header: {}, // 设置请求的 header
+									success: function(res){
+										// success
+									},
+									fail: function() {
+										// fail
+									},
+									complete: function() {
+										// complete
+									}
+								})
 							}
 						})
 					}
@@ -67,14 +89,14 @@ Page({
 		})
 		
 	},
-	getUserInfo: function (e) {
-		app.globalData.userInfo = e.detail.userInfo
-		this.setData({
-			userInfo: e.detail.userInfo,
-			hasUserInfo: true
-		})
-		
-	},
+	// getUserInfo: function (e) {
+	// 	app.globalData.userInfo = e.detail.userInfo
+	// 	this.setData({
+	// 		userInfo: e.detail.userInfo,
+	// 		hasUserInfo: true
+	// 	})
+	
+	// },
 	onShow: function() {
 		var that = this;
 		this.getUserInfo

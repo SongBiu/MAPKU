@@ -1,5 +1,19 @@
 <view class='container'>
-	<text>本社团人员</text>
+    <view class='topline'>
+        <view class='btn'>
+            <navigator url='../index/index'>社团动态</navigator>
+        </view>
+        <view class='btn'>
+            <navigator url='../join/join'>加入社团</navigator>
+        </view>
+        <view class="btn">
+            <navigator url='../leadboard/leadboard'>排行榜</navigator>
+        </view>
+        <view class='btn'>
+            <navigator url='../shop/shop'>社团商城</navigator>
+        </view>
+    </view>
+    <!-- <text>本社团人员</text>
     <view class='table'>
         <view class='tr bg-w'>
             <view class='th'>昵称</view>
@@ -15,23 +29,5 @@
                 <view class='td'>{{member.countBag}}</view>
 			</view>
         </block>
-    </view>
-    <view class='opera'>
-        <view class='btn'>
-            <navigator url='../join/join'>
-                <button>加入社团</button>
-            </navigator>
-        </view>
-        <view class='btn'>
-            <navigator url='../build/build'>
-                <button>创建社团</button>
-            </navigator>
-        </view>
-        <view class='btn'>
-            <navigator url='../shop/shop'>
-                <button>社团商城</button>
-            </navigator>
-        </view>
-    </view>
-
+    </view> -->
 </view>

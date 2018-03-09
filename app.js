@@ -50,4 +50,20 @@ App({
 		})
 	}
 	
+	// wx.uploadFile({
+	// 	url: 'https://String',
+	// 	filePath:'filePath',
+	// 	name:'name',
+	// 	// header: {}, // 设置请求的 header
+	// 	// formData: {}, // HTTP 请求中其他额外的 form data
+	// 	success: function(res){
+	// 		// success
+	// 	},
+	// 	fail: function() {
+	// 		// fail
+	// 	},
+	// 	complete: function() {
+	// 		// complete
+	// 	}
+	// })
 })

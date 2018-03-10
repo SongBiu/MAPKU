@@ -29,6 +29,7 @@
 		$dyna['image'] = 'img/'.$row['image'];
 		$dyna['dynamicID'] = $row['dynamicID']; 
 		$usrID = $row['usrID'];
+		$dyna['usrID'] = $usrID;
 		$sql = "SELECT name FROM usr WHERE usrID = '" . $usrID . "'";
 		$r = mysqli_query($conn, $sql);
 		$name = '';

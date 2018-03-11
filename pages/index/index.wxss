@@ -22,27 +22,39 @@
 
 view.body {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
 	height: 80%;
 	position: relative;
 	top:8%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 view.dynamic {
-	height: 35%;
+	height: 42%;
 	width: 100%;
 	border-bottom: solid;
 	border-color: #BEBEBE;
+	display: flex;
+	flex-direction: row;
 }
 image.left {
-	height: 40%;
+	height: 32%;
 	display: inline-block;
-	width: 20%;
+	width: 15%;
 	border-radius: 100%;
 	position: relative;
-	left: 3%
+	left: 3%;
+	top:6%;
 }
+view.middle {
+	height: 100%;
+	width: 47%;
+	position: relative;
+	left: 5%;
+	display: flex;
+	flex-direction: column;
+	/* padding-left: 5%; */
+}
+
 view.topline {
 	display: flex;
 	flex-direction: row;
@@ -68,3 +80,29 @@ view.btn navigator {
 	color: #1C1C1C;
 }
 
+
+.middle image {
+	height: 71%;
+	width: 78%;
+}
+view.right {
+	height: 100%;
+	width: 38%;
+}
+view.time {
+	font-size: 0.6rem;
+	color: #BEBEBE;
+	position: relative;
+	right: -20%;
+}
+view.num {
+	position: relative;
+	top: 4%;
+	font-size: 0.8rem;
+}
+view.desc {
+	position: relative;
+	top: 4%;
+	width: 100%;
+	word-wrap: break-word;
+}

@@ -1,8 +1,19 @@
 <view class='container'>
-	<block wx:for="{{items}}" wx:for-item="community">
-		<view class='community'>
-			<text>{{community.name}}</text>
-			<button bindtap='join' id="{{index}}">加入该社团</button>
+	<view class='topline'>
+		<view class='btn'>
+			<navigator url='../index/index'>社团动态</navigator>
 		</view>
-	</block>
+		<view class='btn'>
+			<navigator url='../join/join'>加入社团</navigator>
+		</view>
+		<view class="btn">
+			<navigator url='../leadboard/leadboard'>排行榜</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../shop/shop'>社团商城</navigator>
+		</view>
+	</view>
+	<view class="body">
+		<image src="../icon/join.jpg" class="up"></image>
+	</view>
 </view>

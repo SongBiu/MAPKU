@@ -1,74 +1,68 @@
 <!--index.wxml-->
 <view wx:if="{{!bind}}" class='body'>
-    <text>点击下面加入活动</text>
-    <navigator url='../signup/signup'>
-        <button>加入我们</button>
-    </navigator>
+	<text>点击下面加入活动</text>
+	<navigator url='../signup/signup'>
+		<button>加入我们</button>
+	</navigator>
 </view>
 <view wx:else class="container">
-    <view class='topline'>
-        <view class='btn'>
-            <navigator url='../index/index'>社团动态</navigator>
-        </view>
-        <view class='btn'>
-            <navigator url='../join/join'>加入社团</navigator>
-        </view>
-        <view class="btn">
-            <navigator url='../leadboard/leadboard'>排行榜</navigator>
-        </view>
-        <view class='btn'>
-            <navigator url='../shop/shop'>社团商城</navigator>
-        </view>
-    </view>
+	<view class='topline'>
+		<view class='btn'>
+			<navigator url='../index/index'>社团动态</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../join/join'>加入社团</navigator>
+		</view>
+		<view class="btn">
+			<navigator url='../leadboard/leadboard'>排行榜</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../shop/shop'>社团商城</navigator>
+		</view>
+	</view>
 
-    <view class='body' id='dynamic-list'>
+	<view class='body' id='dynamic-list'>
 
-        <block wx:for="{{dynamics}}" wx:for-item="dyna">
-            <view class='dynamic'>
-                <image class="left" src="{{app.url_pre}}/avatar/{{dyna.usrID}}.jpg"></image>
-                <view class="right">
-                    <view class="top">
-                        <view class="name">{{dyna.name}}</view>
-                        <view class="time">{{dyna.time}}</view>
-                    </view>
-                    <view class="middle">
-                        <image></image>
-                        <view class="info">
-                            <view class="num"></view>
-                            <view class="desc"></view>
-                        </view>
-                    </view>
-                    <view class="down">
-                        <view class="position"></view>
-                        <view class="good"></view>
-                    </view>
-                </view>
-            </view>
-        </block>
-    </view>
+		<block wx:for="{{dynamics}}" wx:for-item="dyna">
+			<view class='dynamic'>
+				<image class="left" src="{{app.url_pre}}/avatar/{{dyna.usrID}}.jpg"></image>
+				<view class="middle">
+					<view class="name">{{dyna.name}}</view>
+					<image src="{{app.url_pre}}/{{dyna.image}}" bindtap="preImg" dat-list="{{app.url_pre}}/{{dyna.image}}" data-src="{{app.url_pre}}/{{dyna.image}}"></image>
+					<!-- <view class="position">pku</view> -->
+				</view>
+				<view class="right">
+					<view class="time">{{dyna.time}}</view>
+					<view class="num">{{dyna.countBag}}袋</view>
+					<view class="desc">{{dyna.say}}</view>
+					<view class="good"></view>
+				</view>
+			</view>
+		</block>
+	</view>
 
-    <!-- 这里是分界线 -->
+	<!-- 这里是分界线 -->
 
-    <view class='bottom' style="flex-direction:row；">
-        <view class='button-bottom'>
-            <navigator url='../community/community'>
-                <image src='../icon/Fill-1.png' class='bottom'></image>
-                <text class="label">社团</text>
-            </navigator>
-        </view>
-        <view class='button-bottom'>
-            <navigator url='../upload/upload'>
-                <image src='../icon/Combined Shape.png' class='bottom'>
-                    <text class="label">打开</text>
-                </image>
-            </navigator>
+	<view class='bottom' style="flex-direction:row；">
+		<view class='button-bottom'>
+			<navigator url='../community/community'>
+				<image src='../icon/Fill-1.png' class='bottom'></image>
+				<text class="label">社团</text>
+			</navigator>
+		</view>
+		<view class='button-bottom'>
+			<navigator url='../upload/upload'>
+				<image src='../icon/Combined Shape.png' class='bottom'>
+					<text class="label">打开</text>
+				</image>
+			</navigator>
 
-        </view>
-        <view class='button-bottom'>
-            <navigator url='../my/my'>
-                <image src='../icon/people.png' class='bottom'></image>
-                <text class="label">我的</text>
-            </navigator>
-        </view>
-    </view>
+		</view>
+		<view class='button-bottom'>
+			<navigator url='../my/my'>
+				<image src='../icon/people.png' class='bottom'></image>
+				<text class="label">我的</text>
+			</navigator>
+		</view>
+	</view>
 </view>

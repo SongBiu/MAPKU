@@ -2,11 +2,12 @@ var app = getApp();
 Page({
 	data: {
 		imgPath:null,
-		openid:null
+		openid:null,
+		app:getApp()
 	},
 	
 	formSubmit: function(event) {
-		var img = this.data.imgPath[0];
+		var img = app.imgPath;
 		var value = event.detail.value;
 		var that = this;
 		wx.request({
@@ -17,6 +18,7 @@ Page({
 				usrID:this.data.openid
 			},
 			success: function(res) {
+				console.log(res)
 				wx.uploadFile({
 					url: app.url_pre + '/uploadImage.php',
 					filePath: img,
@@ -26,38 +28,13 @@ Page({
 						dynamicID:res.data.dynamicID
 					},
 					complete: function (res) {
-						console.log(res)
+						
 					}
 				})
 			}
 		})
-	},
-	loadImage: function() {
-		var that = this;
-
-		wx.chooseImage({
-			count: 1,
-			sizeType:['original', 'compressed'],
-			sourceType: ['album', 'camera'],
-			success: function(res) {
-				console.log(res)
-				that.setData({
-					imgPath:res.tempFilePaths
-				})
-			},
-			complete: function(res) {
-				wx.uploadFile({
-					url: app.url_pre + '/uploadImage.php',
-					filePath: res.tempFilePaths[0],
-					name: 'image',
-					formData: {
-						usrID: that.data.openid
-					},
-					complete: function (res) {
-						console.log(res)
-					}
-				})
-			}
+		wx.navigateTo({
+			url:"../index/index"
 		})
 	},
 	onLoad:function() {

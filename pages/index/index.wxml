@@ -51,12 +51,9 @@
 			</navigator>
 		</view>
 		<view class='button-bottom'>
-			<navigator url='../upload/upload'>
-				<image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom'>
-					<text class="label">打开</text>
+				<image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+					<text class="label">上传</text>
 				</image>
-			</navigator>
-
 		</view>
 		<view class='button-bottom'>
 			<navigator url='../my/my'>

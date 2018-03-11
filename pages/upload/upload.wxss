@@ -3,26 +3,31 @@ form {
 	height: 100%;
 	width:100%;
 }
-input {
-	height:20%;
-}
 button {
-	position: absolute;
-	bottom: 0;
-	width:100%;
+	width: 35%;
 }
-image {
-	border-style: solid;
-	width: 100%;
-	height: 45%;
+image.upload {
+	width: 60%;
+	height: 100%;
+	padding-left: 5%;
 }
-textarea#num {
-	border-style: solid;
-	width: 100%;
-	height: 10%;
+input.num {
+	height: 40%;
+	width: 35%;
+	padding-top: 20%;
+	text-align: center;
 }
-textarea#talk {
-	border-style: solid;
-	width: 100%;
+view.up {
 	height: 30%;
+	width: 100%;
+	display: flex;
+	padding-top: 5%;
+}
+view.down {
+	padding-top: 10%;
+}
+image.submit {
+	width: 20%;
+	height: 10%;
+	padding-left: 35%;
 }

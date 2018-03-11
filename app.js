@@ -22,6 +22,7 @@ App({
 	bind:null,
 	url_pre: "https://www.mapku.top",
 	communityID:null,
+	imgPath: null,
 	onLaunch: function () {
 		var that = this;
 		// 展示本地存储能力

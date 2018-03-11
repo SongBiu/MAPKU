@@ -2,12 +2,21 @@
 
 form {
     height: 100%;
-    width: 100%;
+	width: 66%;
+	padding-top: 15%;
+	text-align: center;
 }
 input {
+	height: 10%;
+	width: 100%;
 	border-bottom: solid;
 }
 image.top {
 	height: 15%;
 	width: 25%;
+}
+image.submit {
+	width: 45%;
+	height: 11%;
+	padding-top: 10%;
 }

@@ -13,7 +13,6 @@ Page({
 		app:getApp()
 	},
 	onLoad: function () {
-		console.log("onLoad")
 		var that = this;
 		wx.login({
 			success: function (res) {
@@ -45,14 +44,12 @@ Page({
 								})
 								app.bind = true;
 								if (res.data.length == 0) {
-									console.log("LOAD bind error!")
 									that.setData({
 										bind: false
 									})
 									app.bind = false
 								}
 								else {
-									console.log(res)
 									app.PKU = res.data.PKU
 									app.nickName = res.data.name
 									that.setData({
@@ -101,7 +98,6 @@ Page({
 	onShow: function() {
 		var that = this;
 		this.getUserInfo
-		console.log("SHOW")
 		wx.login({
 			success: function (res) {
 				var jsonCode = res.code
@@ -113,7 +109,6 @@ Page({
 						secret: app.data.secret
 					},
 					success: function (res) {
-						console.log(res)
 						var id = res.data.openid
 						wx.request({
 							url: app.url_pre + '/userinfo.php',
@@ -144,7 +139,7 @@ Page({
 								openid: res.data.openid
 							},
 							success: function (res) {
-								console.log(res)
+								
 								that.setData({
 									dynamics: res.data
 								})
@@ -154,7 +149,7 @@ Page({
 				})
 			},
 			fail: function(res) {
-				console.log(res)
+				
 			}
 		})
 		
@@ -164,7 +159,7 @@ Page({
 		
 	},
 	giveGood: function(event) {
-		console.log(event)
+		
 		var dynamicID = event.currentTarget.id;
 		wx.request({
 			url: app.url_pre + "/giveGood.php",
@@ -173,12 +168,11 @@ Page({
 				dynamicID:dynamicID
 			},
 			success:function(res) {
-				console.log(res)
+				
 			}
 		})
 	},
 	preImg: function(event) {
-		console.log(event)
 		var src = event.currentTarget.dataset.src;
 		var imgList = event.currentTarget.dataset.src;
 		wx.previewImage({
@@ -187,7 +181,6 @@ Page({
 		})
 	},
 	cancelGood:function(event) {
-		console.log(event)
 		var that = this;
 		var dynamicID = event.currentTarget.id;
 		wx.request({
@@ -206,6 +199,19 @@ Page({
 	gotoreg: function() {
 		wx.navigateTo({
 			url: '../signup/signup'
+		})
+	},
+	selectImg: function() {
+		wx.chooseImage({
+			count: 1, // 最多可以选择的图片张数，默认9
+			sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+			sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+			success: function(res){
+				app.imgPath = res.tempFilePaths[0]
+				wx.navigateTo({
+					url: '../upload/upload'
+				})
+			}
 		})
 	}
 })

@@ -6,7 +6,8 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		openid: null
+		openid: null,
+		app:getApp()
 	},
 
 	/**
@@ -79,6 +80,9 @@ Page({
 			},
 			success: function(res) {
 				app.bind = true
+				wx.navigateTo({
+					url: '../index/index'
+				})
 			}
 		})
 	}

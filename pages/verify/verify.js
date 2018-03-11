@@ -116,14 +116,18 @@ Page({
 			},
 			success(res) {
 				if (res.data == that.data.code) {
+					app.PKU = true;
 					wx.request({
 						url: app.url_pre + '/verifySuccess.php',
 						data: {
 							usrID:that.data.openid
 						},
 						success: function () {
-							app.PKU = true;
-						}
+							wx.redirectTo({
+								url:"../shop/shop"
+							})
+						},
+						
 					})
 				}
 			}

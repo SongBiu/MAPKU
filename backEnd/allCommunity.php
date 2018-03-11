@@ -13,7 +13,7 @@
 		$id = $row['communityID'];
 		$community = Array();
 		$community['name'] = $row['name'];
-		$community['des'] = $row['des'];
+		$community['descr'] = $row['descr'];
 		$data[$id] = $community;
 	}
 	print(json_encode($data));

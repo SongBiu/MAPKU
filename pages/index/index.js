@@ -58,6 +58,7 @@ Page({
 									that.setData({
 										nickName: res.data.name
 									})
+									app.communityID = res.data.communityID;
 								}
 							},
 							complete: function(res) {
@@ -125,6 +126,7 @@ Page({
 										bind:true
 									})
 									app.bind = true;
+									app.communityID = res.data.communityID;
 								}
 								else {
 									that.setData({

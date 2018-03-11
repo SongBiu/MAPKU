@@ -15,5 +15,20 @@
 	</view>
 	<view class="body">
 		<image src="../icon/join.jpg" class="up"></image>
+		<view class="community">
+			<block wx:for="{{items}}" wx:for-item="community">
+				<view class="community-item">
+					<view class="left">
+						<view class="name">{{community.name}}</view>
+						<view class="descr">{{community.descr}}</view>
+					</view>
+					<view class="right">
+						<image wx:if="{{app.communityID == index}}" src="../icon/joinsc.png" class="btn"></image>
+						<image wx:else src="../icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
+						<!-- <navigator wx:else url="../leadboard/leadboard"><image src="../icon/join.png" class="btn" bindtap="join" id="{{index}}"></image></navigator> -->
+					</view>
+				</view>
+			</block>
+		</view>
 	</view>
 </view>

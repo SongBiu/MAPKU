@@ -15,6 +15,7 @@
 		$data['PKU'] = $row['PKU'];
 		$data['name'] = $row['name'];
 		$communityID = $row['communityID'];
+		$data['communityID'] = $row['communityID'];
 		$sql = "SELECT name FROM community WHERE communityID = '" . $communityID . "'";
 		$r = mysqli_query($conn, $sql);
 		while ($row = mysqli_fetch_assoc($r)) {

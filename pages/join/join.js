@@ -7,7 +7,8 @@ Page({
 	 */
 	data:{
 		items: [],
-		openid:null
+		openid:null,
+		app:getApp()
 	},
 	/**
 	 * 生命周期函数--监听页面加载
@@ -78,12 +79,17 @@ Page({
 
 	},
 	join: function(event) {
+		console.log(event)
 		wx.request({
 			url: app.url_pre + '/join.php',
 			data:{
 				usrID:this.data.openid,
 				communityID:event.target.id
 			}
+		})
+		app.communityID = event.target.id;
+		wx.navigateTo({
+			url: "../join/join"
 		})
 	}
 })

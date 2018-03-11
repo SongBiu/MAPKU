@@ -4,59 +4,10 @@ form {
     height: 100%;
     width: 100%;
 }
-
-textarea.name {
-    height: 10%;
-    width: 60%;
-    border-style: solid;
+input {
+	border-bottom: solid;
 }
-
-textarea.mail {
-    height: 10%;
-    width: 60%;
-    border-style: solid;
-}
-
-textarea.pkuID {
-    height: 10%;
-    border-style: solid;
-}
-
-textarea.verify {
-    height: 90%;
-    border-style: solid;
-    width: 60%;
-}
-
-textarea.ID {
-	width: 40%;
-	border-style: solid;
-	height: 10%;
-}
-textarea.invitateCode {
-	width: 40%;
-	height: 10%;
-	border-style: solid;
-}
-
-
-text {
-	font-size: 1.2rem;
-}
-button {
-	position: fixed;
-	bottom: 0;
-	width:100%;
-}
-view.form {
-	height: 70%;
-	width:100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-image {
-	width: 20%;
-	height: 20%;
-	
+image.top {
+	height: 15%;
+	width: 25%;
 }

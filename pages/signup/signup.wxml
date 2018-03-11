@@ -1,13 +1,9 @@
 <!--pages/signup/signup.wxml-->
 <view class='container'>
-    <image src='../icon/copy.png'></image>
-    <view class='form'>
-        <form bindsubmit='formSubmit'>
-            <textarea name="name" class='name'>昵称</textarea>
-            <textarea name="email" class='mail'>邮箱</textarea>
-            <textarea name="invitateCode" class='invitateCode'>邀请码（选填）</textarea>
-            <button form-type='submit'>提交</button>
-        </form>
-    </view>
-
+    <image src='{{app.url_pre}}/icon/copy.png' class="top"></image>
+    <form bindsubmit='formSubmit'>
+        <input name="name" class='name' placeholder="昵称" />
+        <input name="email" class='mail' placeholder="联系邮箱"/>
+        <input name="invitateCode" class='invitateCode' placeholder="验证码（选填）" />
+    </form>
 </view>

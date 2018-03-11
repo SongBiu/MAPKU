@@ -1,9 +1,9 @@
 <!--index.wxml-->
-<view wx:if="{{!bind}}" class='body'>
-	<text>点击下面加入活动</text>
-	<navigator url='../signup/signup'>
-		<button>加入我们</button>
-	</navigator>
+<view wx:if="{{!bind}}" class='register'>
+	<image src="{{app.url_pre}}/icon/top.jpg" class="top"></image>
+	<text class="talk">垃圾顺手一袋，</text>
+	<text class="talk">美丽山河回来。</text>
+	<image src="{{app.url_pre}}/icon/register.png" class="register" bindtap="gotoreg"></image>
 </view>
 <view wx:else class="container">
 	<view class='topline'>
@@ -46,13 +46,13 @@
 	<view class='bottom' style="flex-direction:row；">
 		<view class='button-bottom'>
 			<navigator url='../community/community'>
-				<image src='../icon/Fill-1.png' class='bottom'></image>
+				<image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
 				<text class="label">社团</text>
 			</navigator>
 		</view>
 		<view class='button-bottom'>
 			<navigator url='../upload/upload'>
-				<image src='../icon/Combined Shape.png' class='bottom'>
+				<image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom'>
 					<text class="label">打开</text>
 				</image>
 			</navigator>
@@ -60,7 +60,7 @@
 		</view>
 		<view class='button-bottom'>
 			<navigator url='../my/my'>
-				<image src='../icon/people.png' class='bottom'></image>
+				<image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
 				<text class="label">我的</text>
 			</navigator>
 		</view>

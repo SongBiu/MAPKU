@@ -1,19 +1,32 @@
 <view class="container">
-	<view wx:if="{{PKU}}">
+	<view class='topline'>
+		<view class='btn'>
+			<navigator url='../index/index'>社团动态</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../join/join'>加入社团</navigator>
+		</view>
+		<view class="btn">
+			<navigator url='../leadboard/leadboard'>排行榜</navigator>
+		</view>
+		<view class='btn'>
+			<navigator url='../shop/shop'>社团商城</navigator>
+		</view>
+	</view>
+	<view wx:if="{{PKU==1}}" class="body">
 		商城
 	</view>
-	<view wx:else>
-		<view>
-			<text>
-				对不起，目前只有经过认证的北大山鹰社的社员才能进入积分购买功能，此时，您所在的社团还未开放购买，或者您未经过认证。
-			</text>
-			<text>
-				具有北大邮箱的社员可以按下面按键，根据指示完成认证。
-			</text>
-			<navigator url='../verify/verify'><button>去认证</button></navigator>
-			<text>
-				如果您所在的社团想要开放购买功能，请联系北大山鹰社负责人，或者在“我的”-“联系我们”中，联系技术人员进行交流。
-			</text>
-		</view>
+	<view wx:else class="body">
+		<image src="{{app.url_pre}}/icon/lion.png" class="lion"></image>
+		<text>
+			目前只有经过认证的北大山鹰社社员才能使用积分购买功能。
+		</text>
+		<text>
+			此时，您所在的社团还未开放购买，或者您未经过认证。
+		</text>
+		<text>
+			拥有北大邮箱的社员可以按以下按钮，根据指示完成认证。
+		</text>
+		<image src="{{app.url_pre}}/icon/ver.png" class="btn" bindtap="gotover"></image>
 	</view>
 </view>

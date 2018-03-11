@@ -65,5 +65,10 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+	gotover: function() {
+		wx.navigateTo({
+			url: "../verify/verify"
+		})
 	}
 })

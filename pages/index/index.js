@@ -202,5 +202,10 @@ Page({
 			}
 		})
 		
+	},
+	gotoreg: function() {
+		wx.navigateTo({
+			url: '../signup/signup'
+		})
 	}
 })

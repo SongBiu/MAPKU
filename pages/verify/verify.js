@@ -9,7 +9,8 @@ Page({
 		code:null,
 		emailError:false,
 		inputWrong:false,
-		openid:null
+		openid:null,
+		app:getApp()
 	},
 
 	/**
@@ -70,6 +71,8 @@ Page({
 
 	},
 	eMailSubmit: function (event) {
+		console.log("OJ")
+		console.log(event)
 		var that = this;
 		var id = event.detail.value.ID;
 		if (id == "") {

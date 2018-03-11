@@ -1,9 +1,6 @@
 <view class='container'>
 	<view class='topline'>
-		<view class='btn'>
-			<navigator url='../index/index'>社团动态</navigator>
-		</view>
-		<view class='btn'>
+		<view class='btn' id="this">
 			<navigator url='../join/join'>加入社团</navigator>
 		</view>
 		<view class="btn">
@@ -29,6 +26,25 @@
 					</view>
 				</view>
 			</block>
+		</view>
+	</view>
+	<view class='bottom' style="flex-direction:row；">
+		<view class='button-bottom'>
+			<navigator url='../leadboard/leadboard'>
+				<image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
+				<text class="label">社团</text>
+			</navigator>
+		</view>
+		<view class='button-bottom'>
+			<image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+				<text class="label">上传</text>
+			</image>
+		</view>
+		<view class='button-bottom'>
+			<navigator url='../my/my'>
+				<image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
+				<text class="label">我的</text>
+			</navigator>
 		</view>
 	</view>
 </view>

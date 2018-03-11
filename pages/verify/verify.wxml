@@ -1,24 +1,27 @@
 <!--pages/verify/verify.wxml-->
 <view class='container'>
+	<image src="{{app.url_pre}}/icon/copy.png" class="copy"></image>
 	<form bindsubmit='eMailSubmit'>
 		<text>
-			请输入您的北大学号
+			北大学号
 		</text>
-		<input name="ID">
-		</input>
-		<button form-type='submit'>
-			获得验证码
-		</button>
+		<view class="pkuID">
+			<input name="ID"></input>
+			<!-- <input type="image" src="{{app.url_pre}}/icon/getverifyCode.png" bindtap="eMailSubmit"></input> -->
+			<button form-type='submit'>
+				获得验证码
+			</button>
+		</view>
 	</form>
 	<view class='tip'>
 	</view>
 	<form bindsubmit='verifyCodeSubmit'>
 		<text>
-			请输入您的邮箱收到的验证码
+			邮箱收到的验证码
 		</text>
-		<input name="verify">
+		<input name="verify" class="verify">
 		</input>
-		<button form-type='submit'>
+		<button form-type='submit' class="go">
 			提交
 		</button>
 	</form>

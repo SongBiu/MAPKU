@@ -1,12 +1,9 @@
 <view class="container">
 	<view class='topline'>
 		<view class='btn'>
-			<navigator url='../index/index'>社团动态</navigator>
-		</view>
-		<view class='btn'>
 			<navigator url='../join/join'>加入社团</navigator>
 		</view>
-		<view class="btn">
+		<view class="btn" id="this">
 			<navigator url='../leadboard/leadboard'>排行榜</navigator>
 		</view>
 		<view class='btn'>
@@ -44,22 +41,19 @@
 	</view>
 	<view class='bottom' style="flex-direction:row；">
 		<view class='button-bottom'>
-			<navigator url='../community/community'>
-				<image src='../icon/Fill-1.png' class='bottom'></image>
+			<navigator url='../leadboard/leadboard'>
+				<image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
 				<text class="label">社团</text>
 			</navigator>
 		</view>
 		<view class='button-bottom'>
-			<navigator url='../upload/upload'>
-				<image src='../icon/Combined Shape.png' class='bottom'>
-					<text class="label">打开</text>
-				</image>
-			</navigator>
-
-		</view>
+			<image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+				<text class="label">上传</text>
+			</image>
+	</view>
 		<view class='button-bottom'>
 			<navigator url='../my/my'>
-				<image src='../icon/people.png' class='bottom'></image>
+				<image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
 				<text class="label">我的</text>
 			</navigator>
 		</view>

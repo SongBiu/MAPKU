@@ -38,11 +38,27 @@
                 联系我们
             </button>
         </navigator>
-        <navigator url='../invitate_code/invitate_code'>
-            <button bindtap='invitate_code'>
-                生成邀请码
-            </button>
-        </navigator>
+        <button bindtap='invitate_code'>
+            生成邀请码
+        </button>
     </view>
-    
+    <view class='bottom' style="flex-direction:row；">
+        <view class='button-bottom'>
+            <navigator url='../leadboard/leadboard'>
+                <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
+                <text class="label">社团</text>
+            </navigator>
+        </view>
+        <view class='button-bottom'>
+            <image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+                <text class="label">上传</text>
+            </image>
+        </view>
+        <view class='button-bottom'>
+            <navigator url='../my/my'>
+                <image src='{{app.url_pre}}/icon/people2.png' class='bottom'></image>
+                <text class="label">我的</text>
+            </navigator>
+        </view>
+    </view>
 </view>

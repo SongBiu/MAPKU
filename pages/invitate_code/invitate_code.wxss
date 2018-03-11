@@ -1,5 +1,17 @@
 /* pages/invitate_code/invitate_code.wxss */
+view.container {
+	justify-content: center;
+	text-align: center;
+}
 image#chat {
 	width: 20%;
 	height: 20%;
+}
+view.code {
+	padding-top: 17%;
+}
+view.intro {
+	padding-top: 45%;
+	font-size: 0.8rem;
+	width: 60%;
 }

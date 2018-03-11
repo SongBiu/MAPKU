@@ -13,21 +13,4 @@
             <navigator url='../shop/shop'>社团商城</navigator>
         </view>
     </view>
-    <!-- <text>本社团人员</text>
-    <view class='table'>
-        <view class='tr bg-w'>
-            <view class='th'>昵称</view>
-            <view class='th'>垃圾包数</view>
-        </view>
-        <block wx:for="{{members}}" wx:for-item="member">
-            <view class='tr bg-g' wx:if="{{index % 2 == 0}}">
-                <view class='td'>{{member.name}}</view>
-                <view class='td'>{{member.countBag}}</view>
-            </view>
-			<view class='tr' wx:else>
-				 <view class='td'>{{member.name}}</view>
-                <view class='td'>{{member.countBag}}</view>
-			</view>
-        </block>
-    </view> -->
 </view>

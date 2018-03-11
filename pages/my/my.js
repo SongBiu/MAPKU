@@ -102,10 +102,10 @@ Page({
 				},
 				success: function (res) {
 					app.invitate_code = res.data;
+					wx.navigateTo({
+						url: '../invitate_code/invitate_code'
+					})
 				},
-				fail: function () {
-					console.log('error')
-				}
 			})
 		}
 	}

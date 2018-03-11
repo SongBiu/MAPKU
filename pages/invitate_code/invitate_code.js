@@ -1,4 +1,5 @@
 // pages/invitate_code/invitate_code.js
+var app = getApp();
 Page({
 	/**
 	 * 页面的初始数据
@@ -61,5 +62,10 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+	copy: function() {
+		wx.setClipboardData({
+			data:app.invitate_code
+		})
 	}
 })

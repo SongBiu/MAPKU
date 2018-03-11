@@ -6,21 +6,6 @@
 	<image src="{{app.url_pre}}/icon/register.png" class="register" bindtap="gotoreg"></image>
 </view>
 <view wx:else class="container">
-	<view class='topline'>
-		<view class='btn'>
-			<navigator url='../index/index'>社团动态</navigator>
-		</view>
-		<view class='btn'>
-			<navigator url='../join/join'>加入社团</navigator>
-		</view>
-		<view class="btn">
-			<navigator url='../leadboard/leadboard'>排行榜</navigator>
-		</view>
-		<view class='btn'>
-			<navigator url='../shop/shop'>社团商城</navigator>
-		</view>
-	</view>
-
 	<view class='body' id='dynamic-list'>
 
 		<block wx:for="{{dynamics}}" wx:for-item="dyna">
@@ -45,8 +30,8 @@
 
 	<view class='bottom' style="flex-direction:row；">
 		<view class='button-bottom'>
-			<navigator url='../community/community'>
-				<image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
+			<navigator url='../leadboard/leadboard'>
+				<image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
 				<text class="label">社团</text>
 			</navigator>
 		</view>

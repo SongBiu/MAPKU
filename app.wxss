@@ -43,3 +43,10 @@ image.bottom {
 	width: 33%;
 	display: inline-block;
 }
+#this {
+	border-bottom: solid;
+	border-color: green;
+}
+#this navigator {
+	color: green;
+}

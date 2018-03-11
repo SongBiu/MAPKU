@@ -1,15 +1,12 @@
 <view class="container">
 	<view class='topline'>
 		<view class='btn'>
-			<navigator url='../index/index'>社团动态</navigator>
-		</view>
-		<view class='btn'>
 			<navigator url='../join/join'>加入社团</navigator>
 		</view>
 		<view class="btn">
 			<navigator url='../leadboard/leadboard'>排行榜</navigator>
 		</view>
-		<view class='btn'>
+		<view class='btn' id="this">
 			<navigator url='../shop/shop'>社团商城</navigator>
 		</view>
 	</view>

@@ -7,7 +7,6 @@
 </view>
 <view wx:else class="container">
 	<view class='body' id='dynamic-list'>
-
 		<block wx:for="{{dynamics}}" wx:for-item="dyna">
 			<view class='dynamic'>
 				<image class="left" src="{{app.url_pre}}/avatar/{{dyna.usrID}}.jpg"></image>

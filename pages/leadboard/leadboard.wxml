@@ -41,7 +41,7 @@
     </view>
     <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom' bindtap='gotoindex'>
-            <image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
+            <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
             <text class="label">主页</text>
 
         </view>

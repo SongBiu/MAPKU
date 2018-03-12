@@ -22,6 +22,7 @@ view.bottom {
 	height: 11%;
 	border-top: solid; 
 	border-color: #BEBEBE;
+	text-align: center;
 }
 .button-bottom {
 	width: 33%;

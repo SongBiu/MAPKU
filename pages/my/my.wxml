@@ -1,6 +1,5 @@
 <!--pages/my/my.wxml-->
 <view class='container'>
-
     <view class="usr">
         <view>
             <image src="{{app.globalData.userInfo.avatarUrl}}"></image>
@@ -34,7 +33,7 @@
         </button>
         <!-- </navigator>
         <navigator url='../contact/contact'> -->
-        <button bindtap="contect">
+        <button bindtap="contact">
             联系我们
         </button>
         <!-- </navigator> -->

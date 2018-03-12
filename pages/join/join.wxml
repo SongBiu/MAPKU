@@ -1,9 +1,9 @@
 <view class='container'>
 	<view class='topline'>
-        <view class='btn'>
+        <view class='btn' id='this'>
             加入社团
         </view>
-        <view class="btn" id="this" bindtap='gotoleadboard'>
+        <view class="btn" bindtap='gotoleadboard'>
             排行榜
         </view>
         <view class='btn' bindtap='gotoshop'>
@@ -31,7 +31,7 @@
 	    <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom' bindtap='gotoindex'>
 
-            <image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
+            <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
             <text class="label">主页</text>
 
         </view>

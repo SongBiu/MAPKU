@@ -7,15 +7,38 @@ Page({
 	 */
 	data: {
 		PKU: false,
-		app:getApp()
+		app: getApp(),
+		score: null,
+		postcard: 0,
+		vouchers: 0,
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		var that = this;
 		this.setData({
-			PKU:app.PKU
+			PKU: app.PKU
+		})
+		wx.request({
+			url: app.url_pre + "/goshopping.php",
+			data: {
+				usrID: app.openid
+			},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function (res) {
+				var score = parseInt(res.data.score);
+				var postcard = parseInt(res.data.postcard);
+				var vouchers = parseInt(res.data.vouchers);
+				that.setData({
+					score: score,
+					postcard: postcard,
+					vouchers: vouchers
+				})
+				// success
+			}
 		})
 	},
 
@@ -66,27 +89,27 @@ Page({
 	onShareAppMessage: function () {
 
 	},
-	gotover: function() {
+	gotover: function () {
 		wx.navigateTo({
 			url: "../verify/verify"
 		})
 	},
-	gotoleadboard: function() {
+	gotoleadboard: function () {
 		wx.redirectTo({
 			url: '../leadboard/leadboard'
 		})
 	},
-	gotojoin: function() {
+	gotojoin: function () {
 		wx.redirectTo({
 			url: '../join/join'
 		})
 	},
-	gotoindex: function() {
+	gotoindex: function () {
 		wx.redirectTo({
 			url: '../index/index'
 		})
 	},
-	gotomy: function() {
+	gotomy: function () {
 		wx.redirectTo({
 			url: '../my/my'
 		})
@@ -103,5 +126,86 @@ Page({
 				})
 			}
 		})
+	},
+	buy: function (event) {
+		var score = event.target.dataset.score;
+		if (score > this.data.score) {
+			wx.showModal({
+				title: "购买失败",
+				content: "您的积分不足"
+			})
+			return;
+		}
+		wx.request({
+			url: app.url_pre + "/buy.php",
+			data: {
+				usrID: app.openid,
+				score: score
+			},
+			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+			// header: {}, // 设置请求的 header
+			success: function (res) {
+				wx.showToast({
+					title: "购买成功，请及时兑换"
+				})
+				wx.redirectTo({
+					url: '../shop/shop'
+				})
+			}
+		})
+	},
+	use: function (event) {
+		console.log(event)
+		var name = event.target.dataset.name;
+		if (name == "postcard") {
+			if (this.data.postcard == 0) {
+				wx.showModal({
+					title: "使用失败",
+					content: "您没有可以使用的明信片"
+				})
+				return;
+			} else {
+				wx.request({
+					url: app.url_pre + "/use.php",
+					data: {
+						usrID: app.openid,
+						useType: name
+					},
+					success: function () {
+						wx.showToast({
+							title: '使用成功'
+						})
+						wx.redirectTo({
+							url: '../shop/shop'
+						})
+					}
+				})
+			}
+		} else {
+			if (this.data.vouchers == 0) {
+				wx.showModal({
+					title: "使用失败",
+					content: "您没有可以使用的装备租赁抵扣券"
+				})
+				return;
+			} else {
+				wx.request({
+					url: app.url_pre + "/use.php",
+					data: {
+						usrID: app.openid,
+						useType: name
+					},
+					success: function () {
+						wx.showToast({
+							title: '使用成功'
+						})
+						wx.redirectTo({
+							url: '../shop/shop'
+						})
+					}
+				})
+			}
+		}
+		console.log(event)
 	}
 })

@@ -1,5 +1,5 @@
 <view class="container">
-	 <view class='topline'>
+    <view class='topline'>
         <view class='btn' bindtap='gotojoin'>
             加入社团
         </view>
@@ -10,23 +10,49 @@
             社团商城
         </view>
     </view>
-	<view wx:if="{{PKU==1}}" class="body">
-		商城
-	</view>
-	<view wx:else class="body">
-		<image src="{{app.url_pre}}/icon/lion.png" class="lion"></image>
-		<text>
-			目前只有经过认证的北大山鹰社社员才能使用积分购买功能。
-		</text>
-		<text>
-			此时，您所在的社团还未开放购买，或者您未经过认证。
-		</text>
-		<text>
-			拥有北大邮箱的社员可以按以下按钮，根据指示完成认证。
-		</text>
-		<image src="{{app.url_pre}}/icon/ver.png" class="btn" bindtap="gotover"></image>
-	</view>
-	<view class='bottom' style="flex-direction:row；">
+    <view wx:if="{{PKU==1}}" class="body">
+        <view class="postcard">
+            <view class="text">雪山环保主题明信片</view>
+            <view class="info">
+                <view class="buy">
+                    <view class="score">消耗积分：6</view>
+                    <button class="postcardGet" bindtap='buy' data-score='6'>兑换</button>
+                </view>
+                <view class="my">
+                    <view class="score">拥有：{{postcard}}</view>
+                    <button class="use" data-name="postcard" bindtap="use">使用</button>
+                </view>
+            </view>
+
+        </view>
+        <view class="vouchers">
+            <view class="text">50元山鹰社装备租赁抵扣券</view>
+            <view class="info">
+                    <view class="buy">
+                        <view class="score">消耗积分：10</view>
+                        <button class="postcardGet" bindtap='buy' data-score='10'>兑换</button>
+                    </view>
+                    <view class="my">
+                        <view class="score">拥有：{{vouchers}}</view>
+                        <button class="use" data-name="vouchers" bindtap="use">使用</button>
+                    </view>
+                </view>
+        </view>
+    </view>
+    <view wx:else class="body">
+        <image src="{{app.url_pre}}/icon/lion.png" class="lion"></image>
+        <text>
+            目前只有经过认证的北大山鹰社社员才能使用积分购买功能。
+        </text>
+        <text>
+            此时，您所在的社团还未开放购买，或者您未经过认证。
+        </text>
+        <text>
+            拥有北大邮箱的社员可以按以下按钮，根据指示完成认证。
+        </text>
+        <image src="{{app.url_pre}}/icon/ver.png" class="btn" bindtap="gotover"></image>
+    </view>
+    <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom' bindtap='gotoindex'>
             <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
             <text class="label">主页</text>

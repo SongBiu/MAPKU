@@ -22,7 +22,6 @@
 					<view class="right">
 						<image wx:if="{{app.communityID == index}}" src="{{app.url_pre}}/icon/joinsc.png" class="btn"></image>
 						<image wx:else src="{{app.url_pre}}/icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
-						<!-- <navigator wx:else url="../leadboard/leadboard"><image src="../icon/join.png" class="btn" bindtap="join" id="{{index}}"></image></navigator> -->
 					</view>
 				</view>
 			</block>

@@ -25,11 +25,10 @@ App({
 	imgPath: null,
 	onLaunch: function () {
 		var that = this;
-		// 展示本地存储能力
-		// var logs = wx.getStorageSync('logs') || []
-		// logs.unshift(Date.now())
-		// wx.setStorageSync('logs', logs)
-		wx.clearStorage();
+		var logs = wx.getStorageSync('logs') || []
+		logs.unshift(Date.now())
+		wx.setStorageSync('logs', logs)
+		// wx.clearStorage();
 		//获取用户信息
 		wx.getSetting({
 			success: res => {

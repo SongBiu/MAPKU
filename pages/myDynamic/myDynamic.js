@@ -101,5 +101,18 @@ Page({
 				})
 			}
 		})
+	},
+	preImg: function (event) {
+		var src = event.currentTarget.dataset.src;
+		var imgList = event.currentTarget.dataset.src;
+		wx.previewImage({
+			current: src,
+			urls: [imgList]
+		})
+	},
+	gotomy: function() {
+		wx.redirectTo({
+			url: '../my/my'
+		})
 	}
 })

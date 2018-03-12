@@ -51,11 +51,11 @@
                 <text class="label">上传</text>
             </image>
         </view>
-        <view class='button-bottom'>
-            <navigator url='../my/my'>
+        <view class='button-bottom' bindtap='gotomy'>
+
                 <image src='{{app.url_pre}}/icon/people2.png' class='bottom'></image>
                 <text class="label">我的</text>
-            </navigator>
+           
         </view>
     </view>
 </view>

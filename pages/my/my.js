@@ -37,6 +37,11 @@ Page({
 				})
 			}
 		})
+		if (this.data.communityName == null) {
+			this.setData({
+				communityName:"未加入社团"
+			})
+		}
 	},
 
 	/**
@@ -111,7 +116,7 @@ Page({
 	},
 	myDynamic: function() {
 		wx.navigateTo({
-			url: '../my/my'
+			url: '../myDynamic/myDynamic'
 		})
 	},
 	myCommunity: function() {
@@ -147,6 +152,11 @@ Page({
 					url: '../upload/upload'
 				})
 			}
+		})
+	},
+	gotomy: function() {
+		wx.redirectTo({
+			url: '../my/my'
 		})
 	}
 })

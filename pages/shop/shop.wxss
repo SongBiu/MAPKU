@@ -8,6 +8,7 @@ view.topline {
 	height: 7%;
 	align-items: center;
 	background-color: rgba(231, 231, 231, 0.514);
+	text-align: center;
 }
 view.btn {
 	width: 33%;
@@ -42,4 +43,7 @@ image.btn {
 	height: 10%;
 	width: 36%;
 	padding-top: 15%
+}
+#this {
+	color: green;
 }

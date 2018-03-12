@@ -1,15 +1,15 @@
 <view class="container">
-	<view class='topline'>
-		<view class='btn'>
-			<navigator url='../join/join'>加入社团</navigator>
-		</view>
-		<view class="btn">
-			<navigator url='../leadboard/leadboard'>排行榜</navigator>
-		</view>
-		<view class='btn' id="this">
-			<navigator url='../shop/shop'>社团商城</navigator>
-		</view>
-	</view>
+	 <view class='topline'>
+        <view class='btn' bindtap='gotojoin'>
+            加入社团
+        </view>
+        <view class="btn" bindtap='gotoleadboard'>
+            排行榜
+        </view>
+        <view class='btn' id='this'>
+            社团商城
+        </view>
+    </view>
 	<view wx:if="{{PKU==1}}" class="body">
 		商城
 	</view>
@@ -26,4 +26,21 @@
 		</text>
 		<image src="{{app.url_pre}}/icon/ver.png" class="btn" bindtap="gotover"></image>
 	</view>
+	<view class='bottom' style="flex-direction:row；">
+        <view class='button-bottom' bindtap='gotoindex'>
+            <image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
+            <text class="label">主页</text>
+
+        </view>
+        <view class='button-bottom'>
+            <image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+                <text class="label">上传</text>
+            </image>
+        </view>
+        <view class='button-bottom' bindtap="gotomy">
+
+            <image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
+            <text class="label">我的</text>
+        </view>
+    </view>
 </view>

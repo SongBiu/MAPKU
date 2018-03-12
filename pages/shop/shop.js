@@ -70,5 +70,25 @@ Page({
 		wx.navigateTo({
 			url: "../verify/verify"
 		})
+	},
+	gotoleadboard: function() {
+		wx.redirectTo({
+			url: '../leadboard/leadboard'
+		})
+	},
+	gotojoin: function() {
+		wx.redirectTo({
+			url: '../join/join'
+		})
+	},
+	gotoindex: function() {
+		wx.redirectTo({
+			url: '../index/index'
+		})
+	},
+	gotomy: function() {
+		wx.redirectTo({
+			url: '../my/my'
+		})
 	}
 })

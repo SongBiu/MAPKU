@@ -108,5 +108,27 @@ Page({
 				},
 			})
 		}
+	},
+	myDynamic: function() {
+		wx.redirectTo({
+			url: '../myDynamic/myDynamic'
+		})
+	},
+	myCommunity: function() {
+		if (this.data.communityName == null) {
+			wx.redirectTo({
+				url: '../join/join'
+			})
+		}
+		else {
+			wx.redirectTo({
+				url: '../leadboard/leadboard'
+			})
+		}
+	},
+	gotoindex: function() {
+		wx.redirectTo({
+			url: '../index/index'
+		})
 	}
 })

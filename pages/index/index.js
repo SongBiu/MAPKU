@@ -213,5 +213,10 @@ Page({
 				})
 			}
 		})
+	},
+	gotomy: function() {
+		wx.redirectTo({
+			url: '../my/my'
+		})
 	}
 })

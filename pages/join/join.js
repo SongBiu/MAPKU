@@ -104,5 +104,25 @@ Page({
 				})
 			}
 		})
+	},
+	gotomy: function () {
+		wx.redirectTo({
+			url: '../my/my'
+		})
+	},
+	gotoindex: function () {
+		wx.redirectTo({
+			url: '../index/index'
+		})
+	},
+	gotoleadboard: function() {
+		wx.redirectTo({
+			url: '../leadboard/leadboard'
+		})
+	},
+	gotoshop:function() {
+		wx.redirectTo({
+			url: '../shop/shop'
+		})
 	}
 })

@@ -101,5 +101,25 @@ Page({
 				})
 			}
 		})
+	},
+	gotojoin: function() {
+		wx.redirectTo({
+			url: '../join/join'
+		})
+	},
+	gotoshop: function() {
+		wx.redirectTo({
+			url: '../shop/shop'
+		})
+	},
+	gotomy: function () {
+		wx.redirectTo({
+			url: '../my/my'
+		})
+	},
+	gotoindex: function () {
+		wx.redirectTo({
+			url: '../index/index'
+		})
 	}
 })

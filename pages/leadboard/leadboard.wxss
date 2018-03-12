@@ -10,6 +10,7 @@ view.topline {
 	width: 100%;
 	height: 5%;
 	align-items: center;
+	text-align: center;
 }
 view.btn {
 	width: 33%;
@@ -116,4 +117,7 @@ view.countBag view.count {
 }
 view.countBag view.bag {
 	color: #BEBEBE;
+}
+#this {
+	color: green;
 }

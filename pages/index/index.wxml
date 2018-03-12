@@ -30,21 +30,17 @@
 
 	<view class='bottom' style="flex-direction:row；">
 		<view class='button-bottom'>
-			<navigator url='../leadboard/leadboard'>
-				<image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
-				<text class="label">社团</text>
-			</navigator>
+				<image src='{{app.url_pre}}/icon/Fill-1.png' class='bottom'></image>
+				<text class="label">主页</text>
 		</view>
 		<view class='button-bottom'>
 				<image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
 					<text class="label">上传</text>
 				</image>
 		</view>
-		<view class='button-bottom'>
-			<navigator url='../my/my'>
+		<view class='button-bottom' bindtap='gotomy'>
 				<image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
 				<text class="label">我的</text>
-			</navigator>
 		</view>
 	</view>
 </view>

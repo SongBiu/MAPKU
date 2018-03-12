@@ -25,29 +25,27 @@
         </view>
     </view>
     <view class="function">
-        <navigator url='../myDynamic/myDynamic'>
-            <button>我的最近动态</button>
-        </navigator>
-        <navigator url='../rule/rule'>
-            <button>
-                活动规则
-            </button>
-        </navigator>
-        <navigator url='../contact/contact'>
-            <button>
-                联系我们
-            </button>
-        </navigator>
+        <!-- <navigator url='../myDynamic/myDynamic'> -->
+        <button bindtap="myDynamic">我的最近动态</button>
+        <!-- </navigator>
+        <navigator url='../leadboard/leadboard'> -->
+        <button bindtap="myCommunity">
+            我的社团
+        </button>
+        <!-- </navigator>
+        <navigator url='../contact/contact'> -->
+        <button bindtap="contect">
+            联系我们
+        </button>
+        <!-- </navigator> -->
         <button bindtap='invitate_code'>
             生成邀请码
         </button>
     </view>
     <view class='bottom' style="flex-direction:row；">
-        <view class='button-bottom'>
-            <navigator url='../leadboard/leadboard'>
+        <view class='button-bottom' bindtap='gotoindex'>
                 <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
-                <text class="label">社团</text>
-            </navigator>
+                <text class="label">主页</text>
         </view>
         <view class='button-bottom'>
             <image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">

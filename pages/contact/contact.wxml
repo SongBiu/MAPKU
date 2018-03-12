@@ -1,5 +1,5 @@
 <!--pages/contact/contact.wxml-->
 <view class='container'>
-	<view>如果你们的要加入活动，请联系xx</view>
-	<view>举报bug请联系song_pku@foxmail.com</view>
+	<view>如果你们的要加入活动，请联系{{master}}</view>
+	<view>举报bug请联系{{tech}}</view>
 </view>

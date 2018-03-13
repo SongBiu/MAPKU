@@ -1,4 +1,5 @@
 /* pages/contact/contact.wxss */
 .container {
 	justify-content: center;
+	text-align: center;
 }

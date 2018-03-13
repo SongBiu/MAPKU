@@ -97,8 +97,9 @@ Page({
 	invitate_code: function () {
 		console.log("hi")
 		if (app.invitate_code != '') {
-			
-			return;
+			wx.navigateTo({
+				url: '../invitate_code/invitate_code'
+			})
 		} else {
 			wx.request({
 				url: app.url_pre + '/invitate.php',

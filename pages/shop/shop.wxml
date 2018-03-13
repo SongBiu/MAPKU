@@ -15,8 +15,8 @@
             <view class="text">雪山环保主题明信片</view>
             <view class="info">
                 <view class="buy">
-                    <view class="score">消耗积分：6</view>
-                    <button class="postcardGet" bindtap='buy' data-score='6'>兑换</button>
+                    <view class="score">消耗积分：3</view>
+                    <button class="postcardGet" bindtap='buy' data-score='3'>兑换</button>
                 </view>
                 <view class="my">
                     <view class="score">拥有：{{postcard}}</view>
@@ -26,7 +26,7 @@
 
         </view>
         <view class="vouchers">
-            <view class="text">50元山鹰社装备租赁抵扣券</view>
+            <view class="text">50元山鹰社装备租赁抵扣券（满100减50）</view>
             <view class="info">
                     <view class="buy">
                         <view class="score">消耗积分：10</view>

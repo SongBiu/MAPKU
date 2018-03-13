@@ -145,8 +145,9 @@ Page({
 			method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
 			// header: {}, // 设置请求的 header
 			success: function (res) {
-				wx.showToast({
-					title: "购买成功，请及时兑换"
+				wx.showModal({
+					title: '购买成功',
+					content: '购买成功，请及时使用'
 				})
 				wx.redirectTo({
 					url: '../shop/shop'
@@ -173,7 +174,8 @@ Page({
 					},
 					success: function () {
 						wx.showToast({
-							title: '使用成功'
+							title: '使用成功',
+							duration:6000
 						})
 						wx.redirectTo({
 							url: '../shop/shop'
@@ -197,7 +199,8 @@ Page({
 					},
 					success: function () {
 						wx.showToast({
-							title: '使用成功'
+							title: '使用成功',
+							duration:6000
 						})
 						wx.redirectTo({
 							url: '../shop/shop'

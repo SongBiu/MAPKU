@@ -87,6 +87,18 @@ Page({
 		})
 		
 	},
+	onReady: function() {
+		// wx.getUserInfo({
+		// 	success: res => {
+		// 		// this.data.app.globalData.userInfo = res.userInfo
+		// 		this.setData({
+		// 			userInfo: res.userInfo,
+		// 			// app.globalData.userInfo: res.userInfo,
+		// 			hasUserInfo: true
+		// 		})
+		// 	}
+		// })
+	},
 	onShow: function() {
 		var that = this;
 		this.getUserInfo
@@ -147,9 +159,6 @@ Page({
 		
 		
 	},
-	onReady: function() {
-		
-	},
 	giveGood: function(event) {
 		
 		var dynamicID = event.currentTarget.id;
@@ -189,7 +198,7 @@ Page({
 		
 	},
 	gotoreg: function() {
-		wx.navigateTo({
+		wx.redirectTo({
 			url: '../signup/signup'
 		})
 	},

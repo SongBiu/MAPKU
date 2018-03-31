@@ -80,7 +80,7 @@ Page({
 			},
 			success: function(res) {
 				app.bind = true
-				wx.navigateTo({
+				wx.redirectTo({
 					url: '../index/index'
 				})
 			}

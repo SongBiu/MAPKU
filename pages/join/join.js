@@ -26,6 +26,10 @@ Page({
 		var that = this;
 		wx.request({
 			url: app.url_pre + "/allCommunity.php",
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			success: function(res) {
 				that.setData({
 					items: res.data
@@ -82,6 +86,10 @@ Page({
 		console.log(event)
 		wx.request({
 			url: app.url_pre + '/join.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data:{
 				usrID:this.data.openid,
 				communityID:event.target.id

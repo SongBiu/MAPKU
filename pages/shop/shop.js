@@ -23,6 +23,10 @@ Page({
 		})
 		wx.request({
 			url: app.url_pre + "/goshopping.php",
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data: {
 				usrID: app.openid
 			},
@@ -138,6 +142,10 @@ Page({
 		}
 		wx.request({
 			url: app.url_pre + "/buy.php",
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data: {
 				usrID: app.openid,
 				score: score
@@ -168,6 +176,10 @@ Page({
 			} else {
 				wx.request({
 					url: app.url_pre + "/use.php",
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					method: 'POST',
 					data: {
 						usrID: app.openid,
 						useType: name
@@ -193,6 +205,10 @@ Page({
 			} else {
 				wx.request({
 					url: app.url_pre + "/use.php",
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					method: 'POST',
 					data: {
 						usrID: app.openid,
 						useType: name

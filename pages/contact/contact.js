@@ -31,6 +31,10 @@ Page({
 		var that = this;
 		wx.request({
 			url: app.url_pre + '/info.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			success: function(res) {
 				that.setData({
 					master: res.data.master,

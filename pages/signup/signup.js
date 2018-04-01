@@ -72,6 +72,10 @@ Page({
 		var value = event.detail.value;
 		wx.request({
 			url: app.url_pre + '/signup.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data:{
 				openid: this.data.openid,
 				name:value.name,

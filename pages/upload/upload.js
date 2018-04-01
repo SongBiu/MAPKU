@@ -12,6 +12,10 @@ Page({
 		var that = this;
 		wx.request({
 			url: app.url_pre + '/upload.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data: {
 				countBag: event.detail.value.number,
 				say: event.detail.value.talk,

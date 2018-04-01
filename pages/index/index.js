@@ -19,10 +19,12 @@ Page({
 				var jsonCode = res.code
 				wx.request({
 					url: app.url_pre + "/getOpenid.php",
+					header:{
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					method: 'POST',
 					data:{
-						jsonCode:jsonCode,
-						appID:app.data.appID,
-						secret: app.data.secret
+						jsonCode:jsonCode
 					},
 					success(res) {
 						var id = res.data.openid;
@@ -35,6 +37,10 @@ Page({
 						var id = res.data.openid;
 						wx.request({
 							url: app.url_pre + '/userinfo.php',
+							header: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							},
+							method: 'POST',
 							data: {
 								usrID: id
 							},
@@ -63,6 +69,10 @@ Page({
 								var imgUrl = app.globalData.userInfo.avatarUrl;
 								wx.request({
 									url: app.url_pre + "/uploadAvar.php",
+									header: {
+										"Content-Type": "application/x-www-form-urlencoded"
+									},
+									method: 'POST',
 									data: {
 										usrID:openid,
 										avatarUrl:imgUrl
@@ -107,15 +117,21 @@ Page({
 				var jsonCode = res.code
 				wx.request({
 					url: app.url_pre + "/getOpenid.php",
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					method: 'POST',
 					data: {
-						jsonCode: jsonCode,
-						appID: app.data.appID,
-						secret: app.data.secret
+						jsonCode: jsonCode
 					},
 					success: function (res) {
 						var id = res.data.openid
 						wx.request({
 							url: app.url_pre + '/userinfo.php',
+							header: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							},
+							method: 'POST',
 							data:{
 								usrID:id
 							},
@@ -139,6 +155,10 @@ Page({
 					complete: function(res) {
 						wx.request({
 							url: app.url_pre + '/all_dynamic.php',
+							header: {
+								"Content-Type": "application/x-www-form-urlencoded"
+							},
+							method: 'POST',
 							data:{
 								openid: res.data.openid
 							},
@@ -164,6 +184,10 @@ Page({
 		var dynamicID = event.currentTarget.id;
 		wx.request({
 			url: app.url_pre + "/giveGood.php",
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data:{
 				openid:this.data.openid,
 				dynamicID:dynamicID
@@ -186,6 +210,10 @@ Page({
 		var dynamicID = event.currentTarget.id;
 		wx.request({
 			url:app.url_pre + '/cancelGood.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data:{
 				openid:this.data.openid,
 				dynamicID:dynamicID

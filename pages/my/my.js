@@ -25,6 +25,10 @@ Page({
 		})
 		wx.request({
 			url: app.url_pre + '/userinfo.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data: {
 				usrID: this.data.openid
 			},
@@ -103,6 +107,10 @@ Page({
 		} else {
 			wx.request({
 				url: app.url_pre + '/invitate.php',
+				header: {
+					"Content-Type": "application/x-www-form-urlencoded"
+				},
+				method: 'POST',
 				data: {
 					invitater: this.data.openid
 				},

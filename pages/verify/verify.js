@@ -86,6 +86,10 @@ Page({
 		}
 		wx.request({
 			url: app.url_pre + '/PKUverify.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data: {
 				pkuID:id
 			},
@@ -93,6 +97,10 @@ Page({
 				var send = res.data;
 				wx.request({
 					url: app.url_pre + '/hash.php',
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					method: 'POST',
 					method:'POST',
 					data:{
 						str:send
@@ -111,6 +119,10 @@ Page({
 		var input = event.detail.value.verify;
 		wx.request({
 			url: app.url_pre + '/hash.php',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			method: 'POST',
 			data:{
 				str:input
 			},
@@ -119,6 +131,10 @@ Page({
 					app.PKU = true;
 					wx.request({
 						url: app.url_pre + '/verifySuccess.php',
+						header: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						method: 'POST',
 						data: {
 							usrID:that.data.openid
 						},

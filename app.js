@@ -9,9 +9,7 @@ App({
 		PKU: false,
 	},
 	data:{
-		jsonCode:'',
-		appID: 'wxf75f308cbcc043f1',
-		secret: '91b08bb2c99810aa3808c9a283e59178',
+		jsonCode:''
 	},
 	nickName: '',
 	openid: '',

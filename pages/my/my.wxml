@@ -14,10 +14,14 @@
         </view>
     </view>
     <view class="count">
-        <view class='score'>
+        <view wx:if="{{communityID == 0}}" class='score'>
             <view class='scoreNum'>{{score}}</view>
             <view class='text'>积分</view>
         </view>
+		<view wx:else class='score'>
+			 <view class='scoreNum'>{{allscore}}</view>
+            <view class='text'>社团总积分</view>
+		</view>
         <view class='countBag'>
             <view class='bagNum'>{{countBag}}</view>
             <view class='text'>袋数</view>

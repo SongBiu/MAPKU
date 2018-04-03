@@ -37,7 +37,7 @@ Page({
 				})
 			}
 		})
-		wx.navigateTo({
+		wx.redirectTo({
 			url:"../index/index"
 		})
 	},

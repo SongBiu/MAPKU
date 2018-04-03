@@ -12,6 +12,8 @@ Page({
 		score: null,
 		countBag: null,
 		openid: null,
+		communityID: null,
+		allscore: null,
 		app:getApp()
 	},
 	/**
@@ -37,7 +39,9 @@ Page({
 				that.setData({
 					score: res.data.score,
 					communityName: res.data.community_name,
-					countBag: res.data.countBag
+					communityID: res.data.communityID,
+					countBag: res.data.countBag,
+					allscore: res.data.allscore
 				})
 			}
 		})

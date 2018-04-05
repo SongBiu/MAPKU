@@ -1,59 +1,58 @@
 <view class="container">
-    <view class='topline'>
-        <view class='btn' bindtap='gotojoin'>
-            加入社团
-        </view>
-        <view class="btn" id="this">
-            排行榜
-        </view>
-        <view class='btn' bindtap='gotoshop'>
-            社团商城
-        </view>
+  <view class='topline'>
+    <view class='btn' bindtap='gotojoin'>
+      加入社团
     </view>
-    <view class="leadboard">
-        <view class="thefirst">
-            <text class="st">1st</text>
-            <view class="info">
-                <image src="{{app.url_pre}}/avatar/{{thefirst.usrID}}.jpg" class="firstAvar"></image>
-                <text class="name">{{thefirst.name}}</text>
-            </view>
-            <view class="num">
-                <text class="count">{{thefirst.countBag}}</text>
-                <text class="bag">袋</text>
-            </view>
-
-        </view>
-        <view class="other">
-            <block wx:for="{{others}}" wx:for-item="usr">
-                <view class="usr">
-                    <view class="st">{{usr.index}}</view>
-                    <view class="info">
-                        <image src="{{app.url_pre}}/avatar/{{usr.usrID}}.jpg" class="avar"></image>
-                        <text class="oname">{{usr.name}}</text>
-                    </view>
-                    <view class="countBag">
-                        <view class="count">{{usr.countBag}}</view>
-                        <view class="bag">袋</view>
-                    </view>
-                </view>
-            </block>
-        </view>
+    <view class="btn" id="this">
+      排行榜
     </view>
-    <view class='bottom' style="flex-direction:row；">
-        <view class='button-bottom' bindtap='gotoindex'>
-            <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
-            <text class="label">主页</text>
-
-        </view>
-        <view class='button-bottom'>
-            <image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
-                <text class="label">上传</text>
-            </image>
-        </view>
-        <view class='button-bottom' bindtap="gotomy">
-
-            <image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
-            <text class="label">我的</text>
-        </view>
+    <view class='btn' bindtap='gotoshop'>
+      社团商城
     </view>
+  </view>
+  <view class="leadboard">
+    <view class="thefirst">
+      <text class="st">1st</text>
+      <view class="info">
+        <image src="{{app.url_pre}}/avatar/{{thefirst.usrID}}.jpg" mode="widthFix" class="firstAvar"></image>
+        <text class="name">{{thefirst.name}}</text>
+      </view>
+      <view class="num">
+        <text class="count">{{thefirst.countBag}}</text>
+        <text class="bag">袋</text>
+      </view>
+
+    </view>
+    <view class="other">
+      <block wx:for="{{others}}" wx:for-item="usr">
+        <view class="usr">
+          <view class="st">{{usr.index}}</view>
+          <view class="info">
+            <image src="{{app.url_pre}}/avatar/{{usr.usrID}}.jpg" mode="widthFix" class="avar"></image>
+            <text class="oname">{{usr.name}}</text>
+          </view>
+          <view class="countBag">
+            <view class="count">{{usr.countBag}}</view>
+            <view class="bag">袋</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='bottom' style="flex-direction:row；">
+    <view class='button-bottom' bindtap='gotoindex'>
+      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
+      <text class="label">主页</text>
+
+    </view>
+    <view class='button-bottom'>
+      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+      <text class="label">上传</text>
+    </view>
+    <view class='button-bottom' bindtap="gotomy">
+
+      <image src='{{app.url_pre}}/icon/people.png' mode="widthFix" class='bottom'></image>
+      <text class="label">我的</text>
+    </view>
+  </view>
 </view>

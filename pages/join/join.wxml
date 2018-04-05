@@ -1,48 +1,47 @@
 <view class='container'>
-	<view class='topline'>
-        <view class='btn' id='this'>
-            加入社团
-        </view>
-        <view class="btn" bindtap='gotoleadboard'>
-            排行榜
-        </view>
-        <view class='btn' bindtap='gotoshop'>
-            社团商城
-        </view>
+  <view class='topline'>
+    <view class='btn' id='this'>
+      加入社团
     </view>
-	<view class="body">
-		<image src="{{app.url_pre}}/icon/join.jpg" class="up"></image>
-		<view class="community">
-			<block wx:for="{{items}}" wx:for-item="community">
-				<view class="community-item">
-					<view class="left">
-						<view class="name">{{community.name}}</view>
-						<view class="descr">{{community.descr}}</view>
-					</view>
-					<view class="right">
-						<image wx:if="{{app.communityID == index}}" src="{{app.url_pre}}/icon/joinsc.png" class="btn"></image>
-						<image wx:else src="{{app.url_pre}}/icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
-					</view>
-				</view>
-			</block>
-		</view>
-	</view>
-	    <view class='bottom' style="flex-direction:row；">
-        <view class='button-bottom' bindtap='gotoindex'>
-
-            <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
-            <text class="label">主页</text>
-
-        </view>
-        <view class='button-bottom'>
-            <image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
-                <text class="label">上传</text>
-            </image>
-        </view>
-        <view class='button-bottom' bindtap="gotomy">
-
-            <image src='{{app.url_pre}}/icon/people.png' class='bottom'></image>
-            <text class="label">我的</text>
-        </view>
+    <view class="btn" bindtap='gotoleadboard'>
+      排行榜
     </view>
+    <view class='btn' bindtap='gotoshop'>
+      社团商城
+    </view>
+  </view>
+  <view class="body">
+    <image src="{{app.url_pre}}/icon/join.jpg" class="up"></image>
+    <view class="community">
+      <block wx:for="{{items}}" wx:for-item="community">
+        <view class="community-item">
+          <view class="left">
+            <view class="name">{{community.name}}</view>
+            <view class="descr">{{community.descr}}</view>
+          </view>
+          <view class="right">
+            <image wx:if="{{app.communityID == index}}" src="{{app.url_pre}}/icon/joinsc.png" class="btn"></image>
+            <image wx:else src="{{app.url_pre}}/icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class='bottom' style="flex-direction:row；">
+    <view class='button-bottom' bindtap='gotoindex'>
+
+      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
+      <text class="label">主页</text>
+
+    </view>
+    <view class='button-bottom'>
+      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+      <text class="label">上传</text>
+    </view>
+    <view class='button-bottom' bindtap="gotomy">
+
+      <image src='{{app.url_pre}}/icon/people.png' mode="widthFix" class='bottom'></image>
+      <text class="label">我的</text>
+    </view>
+  </view>
 </view>

@@ -15,7 +15,7 @@ view.dynamic {
 	flex-direction: row;
 }
 image.left {
-	height: 32%;
+	height:0;
 	display: inline-block;
 	width: 15%;
 	border-radius: 100%;

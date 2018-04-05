@@ -1,28 +1,28 @@
 <!--pages/verify/verify.wxml-->
 <view class='container'>
-	<image src="{{app.url_pre}}/icon/copy.png" class="copy"></image>
-	<form bindsubmit='eMailSubmit'>
-		<text>
-			北大学号
-		</text>
-		<view class="pkuID">
-			<input name="ID"></input>
-			<!-- <input type="image" src="{{app.url_pre}}/icon/getverifyCode.png" bindtap="eMailSubmit"></input> -->
-			<button form-type='submit'>
-				获得验证码
-			</button>
-		</view>
-	</form>
-	<view class='tip'>
-	</view>
-	<form bindsubmit='verifyCodeSubmit'>
-		<text>
-			邮箱收到的验证码
-		</text>
-		<input name="verify" class="verify">
-		</input>
-		<button form-type='submit' class="go">
-			提交
-		</button>
-	</form>
+  <view class="verifyforms">
+    <image src="{{app.url_pre}}/icon/copy.png" mode="widthFix" class="copy"></image>
+    
+    <form bindsubmit='eMailSubmit' class="pkuID">
+      <text>PKU邮箱地址</text>
+      <input name="ID"></input>
+      <text class="address">@pku.edu.cn</text>
+      <!-- <input type="image" src="{{app.url_pre}}/icon/getverifyCode.png" bindtap="eMailSubmit"></input> -->
+      <button form-type='submit'>
+        获取验证码
+      </button>
+    </form>
+    
+    <form bindsubmit='verifyCodeSubmit' class="verifycode">
+      <text>PKU邮箱收到的验证码</text>
+      <input name="verify" >
+      </input>
+      <button form-type='submit'>
+        提交
+      </button>
+    </form>
+  </view>
+  <view class='tip'>
+  <!-- -->
+  </view>
 </view>

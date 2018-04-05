@@ -48,7 +48,7 @@ view.other {
 image.firstAvar {
 	border-radius: 100%;
 	width: 85%;
-	height: 62%;
+  height:0;
 }
 view.thefirst view.info {
 	display: inline-block;
@@ -96,15 +96,18 @@ view.usr {
 	justify-content: center;
 }
 .usr view.info {
-	width: 50%;
+	width: 60%;
 	height: 100%;
 	display: flex;
 	align-items: center;
 }
 .usr image {
-	height: 86%;
 	border-radius: 100%;
-	width: 43%;
+	width: 20%;
+  height: 0;
+}
+.usr text {
+  margin-left: 1em;
 }
 .usr view.countBag {
 	display: flex;

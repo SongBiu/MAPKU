@@ -1,24 +1,62 @@
 /* pages/verify/verify.wxss */
-input {
-	height: 15%;
+
+view.verifyforms {
+  width: 70%;
+  height: 100%;
 }
-form {
-	height: 50%;
-	padding-left: 5%;
-	padding-right: 5%;
-	width: 87%;
-}
+
 image.copy {
-	width: 30%;
-	height: 30%;
+  width: 50%;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+  padding-left: 25%;
 }
-view.pkuID {
-	display: flex;
-	border-bottom: solid;
+
+form {
+  margin-bottom: 50rpx;
 }
-input.verify {
-	border-bottom: solid;
+
+form text {
+  height: 2em;
+  width: 100%;
+  float: left;
+  text-align: left;
+  font-weight: 900;
+  font-size: 1.1em;
 }
-button.go {
-	width: 46%; 
+
+.pkuID input {
+  height: 2em;
+  width: 60%;
+  float: left;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.3em;
+}
+
+.pkuID text.address {
+  width: 40%;
+  float: left;
+  line-height: 2em;
+  font-size: 0.9em;
+  font-weight: normal;
+  color: grey;
+}
+
+.pkuID button {
+  width: 100%;
+  margin: 50rpx 0;
+  padding: 0;
+  font-size: 0.9em;
+}
+
+.verifycode input {
+  width: 100%;
+  border-bottom: 1px solid black;
+  margin-bottom: 0.3em;
+}
+
+.verifycode button {
+  width: 100%;
+  font-size: 0.9em;
+  background-color: #2c2;
 }

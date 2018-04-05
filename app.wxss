@@ -19,17 +19,19 @@ view.bottom {
 	display: flex;
 	flex-direction: row;
 	bottom: 0;
-	height: 11%;
+	height: 12%;
 	border-top: solid; 
 	border-color: #BEBEBE;
 	text-align: center;
 }
 .button-bottom {
-	width: 33%;
+  flex:1;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+  margin-top:0.4em;
+  font-size: 0.8em;
 }
 view.button-bottom navigator {
 	height: 100%;
@@ -40,8 +42,8 @@ view.button-bottom navigator {
 	flex-direction: column;
 }
 image.bottom {
-	height: 84%;
-	width: 33%;
+  width: 30%;
+  height: 0;
 	display: inline-block;
 }
 #this {

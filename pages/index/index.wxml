@@ -1,44 +1,38 @@
 <!--index.wxml-->
-<view wx:if="{{!bind}}" class='register'>
-  <image src="{{app.url_pre}}/icon/top.jpg" class="top"></image>
-  <text class="talk">垃圾顺手一袋，</text>
-  <text class="talk">美丽山河回来。</text>
-  <image src="{{app.url_pre}}/icon/register.png" class="register" bindtap="gotoreg"></image>
-</view>
-<view wx:else class="container">
-  <view class='body' id='dynamic-list'>
-    <block wx:for="{{dynamics}}" wx:for-item="dyna">
-      <view class='dynamic'>
-        <image class="left" src="{{dyna.usrImg}}" mode="widthFix"></image>
-        <view class="middle">
-          <view class="name">{{dyna.name}}</view>
-          <image src="{{dyna.image}}" bindtap="preImg" dat-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
-          <!-- <view class="position">pku</view> -->
-        </view>
-        <view class="right">
-          <view class="time">{{dyna.time}}</view>
-          <view class="num">{{dyna.countBag}}袋</view>
-          <view class="desc">{{dyna.say}}</view>
-          <view class="good"></view>
-        </view>
-      </view>
-    </block>
-  </view>
+<view class="container">
+    <view class='body' id='dynamic-list'>
+        <block wx:for="{{dynamics}}" wx:for-item="dyna">
+            <view class='dynamic'>
+                <image class="left" src="{{dyna.user_img}}" mode="widthFix"></image>
+                <view class="middle">
+                    <view class="name">{{dyna.name}}</view>
+                    <image src="{{dyna.image}}" bindtap="preImg" dat-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
+                    <!-- <view class="position">pku</view> -->
+                </view>
+                <view class="right">
+                    <view class="time">{{dyna.time}}</view>
+                    <view class="num">{{dyna.countBag}}袋</view>
+                    <view class="desc">{{dyna.say}}</view>
+                    <view class="good"></view>
+                </view>
+            </view>
+        </block>
+    </view>
 
-  <!-- 这里是分界线 -->
+    <!-- 这里是分界线 -->
 
-  <view class='bottom' style="flex-direction:row；">
-    <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Fill-1.png' mode="widthFix" class='bottom'></image>
-      <text class="label">主页</text>
+    <view class='bottom' style="flex-direction:row；">
+        <view class='button-bottom'>
+            <image src='http://39.106.71.227/icon/Fill-1.png' mode="widthFix" class='bottom'></image>
+            <text class="label">主页</text>
+        </view>
+        <view class='button-bottom'>
+            <image src='http://39.106.71.227/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+            <text class="label">上传</text>
+        </view>
+        <view class='button-bottom' bindtap='gotomy'>
+            <image src='http://39.106.71.227/icon/people.png' mode="widthFix" class='bottom'></image>
+            <text class="label">我的</text>
+        </view>
     </view>
-    <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
-      <text class="label">上传</text>
-    </view>
-    <view class='button-bottom' bindtap='gotomy'>
-      <image src='{{app.url_pre}}/icon/people.png' mode="widthFix" class='bottom'></image>
-      <text class="label">我的</text>
-    </view>
-  </view>
 </view>

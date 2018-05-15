@@ -1,8 +1,9 @@
 <!--pages/my/my.wxml-->
 <view class='container'>
+<block wx:if="{{login}}">
     <view class="usr">
         <view>
-            <image src="{{app.globalData.userInfo.avatarUrl}}"></image>
+            <image src="{{info.user_img}}"></image>
         </view>
         <view class='info'>
             <view class='name'>
@@ -11,6 +12,7 @@
             <view class='community'>
                 {{info.community_name}}
             </view>
+			<button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
         </view>
     </view>
     <view class="count">
@@ -27,6 +29,10 @@
             <view class='text'>袋数</view>
         </view>
     </view>
+	</block>
+	<block wx:else>
+<button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
+	</block>
     <view class="function">
         <button bindtap="myDynamic">我的最近动态</button>
         <button bindtap="myCommunity">

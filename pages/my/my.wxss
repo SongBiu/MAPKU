@@ -76,3 +76,6 @@ view.function navigator {
 	height: 15%;
 	width: 100%;
 }
+.info button {
+	height: 35%;
+}

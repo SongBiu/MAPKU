@@ -6,27 +6,39 @@ Page({
 	 */
 
 	data: {
-		info: []
+		info: [],
+		login: true
 	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function() {
+	onLoad: function () {
 		var that = this;
-		wx.request({
-			url: 'http://39.106.71.227/get_userinfo',
-			method: 'POST',
-			header: {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"cookie": wx.getStorageSync('cookie')
-			},
-			success: function(res) {
-				console.log(res)
-				that.setData({
-					info: res.data
-				})
-			}
-		})
+		if (wx.getStorageSync('cookie')) {
+			wx.request({
+				url: 'http://39.106.71.227/get_userinfo',
+				method: 'POST',
+				header: {
+					"Content-Type": "application/x-www-form-urlencoded",
+					"cookie": wx.getStorageSync('cookie')
+				},
+				success: function (res) {
+					console.log(res)
+					if (res.data.name == undefined) {
+						that.setData({
+							login: false
+						})
+					}
+					that.setData({
+						info: res.data
+					})
+				}
+			})
+		} else {
+			this.setData({
+				login: false
+			})
+		}
 	},
 	invitate_code: function () {
 		console.log("hi")
@@ -53,12 +65,12 @@ Page({
 			})
 		}
 	},
-	myDynamic: function() {
+	myDynamic: function () {
 		wx.navigateTo({
 			url: '../myDynamic/myDynamic'
 		})
 	},
-	myCommunity: function() {
+	myCommunity: function () {
 		if (this.data.communityName == null) {
 			wx.redirectTo({
 				url: '../join/join'
@@ -70,12 +82,12 @@ Page({
 			})
 		}
 	},
-	gotoindex: function() {
+	gotoindex: function () {
 		wx.redirectTo({
 			url: '../index/index'
 		})
 	},
-	contact: function() {
+	contact: function () {
 		wx.navigateTo({
 			url: '../contact/contact'
 		})
@@ -93,9 +105,43 @@ Page({
 			}
 		})
 	},
-	gotomy: function() {
+	gotomy: function () {
 		wx.redirectTo({
 			url: '../my/my'
 		})
+	},
+	bindGetUserInfo(res) {
+		var that = this;
+		console.log(res)
+		var data = res.detail.userInfo;
+		wx.request({
+			url: 'http://39.106.71.227/push_userinfo',
+			method: 'POST',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"cookie": wx.getStorageSync('cookie')
+			},
+			data: {
+				user_name: data.nickName,
+				avatarUrl: data.avatarUrl
+			},
+			success: function (res) {
+				console.log(res)
+				wx.request({
+					url: 'http://39.106.71.227/get_userinfo',
+					method: 'POST',
+					header: {
+						"Content-Type": "application/x-www-form-urlencoded",
+						"cookie": wx.getStorageSync('cookie')
+					},
+					success: function (res) {
+						that.setData({
+							info: res.data
+						})
+					}
+				})
+			}
+		})
+
 	}
 })

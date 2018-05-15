@@ -15,26 +15,69 @@ App({
 	openid: '',
 	invitate_code: '',
 	community_name: '',
-	json_code:'',
-	PKU: false,
 	bind:null,
 	url_pre: "https://www.mapku.top",
 	communityID:null,
 	imgPath: null,
 	onLaunch: function () {
+		if (!wx.getStorageSync('cookie')) {
+			wx.login({
+				success:function(res) {
+					wx.request({
+						url: 'http://39.106.71.227/get_openid',
+						header: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						method: 'POST',
+						data:{
+							json_code: res.code
+						},
+						success: function(res) {
+							var openid = res.data.openid;
+							var cookie = "openid="+openid;
+							wx.setStorageSync('cookie', cookie)
+							wx.request({
+								url: 'http://39.106.71.227/get_userinfo',
+								method: 'POST',
+								header: {
+									"Content-Type": "application/x-www-form-urlencoded",
+									"cookie": wx.getStorageSync('cookie')
+								},
+								success: function (res) {
+									var PKU = res.data.PKU;
+									var communityId = res.data.communityId;
+									wx.setStorageSync('PKU', PKU)
+									wx.setStorageSync('communityId', communityId)
+								}
+							})
+						}
+					})
+				}
+			})
+		} else {
+			wx.request({
+				url: 'http://39.106.71.227/get_userinfo',
+				method: 'POST',
+				header: {
+					"Content-Type": "application/x-www-form-urlencoded",
+					"cookie": wx.getStorageSync('cookie')
+				},
+				success: function(res) {
+					var PKU = res.data.PKU;
+					var communityId = res.data.communityId;
+					wx.setStorageSync('PKU', PKU)
+					wx.setStorageSync('communityId', communityId)
+				}
+			})
+		}
 		var that = this;
 		var logs = wx.getStorageSync('logs') || []
 		logs.unshift(Date.now())
-		wx.setStorageSync('logs', logs)
-		
-		// wx.clearStorage();
 		//获取用户信息
 		wx.getSetting({
-			success: res => {
-				
+			success: res => {	
 				if (res.authSetting['scope.userInfo']) {
 					// 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-					
 					wx.getUserInfo({
 						success: res => {
 							// this.getUsetInfo(res)
@@ -88,21 +131,5 @@ App({
 				}
 			});
 		}
-	},  
-	// wx.uploadFile({
-	// 	url: 'https://String',
-	// 	filePath:'filePath',
-	// 	name:'name',
-	// 	// header: {}, // 设置请求的 header
-	// 	// formData: {}, // HTTP 请求中其他额外的 form data
-	// 	success: function(res){
-	// 		// success
-	// 	},
-	// 	fail: function() {
-	// 		// fail
-	// 	},
-	// 	complete: function() {
-	// 		// complete
-	// 	}
-	// })
+	}
 })

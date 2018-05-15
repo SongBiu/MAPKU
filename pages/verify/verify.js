@@ -71,8 +71,6 @@ Page({
 
 	},
 	eMailSubmit: function (event) {
-		console.log("OJ")
-		console.log(event)
 		var that = this;
 		var id = event.detail.value.ID;
 		if (id == "") {
@@ -127,6 +125,7 @@ Page({
 				str:input
 			},
 			success(res) {
+				// console.log(res)
 				if (res.data == that.data.code) {
 					app.PKU = true;
 					wx.request({

@@ -1,64 +1,65 @@
 <!--pages/my/my.wxml-->
 <view class='container'>
-  <view class="usr">
-    <view>
-      <image src="{{app.globalData.userInfo.avatarUrl}}"></image>
+    <view class="usr">
+        <view>
+            <image src="{{app.globalData.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class='info'>
+            <view class='name'>
+                {{nickName}}
+            </view>
+            <view class='community'>
+                {{communityName}}
+            </view>
+        </view>
     </view>
-    <view class='info'>
-      <view class='name'>
-        {{nickName}}
-      </view>
-      <view class='community'>
-        {{communityName}}
-      </view>
+    <view class="count">
+        <view wx:if="{{communityID == 0}}" class='score'>
+            <view class='scoreNum'>{{score}}</view>
+            <view class='text'>积分</view>
+        </view>
+		<view wx:else class='score'>
+			 <view class='scoreNum'>{{allscore}}</view>
+            <view class='text'>社团总积分</view>
+		</view>
+        <view class='countBag'>
+            <view class='bagNum'>{{countBag}}</view>
+            <view class='text'>袋数</view>
+        </view>
     </view>
-  </view>
-  <view class="count">
-    <view wx:if="{{communityID == 0}}" class='score'>
-      <view class='scoreNum'>{{score}}</view>
-      <view class='text'>积分</view>
-    </view>
-    <view wx:else class='score'>
-      <view class='scoreNum'>{{allscore}}</view>
-      <view class='text'>社团总积分</view>
-    </view>
-    <view class='countBag'>
-      <view class='bagNum'>{{countBag}}</view>
-      <view class='text'>袋数</view>
-    </view>
-  </view>
-  <view class="function">
-    <!-- <navigator url='../myDynamic/myDynamic'> -->
-    <button bindtap="myDynamic">我的最近动态</button>
-    <!-- </navigator>
+    <view class="function">
+        <!-- <navigator url='../myDynamic/myDynamic'> -->
+        <button bindtap="myDynamic">我的最近动态</button>
+        <!-- </navigator>
         <navigator url='../leadboard/leadboard'> -->
-    <button bindtap="myCommunity">
-      我的社团
-    </button>
-    <!-- </navigator>
+        <button bindtap="myCommunity">
+            我的社团
+        </button>
+        <!-- </navigator>
         <navigator url='../contact/contact'> -->
-    <button bindtap="contact">
-      联系我们
-    </button>
-    <!-- </navigator> -->
-    <button bindtap='invitate_code'>
-      生成邀请码
-    </button>
-  </view>
-  <view class='bottom' style="flex-direction:row；">
-    <view class='button-bottom' bindtap='gotoindex'>
-      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
-      <text class="label">主页</text>
+        <button bindtap="contact">
+            联系我们
+        </button>
+        <!-- </navigator> -->
+        <button bindtap='invitate_code'>
+            生成邀请码
+        </button>
     </view>
-    <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
-      <text class="label">上传</text>
-    </view>
-    <view class='button-bottom' bindtap='gotomy'>
+    <view class='bottom' style="flex-direction:row；">
+        <view class='button-bottom' bindtap='gotoindex'>
+                <image src='{{app.url_pre}}/icon/community1.png' class='bottom'></image>
+                <text class="label">主页</text>
+        </view>
+        <view class='button-bottom'>
+            <image src='{{app.url_pre}}/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+                <text class="label">上传</text>
+            </image>
+        </view>
+        <view class='button-bottom' bindtap='gotomy'>
 
-      <image src='{{app.url_pre}}/icon/people2.png' mode="widthFix" class='bottom'></image>
-      <text class="label">我的</text>
-
+                <image src='{{app.url_pre}}/icon/people2.png' class='bottom'></image>
+                <text class="label">我的</text>
+           
+        </view>
     </view>
-  </view>
 </view>

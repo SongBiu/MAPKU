@@ -9,10 +9,10 @@
   <view class='body' id='dynamic-list'>
     <block wx:for="{{dynamics}}" wx:for-item="dyna">
       <view class='dynamic'>
-        <image class="left" src="{{app.url_pre}}/avatar/{{dyna.usrID}}.jpg" mode="widthFix"></image>
+        <image class="left" src="{{dyna.usrImg}}" mode="widthFix"></image>
         <view class="middle">
           <view class="name">{{dyna.name}}</view>
-          <image src="{{app.url_pre}}/{{dyna.image}}" bindtap="preImg" dat-list="{{app.url_pre}}/{{dyna.image}}" data-src="{{app.url_pre}}/{{dyna.image}}"></image>
+          <image src="{{dyna.image}}" bindtap="preImg" dat-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
           <!-- <view class="position">pku</view> -->
         </view>
         <view class="right">

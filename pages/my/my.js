@@ -6,101 +6,27 @@ Page({
 	 */
 
 	data: {
-		app:getApp(),
-		nickName: null,
-		communityName: null,
-		score: null,
-		countBag: null,
-		openid: null,
-		communityID: null,
-		allscore: null,
-		app:getApp()
+		info: []
 	},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
-	onLoad: function () {
+	onLoad: function() {
 		var that = this;
-		this.setData({
-			nickName: app.nickName,
-			openid: app.openid
-		})
 		wx.request({
-			url: app.url_pre + '/userinfo.php',
-			header: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
+			url: 'http://39.106.71.227/get_userinfo',
 			method: 'POST',
-			data: {
-				usrID: this.data.openid
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"cookie": wx.getStorageSync('cookie')
 			},
-			success: function (res) {
+			success: function(res) {
 				console.log(res)
 				that.setData({
-					score: res.data.score,
-					communityName: res.data.community_name,
-					communityID: res.data.communityID,
-					countBag: res.data.countBag,
-					allscore: res.data.allscore
+					info: res.data
 				})
 			}
 		})
-		if (this.data.communityName == null) {
-			this.setData({
-				communityName:"未加入社团"
-			})
-		}
-	},
-
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
-		this.setData({
-			openid: app.openid
-		})
-	},
-
-	/**
-	 * 生命周期函数--监听页面显示
-	 */
-	onShow: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-
-	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
-	},
-
-	/**
-	 * 用户点击右上角分享
-	 */
-	onShareAppMessage: function () {
-
 	},
 	invitate_code: function () {
 		console.log("hi")

@@ -8,15 +8,7 @@ App({
 		invitateCode: null,
 		PKU: false,
 	},
-	data:{
-		jsonCode:''
-	},
-	nickName: '',
-	openid: '',
-	invitate_code: '',
-	community_name: '',
-	bind:null,
-	url_pre: "https://www.mapku.top",
+	url_pre: "http://39.106.71.227",
 	communityID:null,
 	imgPath: null,
 	onLaunch: function () {

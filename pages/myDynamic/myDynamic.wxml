@@ -1,35 +1,34 @@
 <!--pages/myDynamic/myDynamic.wxml-->
 <view class='container'>
-  <view class='body' id='dynamic-list'>
-    <block wx:for="{{dynamics}}" wx:for-item="dyna">
-      <view class='dynamic'>
-        <image class="left" src="{{app.globalData.userInfo.avatarUrl}}"></image>
-        <view class="middle">
-          <view class="name">{{dyna.name}}</view>
-          <image src="{{app.url_pre}}/{{dyna.image}}" bindtap="preImg" dat-list="{{app.url_pre}}/{{dyna.image}}" data-src="{{app.url_pre}}/{{dyna.image}}"></image>
-          <!-- <view class="position">pku</view> -->
+    <view class='body' id='dynamic-list'>
+        <block wx:for="{{dynamics}}" wx:for-item="dyna">
+            <view class='dynamic'>
+                <image class="left" src="{{avatarUrl}}"></image>
+                <view class="middle">
+                    <view class="name">{{dyna.name}}</view>
+                    <image src="{{dyna.image}}" bindtap="preImg" dat-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
+                </view>
+                <view class="right">
+                    <view class="time">{{dyna.dynamic_date}}</view>
+                    <view class="num">{{dyna.count_bag}}袋</view>
+                    <view class="desc">{{dyna.say}}</view>
+                    <view class="good"></view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class='bottom' style="flex-direction:row；">
+        <view class='button-bottom' bindtap='gotoindex'>
+            <image src='http://39.106.71.227/icon/community1.png' mode="widthFix" class='bottom'></image>
+            <text class="label">主页</text>
         </view>
-        <view class="right">
-          <view class="time">{{dyna.time}}</view>
-          <view class="num">{{dyna.countBag}}袋</view>
-          <view class="desc">{{dyna.say}}</view>
-          <view class="good"></view>
+        <view class='button-bottom'>
+            <image src='http://39.106.71.227/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+            <text class="label">上传</text>
         </view>
-      </view>
-    </block>
-  </view>
-  <view class='bottom' style="flex-direction:row；">
-    <view class='button-bottom' bindtap='gotoindex'>
-      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
-      <text class="label">主页</text>
+        <view class='button-bottom' bindtap='gotomy'>
+            <image src='http://39.106.71.227/icon/people2.png' mode="widthFix" class='bottom'></image>
+            <text class="label">我的</text>
+        </view>
     </view>
-    <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
-      <text class="label">上传</text>
-    </view>
-    <view class='button-bottom' bindtap='gotomy'>
-      <image src='{{app.url_pre}}/icon/people2.png' mode="widthFix" class='bottom'></image>
-      <text class="label">我的</text>
-    </view>
-  </view>
 </view>

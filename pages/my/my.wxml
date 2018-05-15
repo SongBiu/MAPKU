@@ -1,38 +1,38 @@
 <!--pages/my/my.wxml-->
 <view class='container'>
-<block wx:if="{{login}}">
-    <view class="usr">
-        <view>
-            <image src="{{info.user_img}}"></image>
-        </view>
-        <view class='info'>
-            <view class='name'>
-                {{info.name}}
+    <block wx:if="{{login}}">
+        <view class="usr">
+            <view>
+                <image src="{{info.user_img}}"></image>
             </view>
-            <view class='community'>
-                {{info.community_name}}
+            <view class='info'>
+                <view class='name'>
+                    {{info.name}}
+                </view>
+                <view class='community'>
+                    {{info.community_name}}
+                </view>
+                <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
             </view>
-			<button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
         </view>
-    </view>
-    <view class="count">
-        <view wx:if="{{info.community_id == 0}}" class='score'>
-            <view class='scoreNum'>{{info.score}}</view>
-            <view class='text'>积分</view>
+        <view class="count">
+            <view wx:if="{{info.community_id == 0}}" class='score'>
+                <view class='scoreNum'>{{info.score}}</view>
+                <view class='text'>积分</view>
+            </view>
+            <view wx:else class='score'>
+                <view class='scoreNum'>{{info.all_score}}</view>
+                <view class='text'>社团总积分</view>
+            </view>
+            <view class='countBag'>
+                <view class='bagNum'>{{info.count_bag}}</view>
+                <view class='text'>袋数</view>
+            </view>
         </view>
-        <view wx:else class='score'>
-            <view class='scoreNum'>{{info.all_score}}</view>
-            <view class='text'>社团总积分</view>
-        </view>
-        <view class='countBag'>
-            <view class='bagNum'>{{info.count_bag}}</view>
-            <view class='text'>袋数</view>
-        </view>
-    </view>
-	</block>
-	<block wx:else>
-<button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
-	</block>
+    </block>
+    <block wx:else>
+        <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
+    </block>
     <view class="function">
         <button bindtap="myDynamic">我的最近动态</button>
         <button bindtap="myCommunity">

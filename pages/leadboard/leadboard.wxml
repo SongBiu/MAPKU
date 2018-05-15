@@ -14,11 +14,11 @@
     <view class="thefirst">
       <text class="st">1st</text>
       <view class="info">
-        <image src="{{app.url_pre}}/avatar/{{thefirst.usrID}}.jpg" mode="widthFix" class="firstAvar"></image>
-        <text class="name">{{thefirst.name}}</text>
+        <image src="{{the_first.usr_img}}" mode="widthFix" class="firstAvar"></image>
+        <text class="name">{{the_first.name}}</text>
       </view>
       <view class="num">
-        <text class="count">{{thefirst.countBag}}</text>
+        <text class="count">{{the_first.count_bag}}</text>
         <text class="bag">袋</text>
       </view>
 
@@ -26,13 +26,13 @@
     <view class="other">
       <block wx:for="{{others}}" wx:for-item="usr">
         <view class="usr">
-          <view class="st">{{usr.index}}</view>
+          <view class="st">{{index+2}}</view>
           <view class="info">
-            <image src="{{app.url_pre}}/avatar/{{usr.usrID}}.jpg" mode="widthFix" class="avar"></image>
+            <image src="{{usr.usr_img}}" mode="widthFix" class="avar"></image>
             <text class="oname">{{usr.name}}</text>
           </view>
           <view class="countBag">
-            <view class="count">{{usr.countBag}}</view>
+            <view class="count">{{usr.count_bag}}</view>
             <view class="bag">袋</view>
           </view>
         </view>
@@ -41,17 +41,17 @@
   </view>
   <view class='bottom' style="flex-direction:row；">
     <view class='button-bottom' bindtap='gotoindex'>
-      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
+      <image src='http://39.106.71.227/icon/community1.png' mode="widthFix" class='bottom'></image>
       <text class="label">主页</text>
 
     </view>
     <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
-      <text class="label">上传</text>
+      <image src='http://39.106.71.227/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+      <text class="label">发布</text>
     </view>
     <view class='button-bottom' bindtap="gotomy">
 
-      <image src='{{app.url_pre}}/icon/people.png' mode="widthFix" class='bottom'></image>
+      <image src='http://39.106.71.227/icon/people.png' mode="widthFix" class='bottom'></image>
       <text class="label">我的</text>
     </view>
   </view>

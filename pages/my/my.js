@@ -114,6 +114,7 @@ Page({
 		var that = this;
 		console.log(res)
 		var data = res.detail.userInfo;
+		wx.setStorageSync('avatarUrl', data.avatarUrl)
 		wx.request({
 			url: 'http://39.106.71.227/push_userinfo',
 			method: 'POST',

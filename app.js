@@ -31,9 +31,9 @@ App({
 				},
 				success: function (res) {
 					var PKU = res.data.PKU;
-					var communityId = res.data.communityId;
+					var community_id = res.data.community_id;
 					wx.setStorageSync('PKU', PKU)
-					wx.setStorageSync('communityId', communityId)
+					wx.setStorageSync('community_id', community_id)
 				}
 			})
 		}

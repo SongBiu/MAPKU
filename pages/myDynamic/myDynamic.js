@@ -7,77 +7,35 @@ Page({
 	 */
 	data: {
 		dynamics: [],
-		openid: null,
-		app:getApp()
+		avatarUrl: null
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.setData({
-			openid:app.openid
-		})
-	},
-
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面显示
-	 */
-	onShow: function () {
 		var that = this;
-		wx.request({
-			url: app.url_pre + '/myDynamic.php',
-			data:{
-				usrID:this.data.openid
-			},
+		wx.getStorage({
+			key: 'avatarUrl',
 			success: function(res) {
 				that.setData({
-					dynamics:res.data
+					avatarUrl: res.data
 				})
 			}
 		})
-	},
-
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-
-	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
-	},
-
-	/**
-	 * 用户点击右上角分享
-	 */
-	onShareAppMessage: function () {
-
+		wx.request({
+			url: 'http://39.106.71.227/my_dynamic',
+			method: 'POST',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"cookie": wx.getStorageSync('cookie')
+			},
+			success: function(res) {
+				that.setData({
+					dynamics: res.data
+				})
+			}
+		})
 	},
 	gotoindex:function() {
 		wx.redirectTo({

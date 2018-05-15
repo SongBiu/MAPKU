@@ -11,17 +11,17 @@
     </view>
   </view>
   <view class="body">
-    <image src="{{app.url_pre}}/icon/join.jpg" class="up"></image>
+    <image src="http://39.106.71.227/icon/join.jpg" class="up"></image>
     <view class="community">
-      <block wx:for="{{items}}" wx:for-item="community">
+      <block wx:for="{{communitys}}" wx:for-item="community">
         <view class="community-item">
           <view class="left">
-            <view class="name">{{community.name}}</view>
+            <view class="name">{{community.community_name}}</view>
             <view class="descr">{{community.descr}}</view>
           </view>
           <view class="right">
-            <image wx:if="{{app.communityID == index}}" src="{{app.url_pre}}/icon/joinsc.png" class="btn"></image>
-            <image wx:else src="{{app.url_pre}}/icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
+            <image wx:if="{{community_id == community.community_id}}" src="http://39.106.71.227/icon/joinsc.png" class="btn"></image>
+            <image wx:else src="http://39.106.71.227/icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
           </view>
         </view>
       </block>
@@ -30,17 +30,17 @@
   <view class='bottom' style="flex-direction:row；">
     <view class='button-bottom' bindtap='gotoindex'>
 
-      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
+      <image src='http://39.106.71.227/icon/community1.png' mode="widthFix" class='bottom'></image>
       <text class="label">主页</text>
 
     </view>
     <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+      <image src='http://39.106.71.227/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
       <text class="label">上传</text>
     </view>
     <view class='button-bottom' bindtap="gotomy">
 
-      <image src='{{app.url_pre}}/icon/people.png' mode="widthFix" class='bottom'></image>
+      <image src='http://39.106.71.227/icon/people.png' mode="widthFix" class='bottom'></image>
       <text class="label">我的</text>
     </view>
   </view>

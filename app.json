@@ -1,10 +1,13 @@
 {
 	"pages": [
+		"pages/upload/upload",
+		"pages/leadboard/leadboard",
+		"pages/join/join",
 		"pages/index/index",
 		"pages/logs/logs",
 		"pages/community/community",
-		"pages/upload/upload",
-		"pages/join/join",
+		
+		
 		"pages/build/build",
 		"pages/shop/shop",
 		"pages/rule/rule",
@@ -14,8 +17,8 @@
 		"pages/my/my",
 		"pages/invitate_code/invitate_code",
 		"pages/verify/verify",
-		"pages/myDynamic/myDynamic",
-		"pages/leadboard/leadboard"
+		"pages/myDynamic/myDynamic"
+		
 	],
 	"window": {
 		"backgroundTextStyle": "light",

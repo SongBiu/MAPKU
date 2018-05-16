@@ -1,33 +1,13 @@
-/* pages/upload/upload.wxss */
-form {
-	height: 100%;
-	width:100%;
+textarea {
+	width: 80%;
+	border-bottom: solid;
 }
-button {
-	width: 35%;
+view.slider {
+	width: 80%;
 }
-image.upload {
-	width: 60%;
-	height: 100%;
-	padding-left: 5%;
-}
-input.num {
-	height: 40%;
-	width: 35%;
-	padding-top: 20%;
-	text-align: center;
-}
-view.up {
+view.img {
 	height: 30%;
-	width: 100%;
-	display: flex;
-	padding-top: 5%;
 }
-view.down {
-	padding-top: 10%;
-}
-image.submit {
-	width: 20%;
-	height: 10%;
-	padding-left: 35%;
+.img image {
+	height: 100%;
 }

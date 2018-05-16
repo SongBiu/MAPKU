@@ -1,9 +1,31 @@
 <view class='container'>
-	<textarea placeholder='说点什么吧' bindinput='bindTextarea'></textarea>
-	<!-- <form bindsubmit='formSubmit'>
-		<view class="up"><image src="{{app.imgPath}}" name="img" class="upload"></image>
-			<input id="num" name="number" placeholder='请输入垃圾袋数'></input></view>
-		<view class="down"><textarea id="talk" name="talk" placeholder='说点什么吧'></textarea></view>
-		<button class="submit" formType="submit" src="{{app.url_pre}}/icon/Group 2.png">提交</button>
-	</form> -->
+    <textarea placeholder='说点什么吧' bindinput='bind_input'></textarea>
+	<text>{{say_length}}/140</text>
+    <view class='img'>
+        <block wx:if="{{img_url == null}}">
+            <button bindtap='choose_img'>点击上传图片</button>
+        </block>
+        <block wx:else>
+            <image src='{{img_url}}' bindtap='choose_img'></image>
+        </block>
+    </view>
+    <picker range='{{types}}' value="{{index}}" bindchange='bindPicker'>
+        <view class='picker'>
+            选择动态类型：{{types[index]}}↓
+        </view>
+    </picker>
+    <block wx:if="{{index==0}}">
+        <view class='slider'>
+            <slider min='0' max='10' show-value bindchange='bind_slider'></slider>
+        </view>
+    </block>
+    <block wx:if="{{position==''}}">
+        <button bindtap='choose_position'>获取位置</button>
+    </block>
+    <block wx:else>
+        <view>{{position}}
+            <button bindtap='hideLocal'>隐藏地址</button>
+        </view>
+    </block>
+    <button bindtap='submit'>提交</button>
 </view>

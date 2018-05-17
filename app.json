@@ -20,9 +20,10 @@
 		"pages/contact/contact"
 	],
 	"window": {
-		"backgroundTextStyle": "light",
+		"backgroundTextStyle": "dark",
 		"navigationBarBackgroundColor": "#fff",
 		"navigationBarTitleText": "顺手一袋",
-		"navigationBarTextStyle": "black"
+		"navigationBarTextStyle": "black",
+		"onPullDownRefresh": true
 	}
 }

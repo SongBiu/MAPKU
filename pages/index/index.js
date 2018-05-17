@@ -45,5 +45,23 @@ Page({
 			current: src,
 			urls: [imgList]
 		})
+	},
+	onPullDownRefresh: function (){
+		wx.showNavigationBarLoading()
+		var that = this;
+		wx.request({
+			url: 'https://www.mapku.top/all_dynamic',
+			method: 'POST',
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"cookie": wx.getStorageSync('cookie')
+			},
+			success: function (res) {
+				console.log(res)
+				that.setData({
+					dynamics: res.data
+				})
+			}
+		})
 	}
 })

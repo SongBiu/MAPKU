@@ -11,7 +11,7 @@
     </view>
   </view>
   <view class="body">
-    <image src="http://39.106.71.227/icon/join.jpg" class="up"></image>
+    <image src="https://www.mapku.top/icon/join.jpg" class="up"></image>
     <view class="community">
       <block wx:for="{{communitys}}" wx:for-item="community">
         <view class="community-item">
@@ -20,8 +20,8 @@
             <view class="descr">{{community.descr}}</view>
           </view>
           <view class="right">
-            <image wx:if="{{community_id == community.community_id}}" src="http://39.106.71.227/icon/joinsc.png" class="btn"></image>
-            <image wx:else src="http://39.106.71.227/icon/join.png" class="btn" bindtap="join" id="{{index}}"></image>
+            <image wx:if="{{community_id == community.community_id}}" src="https://www.mapku.top/icon/joinsc.png" class="btn"></image>
+            <image wx:else src="https://www.mapku.top/icon/join.png" class="btn" bindtap="join" data-community_id='{{community.community_id}}'></image>
           </view>
         </view>
       </block>
@@ -29,18 +29,17 @@
   </view>
   <view class='bottom' style="flex-direction:row；">
     <view class='button-bottom' bindtap='gotoindex'>
-
-      <image src='http://39.106.71.227/icon/community1.png' mode="widthFix" class='bottom'></image>
+      <image src='https://www.mapku.top/icon/community1.png' mode="widthFix" class='bottom'></image>
       <text class="label">主页</text>
 
     </view>
     <view class='button-bottom'>
-      <image src='http://39.106.71.227/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
-      <text class="label">上传</text>
+      <image src='https://www.mapku.top/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="gotoupload"></image>
+      <text class="label">发布</text>
     </view>
     <view class='button-bottom' bindtap="gotomy">
 
-      <image src='http://39.106.71.227/icon/people.png' mode="widthFix" class='bottom'></image>
+      <image src='https://www.mapku.top/icon/people.png' mode="widthFix" class='bottom'></image>
       <text class="label">我的</text>
     </view>
   </view>

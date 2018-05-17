@@ -16,7 +16,7 @@ Page({
 	onLoad: function (options) {
 		var that = this;
 		wx.request({
-			url: 'http://39.106.71.227/this_community',
+			url: 'https://www.mapku.top/this_community',
 			method: 'POST',
 			header: {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -31,6 +31,31 @@ Page({
 					others: res.data.others
 				})
 			}
+		})
+	},
+	gotomy: function (res) {
+		wx.navigateTo({
+			url: '../my/my'
+		})
+	},
+	gotoupload: function () {
+		wx.navigateTo({
+			url: '../upload/upload'
+		})
+	},
+	gotoindex: function () {
+		wx.redirectTo({
+			url: '../index/index'
+		})
+	},
+	gotojoin:function() {
+		wx.redirectTo({
+			url: '../join/join'
+		})
+	},
+	gotoshop: function() {
+		wx.redirectTo({
+			url: '../shop/shop'
 		})
 	}
 })

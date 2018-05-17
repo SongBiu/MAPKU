@@ -16,7 +16,7 @@
       <view class="info">
         <view class="buy">
           <view class="score">消耗积分：3</view>
-          <button class="postcardGet" bindtap='buy' data-score='3'>兑换</button>
+          <button class="postcardGet" bindtap='buy' data-type='postcard'>兑换</button>
         </view>
         <view class="my">
           <view class="score">拥有：{{postcard}}</view>
@@ -30,7 +30,7 @@
       <view class="info">
         <view class="buy">
           <view class="score">消耗积分：10</view>
-          <button class="postcardGet" bindtap='buy' data-score='10'>兑换</button>
+          <button class="postcardGet" bindtap='buy'data-type='vouchers'>兑换</button>
         </view>
         <view class="my">
           <view class="score">拥有：{{vouchers}}</view>
@@ -40,7 +40,7 @@
     </view>
   </view>
   <view wx:else class="body">
-    <image src="{{app.url_pre}}/icon/lion.png" class="lion"></image>
+    <image src="https://www.mapku.top/icon/lion.png" class="lion"></image>
     <text>
             目前只有经过认证的北大山鹰社社员才能使用积分购买社团内服务。
         </text>
@@ -50,21 +50,21 @@
     <text>
             拥有北大邮箱的社员可以按以下按钮，根据指示完成认证。
         </text>
-    <image src="{{app.url_pre}}/icon/ver.png" class="btn" bindtap="gotover"></image>
+    <image src="https://www.mapku.top/icon/ver.png" class="btn" bindtap="gotover"></image>
   </view>
-  <view class='bottom' style="flex-direction:row；">
+ <view class='bottom' style="flex-direction:row；">
     <view class='button-bottom' bindtap='gotoindex'>
-      <image src='{{app.url_pre}}/icon/community1.png' mode="widthFix" class='bottom'></image>
+      <image src='https://www.mapku.top/icon/community1.png' mode="widthFix" class='bottom'></image>
       <text class="label">主页</text>
 
     </view>
     <view class='button-bottom'>
-      <image src='{{app.url_pre}}/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
-      <text class="label">上传</text>
+      <image src='https://www.mapku.top/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="gotoupload"></image>
+      <text class="label">发布</text>
     </view>
     <view class='button-bottom' bindtap="gotomy">
 
-      <image src='{{app.url_pre}}/icon/people.png' mode="widthFix" class='bottom'></image>
+      <image src='https://www.mapku.top/icon/people.png' mode="widthFix" class='bottom'></image>
       <text class="label">我的</text>
     </view>
   </view>

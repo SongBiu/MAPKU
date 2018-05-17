@@ -1,37 +1,41 @@
 <!--index.wxml-->
 <view class="container">
-    <view class='body' id='dynamic-list'>
+    <scroll-view class='body' id='dynamic-list' scroll-y="true">
         <block wx:for="{{dynamics}}" wx:for-item="dyna">
-            <view class='dynamic'>
-                <image class="left" src="{{dyna.user_img}}" mode="widthFix"></image>
-                <view class="middle">
+            <view class='top'>
+                <image class="left" src="{{dyna.user_img}}"></image>
+                <view class="info">
                     <view class="name">{{dyna.name}}</view>
-                    <image src="{{dyna.image}}" bindtap="preImg" dat-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
-                    <!-- <view class="position">pku</view> -->
-                </view>
-                <view class="right">
                     <view class="time">{{dyna.time}}</view>
-                    <view class="num">{{dyna.countBag}}袋</view>
-                    <view class="desc">{{dyna.say}}</view>
-                    <view class="good"></view>
                 </view>
+
+            </view>
+            <view class='say'>
+                <text>{{dyna.say}}</text>
+            </view>
+            <image wx:if="{{dyna.has_img}}" class="middle" src="{{dyna.image}}" bindtap="preImg" date-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
+            <view class="down">
+                <view wx:if="{{dyna.class=='顺手一袋'}}" class="num">顺手一袋：{{dyna.countBag}}袋</view>
+                <view wx:else class="num">心情记录</view>
+                <view wx:if="{{dyna.address != ''}}" class='address'>{{dyna.address}}</view>
+                <view class="good"></view>
             </view>
         </block>
-    </view>
+    </scroll-view>
 
     <!-- 这里是分界线 -->
 
     <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom'>
-            <image src='http://39.106.71.227/icon/Fill-1.png' mode="widthFix" class='bottom'></image>
+            <image src='https://www.mapku.top/icon/Fill-1.png' mode="widthFix" class='bottom'></image>
             <text class="label">主页</text>
         </view>
         <view class='button-bottom'>
-            <image src='http://39.106.71.227/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="selectImg"></image>
+            <image src='https://www.mapku.top/icon/Combined Shape.png' mode="widthFix" class='bottom' bindtap="gotoupload"></image>
             <text class="label">上传</text>
         </view>
         <view class='button-bottom' bindtap='gotomy'>
-            <image src='http://39.106.71.227/icon/people.png' mode="widthFix" class='bottom'></image>
+            <image src='https://www.mapku.top/icon/people.png' mode="widthFix" class='bottom'></image>
             <text class="label">我的</text>
         </view>
     </view>

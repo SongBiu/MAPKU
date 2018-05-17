@@ -6,146 +6,64 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		code:null,
-		emailError:false,
-		inputWrong:false,
-		openid:null,
-		app:getApp()
+		
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.setData({
-			openid:app.openid
-		})
+		
 	},
-
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面显示
-	 */
-	onShow: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-
-	},
-
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-
-	},
-
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-
-	},
-
-	/**
-	 * 用户点击右上角分享
-	 */
-	onShareAppMessage: function () {
-
-	},
-	eMailSubmit: function (event) {
-		var that = this;
-		var id = event.detail.value.ID;
-		if (id == "") {
-			this.setData({
-				eMailError:true
-			})
-		} else {
-			this.setData({
-				eMailError: false
-			})
-		}
+	eMailSubmit(e) {
+		console.log(e)
+		var name = e.detail.value.ID;
 		wx.request({
-			url: app.url_pre + '/PKUverify.php',
-			header: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
+			url: 'https://www.mapku.top/verify_push',
 			method: 'POST',
-			data: {
-				pkuID:id
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"cookie": wx.getStorageSync('cookie')
 			},
-			success:function(res) {
-				var send = res.data;
-				wx.request({
-					url: app.url_pre + '/hash.php',
-					header: {
-						"Content-Type": "application/x-www-form-urlencoded"
-					},
-					method: 'POST',
-					method:'POST',
-					data:{
-						str:send
-					},
-					success:function(res) {
-						that.setData({
-							code:res.data
-						})
-					}
-				})
+			data: {
+				name: name
+			},
+			success: function(res) {
+				console.log(res)
 			}
 		})
 	},
-	verifyCodeSubmit: function(event) {
-		var that = this;
-		var input = event.detail.value.verify;
+	verifyCodeSubmit: function(e) {
+		console.log(e)
+		var code = e.detail.value.verify;
 		wx.request({
-			url: app.url_pre + '/hash.php',
-			header: {
-				"Content-Type": "application/x-www-form-urlencoded"
-			},
+			url: 'https://www.mapku.top/verify_submit',
 			method: 'POST',
-			data:{
-				str:input
+			header: {
+				"Content-Type": "application/x-www-form-urlencoded",
+				"cookie": wx.getStorageSync('cookie')
 			},
-			success(res) {
-				// console.log(res)
-				if (res.data == that.data.code) {
-					app.PKU = true;
-					wx.request({
-						url: app.url_pre + '/verifySuccess.php',
-						header: {
-							"Content-Type": "application/x-www-form-urlencoded"
-						},
-						method: 'POST',
-						data: {
-							usrID:that.data.openid
-						},
-						success: function () {
+			data: {
+				code: code
+			},
+			success: function(res) {
+				console.log(res)
+				if (res.data.content == "success") {
+					wx.setStorageSync('PKU', 1)
+					wx.showToast({
+						title: '认证成功',
+						success: function() {
 							wx.redirectTo({
-								url:"../shop/shop"
+								url: '../shop/shop'
 							})
-						},
-						
+						}
+					})
+				} else {
+					wx.showToast({
+						title: '验证码错误'
 					})
 				}
 			}
-		})	
+		})
 	}
 })

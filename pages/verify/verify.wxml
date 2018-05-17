@@ -1,13 +1,11 @@
 <!--pages/verify/verify.wxml-->
 <view class='container'>
   <view class="verifyforms">
-    <image src="{{app.url_pre}}/icon/copy.png" mode="widthFix" class="copy"></image>
-    
+    <image src="https://www.mapku.top/icon/copy.png" mode="widthFix" class="copy"></image>
     <form bindsubmit='eMailSubmit' class="pkuID">
       <text>PKU邮箱地址</text>
       <input name="ID"></input>
       <text class="address">@pku.edu.cn</text>
-      <!-- <input type="image" src="{{app.url_pre}}/icon/getverifyCode.png" bindtap="eMailSubmit"></input> -->
       <button form-type='submit'>
         获取验证码
       </button>

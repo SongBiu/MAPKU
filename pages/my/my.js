@@ -16,7 +16,7 @@ Page({
 		var that = this;
 		if (wx.getStorageSync('cookie')) {
 			wx.request({
-				url: 'http://39.106.71.227/get_userinfo',
+				url: 'https://www.mapku.top/get_userinfo',
 				method: 'POST',
 				header: {
 					"Content-Type": "application/x-www-form-urlencoded",
@@ -40,83 +40,49 @@ Page({
 			})
 		}
 	},
-	invitate_code: function () {
-		console.log("hi")
-		if (app.invitate_code != '') {
-			wx.navigateTo({
-				url: '../invitate_code/invitate_code'
+	bindGetUserInfo(res) {
+		var that = this;
+		if (!wx.getStorageSync('cookie')) {
+			wx.login({
+				success: function (res) {
+					wx.request({
+						url: 'https://www.mapku.top/get_openid',
+						header: {
+							"Content-Type": "application/x-www-form-urlencoded"
+						},
+						method: 'POST',
+						data: {
+							json_code: res.code
+						},
+						success: function (res) {
+							var openid = res.data.openid;
+							var cookie = "openid=" + openid;
+							wx.setStorageSync('cookie', cookie)
+						}
+					})
+				}
 			})
 		} else {
 			wx.request({
-				url: app.url_pre + '/invitate.php',
-				header: {
-					"Content-Type": "application/x-www-form-urlencoded"
-				},
+				url: 'https://www.mapku.top/get_userinfo',
 				method: 'POST',
-				data: {
-					invitater: this.data.openid
+				header: {
+					"Content-Type": "application/x-www-form-urlencoded",
+					"cookie": wx.getStorageSync('cookie')
 				},
 				success: function (res) {
-					app.invitate_code = res.data;
-					wx.navigateTo({
-						url: '../invitate_code/invitate_code'
-					})
-				},
+					var PKU = res.data.PKU;
+					var community_id = res.data.community_id;
+					wx.setStorageSync('PKU', PKU)
+					wx.setStorageSync('community_id', community_id)
+				}
 			})
 		}
-	},
-	myDynamic: function () {
-		wx.navigateTo({
-			url: '../myDynamic/myDynamic'
-		})
-	},
-	myCommunity: function () {
-		if (this.data.communityName == null) {
-			wx.redirectTo({
-				url: '../join/join'
-			})
-		}
-		else {
-			wx.redirectTo({
-				url: '../leadboard/leadboard'
-			})
-		}
-	},
-	gotoindex: function () {
-		wx.redirectTo({
-			url: '../index/index'
-		})
-	},
-	contact: function () {
-		wx.navigateTo({
-			url: '../contact/contact'
-		})
-	},
-	selectImg: function () {
-		wx.chooseImage({
-			count: 1, // 最多可以选择的图片张数，默认9
-			sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
-			sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
-			success: function (res) {
-				app.imgPath = res.tempFilePaths[0]
-				wx.navigateTo({
-					url: '../upload/upload'
-				})
-			}
-		})
-	},
-	gotomy: function () {
-		wx.redirectTo({
-			url: '../my/my'
-		})
-	},
-	bindGetUserInfo(res) {
-		var that = this;
 		console.log(res)
 		var data = res.detail.userInfo;
 		wx.setStorageSync('avatarUrl', data.avatarUrl)
 		wx.request({
-			url: 'http://39.106.71.227/push_userinfo',
+			url: 'https://www.mapku.top/push_userinfo',
 			method: 'POST',
 			header: {
 				"Content-Type": "application/x-www-form-urlencoded",
@@ -129,7 +95,7 @@ Page({
 			success: function (res) {
 				console.log(res)
 				wx.request({
-					url: 'http://39.106.71.227/get_userinfo',
+					url: 'https://www.mapku.top/get_userinfo',
 					method: 'POST',
 					header: {
 						"Content-Type": "application/x-www-form-urlencoded",
@@ -137,12 +103,60 @@ Page({
 					},
 					success: function (res) {
 						that.setData({
-							info: res.data
+							info: res.data,
+							login: true
 						})
 					}
 				})
 			}
 		})
-
+	},
+	gotoupload: function () {
+		wx.navigateTo({
+			url: '../upload/upload'
+		})
+	},
+	gotoindex: function() {
+		wx.redirectTo({
+			url: '../index/index'
+		})
+	},
+	gotocommunity: function() {
+		if (!wx.getStorageSync('cookie')) {
+			wx.showToast({
+				title: '请先登录'
+			})
+			return;
+		}
+		wx.navigateTo({
+			url: '../leadboard/leadboard'
+		})
+	},
+	gotomydynamic: function() {
+		if (!wx.getStorageSync('cookie')) {
+			wx.showToast({
+				title: '请先登录'
+			})
+			return;
+		}
+		wx.navigateTo({
+			url: '../myDynamic/myDynamic'
+		})
+	},
+	gotoInvitate: function() {
+		if (!wx.getStorageSync('cookie')) {
+			wx.showToast({
+				title: '请先登录'
+			})
+			return;
+		}
+		wx.navigateTo({
+			url: '../invitate_code/invitate_code'
+		})
+	},
+	contact: function() {
+		wx.navigateTo({
+			url: '../contact/contact'
+		})
 	}
 })

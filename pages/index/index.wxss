@@ -1,106 +1,53 @@
-/**index.wxss**/
-view.body {
-	width: 100%;
-	height: 88%;
-	position: relative;
-	overflow-y: scroll;
-	overflow-x: hidden;
-}
-view.dynamic {
-	height: 42%;
-	width: 100%;
-	border-bottom: solid;
-	border-color: #BEBEBE;
-	display: flex;
-	flex-direction: row;
-}
-image.left {
-	height:0;
-	display: inline-block;
-	width: 15%;
-	border-radius: 100%;
-	position: relative;
-	left: 3%;
-	top:6%;
-}
-view.middle {
-	height: 100%;
-	width: 47%;
-	position: relative;
-	left: 5%;
-	display: flex;
-	flex-direction: column;
-	/* padding-left: 5%; */
+scroll-view {
+    height: 88%;
 }
 
-view.topline {
-	display: flex;
-	flex-direction: row;
-	position: fixed;
-	top:0;
-	width: 100%;
-	height: 7%;
-	align-items: center;
-	background-color: rgba(231, 231, 231, 0.514);
-}
-view.btn {
-	width: 33%;
-	height: 100%;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
-}
-view.btn navigator {
-	text-align: center;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	color: #1C1C1C;
+view.top {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+	padding-top: 2%;
 }
 
+.top image {
+    height: 90%;
+    width: 20%;
+    padding-left: 2%;
+}
 
-.middle image {
-	height: 71%;
-	width: 78%;
+.top view.info {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
 }
-view.right {
-	height: 100%;
-	width: 38%;
+
+.top view.name {
+    font-size: 1.2rem;
+    /* width: 30%; */
 }
-view.time {
-	font-size: 0.6rem;
-	color: #BEBEBE;
-	position: relative;
-	right: -20%;
+
+.top view.time {
+    font-size: 0.9rem;
 }
+
+image.middle {
+    height: 40%;
+    width: 60%;
+}
+
+class.say {
+    width: 100%;
+}
+
+view.down {
+    border-bottom: solid #aaa;
+    padding-bottom: 2%;
+}
+
 view.num {
-	position: relative;
-	top: 4%;
-	font-size: 0.8rem;
+    color: gray;
 }
-view.desc {
-	position: relative;
-	top: 4%;
-	width: 100%;
-	word-wrap: break-word;
-}
-view.register {
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-image.top {
-	width: 100%;
-	height: 40%;
-}
-text.talk {
-	padding-top: 5%;
-	text-align: center;
-}
-image.register {
-	width: 30%;
-	height: 10%;
-	padding-top: 10%;
+
+view.say text {
+    word-break: break-all;
 }

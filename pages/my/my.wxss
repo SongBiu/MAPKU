@@ -60,7 +60,7 @@ view.function {
 	width: 100%;
 	height: 60%;
 }
-image {
+image.usr_img {
 	width: 100px;
 	height: 100px;
 }

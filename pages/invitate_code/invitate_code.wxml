@@ -1,12 +1,12 @@
 <!--pages/invitate_code/invitate_code.wxml-->
 <view class='container'>
-	<image src='{{app.url_pre}}/icon/chat.png' id='chat'></image>
+	<image src='https://www.mapku.top/icon/chat.png' id='chat'></image>
 	<view class='code'>
 		<text>
 			您的邀请码为
 		</text>
 		<text>
-			{{app.invitate_code}}
+			{{invitate_code}}
 		</text>
 		<button class="copy" bindtap="copy">复制到剪切板</button>
 	</view>

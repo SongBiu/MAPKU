@@ -5,7 +5,7 @@ Page({
 		say: "",
 		types: ["顺手一袋", "心情记录"],
 		position: "",
-		count_bag: 0,
+		count_bag: 1,
 		index: 0,
 		say_length: 0
 	},
@@ -76,27 +76,66 @@ Page({
 	},
 	submit: function () {
 		var that = this;
-		wx.uploadFile({
-			url: 'http://39.106.71.227/upload',
-			header: {
-				"Content-Type": "multipart/form-data",
-				"cookie": wx.getStorageSync('cookie')
-			},
-			filePath: that.data.img_url,
-			method: 'POST',
-			name: 'image',
-			formData: {
-				say: that.data.say,
-				position: that.data.position,
-				count_bag: that.data.count_bag,
-				index: that.data.index
-			},
-			success: function (res) {
-				
-			},
-			fail: function (res) {
-				console.log(res)
+		if (this.data.img_url == null && this.data.say == "") {
+			wx.showModal({
+				title: '请输入内容',
+				content: '内容不能为空'
+			})
+			return;
+		}
+		if (this.data.img_url == null) {
+			if (this.data.index == 0) {
+				wx.showModal({
+					title: '上传照片',
+					content: '顺手一袋活动必须上传照片作为凭证'
+				})
+				return;
 			}
-		})
+			wx.request({
+				url: 'https://www.mapku.top/upload_none',
+				method: 'POST',
+				header: {
+					"Content-Type": "application/x-www-form-urlencoded",
+					"cookie": wx.getStorageSync('cookie')
+				},
+				data: {
+					say: that.data.say,
+					position: that.data.position,
+					count_bag: that.data.count_bag,
+					index: that.data.index
+				},
+				success: function(res) {
+					wx.redirectTo({
+						url: '../index/index',
+					})
+				}
+			})
+		} else {
+			wx.uploadFile({
+				url: 'https://www.mapku.top/upload',
+				header: {
+					"Content-Type": "multipart/form-data",
+					"cookie": wx.getStorageSync('cookie')
+				},
+				filePath: that.data.img_url,
+				method: 'POST',
+				name: 'image',
+				formData: {
+					say: that.data.say,
+					position: that.data.position,
+					count_bag: that.data.count_bag,
+					index: that.data.index
+				},
+				success: function (res) {
+					wx.redirectTo({
+						url: '../index/index',
+					})
+				},
+				fail: function (res) {
+					console.log(res)
+				}
+			})
+		}
+		
 	}
 })

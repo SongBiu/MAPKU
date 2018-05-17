@@ -3,7 +3,7 @@
     <block wx:if="{{login}}">
         <view class="usr">
             <view>
-                <image src="{{info.user_img}}"></image>
+                <image src="{{info.user_img}}" class='usr_img'></image>
             </view>
             <view class='info'>
                 <view class='name'>
@@ -31,32 +31,32 @@
         </view>
     </block>
     <block wx:else>
-        <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
+        <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>加入活动</button>
     </block>
     <view class="function">
-        <button bindtap="myDynamic">我的最近动态</button>
-        <button bindtap="myCommunity">
+        <button bindtap="gotomydynamic">我的最近动态</button>
+        <button bindtap="gotocommunity">
             我的社团
         </button>
         <button bindtap="contact">
             联系我们
         </button>
-        <button bindtap='invitate_code'>
+        <button bindtap='gotoInvitate'>
             生成邀请码
         </button>
     </view>
     <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom' bindtap='gotoindex'>
-            <image src='http://39.106.71.227/icon/community1.png' class='bottom'></image>
+            <image src='https://www.mapku.top/icon/community1.png' class='bottom'></image>
             <text class="label">主页</text>
         </view>
         <view class='button-bottom'>
-            <image src='http://39.106.71.227/icon/Combined Shape.png' class='bottom' bindtap="selectImg">
+            <image src='https://www.mapku.top/icon/Combined Shape.png' class='bottom' bindtap="gotoupload">
                 <text class="label">上传</text>
             </image>
         </view>
         <view class='button-bottom' bindtap='gotomy'>
-            <image src='http://39.106.71.227/icon/people2.png' class='bottom'></image>
+            <image src='https://www.mapku.top/icon/people2.png' class='bottom'></image>
             <text class="label">我的</text>
         </view>
     </view>

@@ -57,5 +57,8 @@ Page({
 		wx.redirectTo({
 			url: '../shop/shop'
 		})
+	},
+	onShareAppMessage: function () {
+
 	}
 })

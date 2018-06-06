@@ -146,5 +146,10 @@ Page({
 		wx.redirectTo({
 			url: '../index/index'
 		})
+	},
+	gotoverify: function() {
+		wx.redirectTo({
+			url: '../verify/verify'
+		})
 	}
 })

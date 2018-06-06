@@ -50,7 +50,7 @@
     <text>
             拥有北大邮箱的社员可以按以下按钮，根据指示完成认证。
         </text>
-    <image src="https://www.mapku.top/icon/ver.png" class="btn" bindtap="gotover"></image>
+    <image src="https://www.mapku.top/icon/ver.png" class="btn" bindtap="gotoverify"></image>
   </view>
  <view class='bottom' style="flex-direction:row；">
     <view class='button-bottom' bindtap='gotoindex'>

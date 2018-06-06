@@ -12,7 +12,7 @@
                 <view class='community'>
                     {{info.community_name}}
                 </view>
-                <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>获取微信信息</button>
+                <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>同步个人信息</button>
             </view>
         </view>
         <view class="count">

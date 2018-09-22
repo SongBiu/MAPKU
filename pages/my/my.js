@@ -29,6 +29,10 @@ Page({
 							login: false
 						})
 					}
+          else
+          {
+            wx.setStorageSync('community_id', res.data.communityID)
+          }
 					that.setData({
 						info: res.data
 					})
@@ -56,7 +60,7 @@ Page({
 						},
 						success: function (res) {
 							var openid = res.data.openid;
-							var cookie = "openid=" + openid;
+							var cookie = "user_id=" + openid;
 							wx.setStorageSync('cookie', cookie)
 						}
 					})
@@ -72,7 +76,7 @@ Page({
 				},
 				success: function (res) {
 					var PKU = res.data.PKU;
-					var community_id = res.data.community_id;
+					var community_id = res.data.communityID;
 					wx.setStorageSync('PKU', PKU)
 					wx.setStorageSync('community_id', community_id)
 				}

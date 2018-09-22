@@ -20,8 +20,8 @@
             <view class="descr">{{community.descr}}</view>
           </view>
           <view class="right">
-            <image wx:if="{{community_id == community.community_id}}" src="https://www.mapku.top/icon/joinsc.png" class="btn"></image>
-            <image wx:else src="https://www.mapku.top/icon/join.png" class="btn" bindtap="join" data-community_id='{{community.community_id}}'></image>
+            <image wx:if="{{community_id == community.communityID}}" src="https://www.mapku.top/icon/joinsc.png" class="btn"></image>
+            <image wx:else src="https://www.mapku.top/icon/join.png" class="btn" bindtap="join" data-community_id='{{community.communityID}}'></image>
           </view>
         </view>
       </block>

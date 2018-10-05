@@ -34,6 +34,7 @@ view.top {
 image.middle {
     height: 40%;
     width: 60%;
+    padding: 3%;
 }
 
 view.say {

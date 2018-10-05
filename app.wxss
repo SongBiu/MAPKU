@@ -34,7 +34,7 @@ view.bottom {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 view.button-bottom navigator {
@@ -47,9 +47,10 @@ view.button-bottom navigator {
 }
 
 image.bottom {
-    width: 30%;
+    width: 33%;
     height: 80%;
     display: inline-block;
+    padding-top: 5%;
 }
 
 #this {

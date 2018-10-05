@@ -3,7 +3,7 @@ scroll-view {
 }
 
 view.top {
-    height: 20%;
+    height: 15%;
     display: flex;
     flex-direction: row;
 	padding-top: 2%;
@@ -23,11 +23,12 @@ view.top {
 
 .top view.name {
     font-size: 1.2rem;
-    /* width: 30%; */
+    height: 50%;
 }
 
 .top view.time {
     font-size: 0.9rem;
+    height: 50%;
 }
 
 image.middle {
@@ -35,17 +36,18 @@ image.middle {
     width: 60%;
 }
 
-class.say {
-    width: 100%;
+view.say {
+    width: 94%;
+    padding: 3%;
 }
 
 view.good {
     border-bottom: solid #aaa;
-    padding-bottom: 2%;
 }
 
 view.num {
     color: gray;
+    padding-left: 3%;
 }
 
 view.say text {
@@ -54,10 +56,13 @@ view.say text {
 view.down {
 	height: 25%;
 }
+view.address {
+    padding: 3%;
+}
 view.good {
 	display: flex;
 	flex-direction: row;
-	padding-top: 2%;
+	padding: 3%;
 	align-items: center;
 	height: 5%;
 }

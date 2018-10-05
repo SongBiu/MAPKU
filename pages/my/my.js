@@ -31,7 +31,10 @@ Page({
 					}
           else
           {
-            wx.setStorageSync('community_id', res.data.communityID)
+            var PKU = res.data.PKU;
+            var community_id = res.data.communityID;
+            wx.setStorageSync('PKU', PKU)
+            wx.setStorageSync('community_id', community_id)
           }
 					that.setData({
 						info: res.data

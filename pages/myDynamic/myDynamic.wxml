@@ -3,7 +3,7 @@
     <scroll-view class='body' id='dynamic-list' scroll-y="true">
         <block wx:for="{{dynamics}}" wx:for-item="dyna">
             <view class='top'>
-                <image class="left" src="{{avatarUrl}}"></image>
+                <image class="left" src="{{dyna.user_img}}"></image>
                 <view class="info">
                     <view class="time">{{dyna.time}}</view>
                     <view class="delete" bindtap='delete_dyna' data-dyid='{{dyna.dyid}}'>删除</view>

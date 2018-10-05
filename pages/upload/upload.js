@@ -102,7 +102,7 @@ Page({
 					say: that.data.say,
 					position: that.data.position,
 					count_bag: that.data.count_bag,
-					index: that.data.index
+					index: 1
 				},
 				success: function(res) {
 					wx.redirectTo({

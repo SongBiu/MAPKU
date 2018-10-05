@@ -21,8 +21,8 @@
                 <view class='text'>积分</view>
             </view>
             <view wx:else class='score'>
-                <view class='scoreNum'>{{info.all_score}}</view>
-                <view class='text'>社团总积分</view>
+                <view class='scoreNum'>{{info.score}}</view>
+                <view class='text'>积分</view>
             </view>
             <view class='countBag'>
                 <view class='bagNum'>{{info.count_bag}}</view>
@@ -34,17 +34,27 @@
         <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>加入活动</button>
     </block>
     <view class="function">
-        <button bindtap="gotomydynamic">我的最近动态</button>
-        <button bindtap="gotocommunity">
+        <button bindtap="gotomydynamic" type="primary">
+            我的最近动态
+        </button>
+    </view>
+    <view class="function">
+        <button bindtap="gotocommunity" type="primary">
             我的社团
         </button>
-        <button bindtap="contact">
+    </view>
+    <view class="function">
+        <button bindtap="contact" type="primary">
             联系我们
         </button>
-        <button bindtap='gotoInvitate'>
+    </view>
+        
+    <view class="function">
+        <button bindtap='gotoInvitate' type="primary">
             生成邀请码
         </button>
     </view>
+        
     <view class='bottom' style="flex-direction:row；">
         <view class='button-bottom' bindtap='gotoindex'>
             <image src='https://www.mapku.top/icon/community1.png' class='bottom'></image>

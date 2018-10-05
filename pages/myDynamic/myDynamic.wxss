@@ -1,47 +1,79 @@
 scroll-view {
-	height: 100%;
+    height: 88%;
 }
+
 view.top {
-	height: 15%;
-	display: flex;
-	flex-direction: row;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
 	padding-top: 2%;
 }
+
 .top image {
-	height: 80%;
-	width: 25%;
-	padding-left: 2%;
+    height: 90%;
+    width: 20%;
+    padding-left: 2%;
 }
+
 .top view.info {
-	width: 75%;
-	display: flex;
-	flex-direction: column;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
 }
+
 .top view.name {
-	font-size: 1.2rem;
-	/* width: 30%; */
+    font-size: 1.2rem;
+    height: 50%;
 }
+
 .top view.time {
-	font-size: 0.9rem
+    font-size: 0.9rem;
+    height: 50%;
 }
+
 image.middle {
-	height: 40%;
-	width: 60%;
+    height: 40%;
+    width: 60%;
 }
-class.say {
-	width: 100%;
+
+view.say {
+    width: 94%;
+    padding: 3%;
 }
-view.down {
-	border-bottom: solid #aaa;
-	padding-bottom: 2%;
+
+view.good {
+    border-bottom: solid #aaa;
 }
+
 view.num {
-	color: gray;
+    color: gray;
+    padding-left: 3%;
 }
+
 view.say text {
     word-break: break-all;
 }
-view.delete {
-	padding-left: 10%;
+view.down {
+	height: 25%;
+}
+view.address {
+    padding: 3%;
+}
+view.good {
+	display: flex;
+	flex-direction: row;
+	padding: 3%;
+	align-items: center;
+	height: 5%;
+}
+.good image{
+	height: 100%;
+	width: 10%;
+}
+.good text {
+	padding-left: 3%;
+}
+.info view.delete
+{
 	color: #1E90FF;
 }

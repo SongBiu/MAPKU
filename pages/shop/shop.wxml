@@ -16,11 +16,11 @@
       <view class="info">
         <view class="buy">
           <view class="score">消耗积分：3</view>
-          <button class="postcardGet" bindtap='buy' data-type='postcard'>兑换</button>
+          <button class="postcardGet" bindtap='buy' data-type='postcard' type="primary">兑换</button>
         </view>
         <view class="my">
           <view class="score">拥有：{{postcard}}</view>
-          <button class="use" data-name="postcard" bindtap="use">使用</button>
+          <button class="use" data-name="postcard" bindtap="use" type="primary">使用</button>
         </view>
       </view>
 
@@ -30,11 +30,11 @@
       <view class="info">
         <view class="buy">
           <view class="score">消耗积分：10</view>
-          <button class="postcardGet" bindtap='buy'data-type='vouchers'>兑换</button>
+          <button class="postcardGet" bindtap='buy'data-type='vouchers' type="primary">兑换</button>
         </view>
         <view class="my">
           <view class="score">拥有：{{vouchers}}</view>
-          <button class="use" data-name="vouchers" bindtap="use">使用</button>
+          <button class="use" data-name="vouchers" bindtap="use" type="primary">使用</button>
         </view>
       </view>
     </view>

@@ -14,6 +14,9 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const domainUrl = "https://www.mapku.top";
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  domainUrl: domainUrl
 }

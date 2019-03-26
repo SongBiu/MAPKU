@@ -10,9 +10,9 @@
                 </view>
             </view>
             <view class='say'>
-                <text>{{dyna.say}}</text>
+                <text>{{dyna.content}}</text>
             </view>
-            <image wx:if="{{dyna.has_img}}" class="middle" src="{{dyna.image}}" bindtap="preImg" date-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
+            <image wx:if="{{!dyna.simple}}" class="middle" src="{{dyna.image}}" bindtap="preImg" date-list="{{dyna.image}}" data-src="{{dyna.image}}"></image>
             <view wx:if="{{dyna.class=='顺手一袋'}}" class="num">顺手一袋：{{dyna.countBag}}袋</view>
             <view wx:else class="num">心情记录</view>
             <view wx:if="{{dyna.address != ''}}" class='address'>{{dyna.address}}</view>

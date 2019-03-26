@@ -3,29 +3,29 @@
     <block wx:if="{{login}}">
         <view class="usr">
             <view>
-                <image src="{{info.user_img}}" class='usr_img'></image>
+                <image src="{{userDetail.avatarUrl}}" class='usr_img'></image>
             </view>
             <view class='info'>
                 <view class='name'>
-                    {{info.name}}
+                    {{userDetail.userName}}
                 </view>
                 <view class='community'>
-                    {{info.community_name}}
+                    {{userDetail.teamId}}
                 </view>
                 <button open-type='getUserInfo' bindgetuserinfo='bindGetUserInfo'>同步个人信息</button>
             </view>
         </view>
         <view class="count">
-            <view wx:if="{{info.community_id == 0}}" class='score'>
-                <view class='scoreNum'>{{info.score}}</view>
+            <view wx:if="{{userDetail.teamId == 0}}" class='score'>
+                <view class='scoreNum'>{{userDetail.score}}</view>
                 <view class='text'>积分</view>
             </view>
             <view wx:else class='score'>
-                <view class='scoreNum'>{{info.score}}</view>
+                <view class='scoreNum'>{{userDetail.score}}</view>
                 <view class='text'>积分</view>
             </view>
             <view class='countBag'>
-                <view class='bagNum'>{{info.count_bag}}</view>
+                <view class='bagNum'>{{userDetail.bag}}</view>
                 <view class='text'>袋数</view>
             </view>
         </view>
